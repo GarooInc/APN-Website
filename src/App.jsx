@@ -8,6 +8,8 @@ import News from './pages/News';
 import NewsDetail from './pages/NewsDetail';
 import Board from './pages/Board';
 import { ROUTES } from './utils/constants';
+// main.jsx o App.jsx
+import '@fontsource/plus-jakarta-sans/400.css';
 
 export default function App() {
   return (
