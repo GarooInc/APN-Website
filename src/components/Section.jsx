@@ -9,7 +9,7 @@ export default function Section({
   return (
     <section 
       id={id}
-      className={`py-12 md:py-20 ${bgColor} ${className}`}
+      className={`py-12 md:py-20 ${bgColor} ${className} fade-in`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {title && (

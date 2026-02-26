@@ -30,6 +30,23 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Fade in animation */
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Transición entre secciones */
+section {
+  @apply transition-colors duration-500;
+}
+
 /* Estilos personalizados */
 .hero-gradient {
   background: linear-gradient(135deg, #00379E 0%, #0098DC 100%);

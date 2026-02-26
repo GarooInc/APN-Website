@@ -1,8 +1,10 @@
 import Section from '../components/Section';
 import Card from '../components/Card';
 import Button from '../components/Button';
+import { useFadeIn } from '../hooks/useFadeIn';
 
 export default function Board() {
+  useFadeIn();
   const members = [
     {
       id: 1,

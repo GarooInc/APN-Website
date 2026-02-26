@@ -1,9 +1,11 @@
 import { useParams, Link } from 'react-router-dom';
 import Section from '../components/Section';
 import Button from '../components/Button';
+import { useFadeIn } from '../hooks/useFadeIn';
 import { ROUTES } from '../utils/constants';
 
 export default function NewsDetail() {
+  useFadeIn();
   const { id } = useParams();
 
   // Mock data - En una aplicación real, esto vendría de una API
