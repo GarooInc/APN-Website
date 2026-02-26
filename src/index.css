@@ -1,0 +1,55 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Importar fuentes */
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap');
+
+/* Definir Averta como fallback */
+@font-face {
+  font-family: 'Averta';
+  src: url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;900&display=swap');
+  font-display: swap;
+}
+
+* {
+  @apply transition-colors duration-200;
+}
+
+body {
+  @apply bg-primary-white text-primary-dark;
+  font-family: 'Manrope', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Averta', 'Montserrat', sans-serif;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Estilos personalizados */
+.hero-gradient {
+  background: linear-gradient(135deg, #00379E 0%, #0098DC 100%);
+}
+
+/* Utilities personalizadas */
+@layer components {
+  .btn-primary {
+    @apply bg-primary-dark text-primary-white px-6 py-3 rounded-lg font-semibold hover:bg-primary-light transition-all duration-200;
+  }
+
+  .btn-secondary {
+    @apply bg-primary-light text-primary-white px-6 py-3 rounded-lg font-semibold hover:bg-primary-dark transition-all duration-200;
+  }
+
+  .card {
+    @apply bg-primary-white rounded-lg border border-neutral-gray p-6 shadow-md hover:shadow-lg transition-shadow;
+  }
+
+  .section-title {
+    @apply font-averta font-bold text-4xl text-primary-dark;
+  }
+}
