@@ -2,9 +2,11 @@ import { LiaLinkedinIn } from "react-icons/lia";
 import { FaFacebookF, FaYoutube } from "react-icons/fa";
 import { AiOutlineInstagram } from "react-icons/ai";
 import { useState, useEffect } from "react";
+import { useLang } from "../context/LanguageContext";
 
 export default function Footer() {
   const [isVisible, setIsVisible] = useState(false);
+  const { t } = useLang();
 
   useEffect(() => {
     // Trigger animation after component mounts
@@ -26,7 +28,7 @@ export default function Footer() {
 
           {/* Columna izquierda */}
           <div className="flex flex-col gap-6">
-            {["PROPÓSITO", "MISIÓN", "GENERACIÓN\nDE EVIDENCIA", "ALIADOS"].map((item) => (
+            {t.footer.left.map((item) => (
               <a
                 key={item}
                 href="#"
@@ -49,7 +51,7 @@ export default function Footer() {
 
           {/* Columna derecha */}
           <div className="flex flex-col gap-6">
-            {["ÚNETE", "MATERIALES TÉCNICOS", "NOTICIAS", "CONTÁCTANOS"].map((item) => (
+            {t.footer.right.map((item) => (
               <a
                 key={item}
                 href="#"
@@ -120,8 +122,9 @@ export default function Footer() {
               lineHeight: "1.5",
             }}
           >
-            © 2026 Alianza por la Nutrición.<br />
-            All Rights Reserved.
+            {t.footer.copyright.split("\n").map((line, i) => (
+              <span key={i}>{line}{i === 0 && <br />}</span>
+            ))}
           </p>
         </div>
       </div>

@@ -1,8 +1,34 @@
 import { useState } from "react";
+import { useNavigate, useLocation } from "react-router-dom";
+import { useLang } from "../context/LanguageContext";
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [lang, setLang] = useState("ES");
+  const { lang, toggleLang, t } = useLang();
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const scrollToSection = (id) => {
+    setMenuOpen(false);
+    const doScroll = () => {
+      const el = document.getElementById(id);
+      if (el) el.scrollIntoView({ behavior: "smooth" });
+    };
+    if (location.pathname === "/") {
+      doScroll();
+    } else {
+      navigate("/");
+      setTimeout(doScroll, 100);
+    }
+  };
+
+  const menuItems = [
+    { label: t.menu.inicio,       id: "proposito"    },
+    { label: t.menu.quienesSomos, id: "quienes-somos" },
+    { label: t.menu.programas,    id: "aliados"       },
+    { label: t.menu.noticias,     id: "noticias"      },
+    { label: t.menu.contacto,     id: "contacto"      },
+  ];
 
   return (
     <header className="w-full h-[70px] flex justify-between items-center bg-white shadow-md font-montserrat absolute z-50">
@@ -44,7 +70,7 @@ export default function Header() {
       {/* Right: Language selector */}
       <div className="flex items-center justify-end pr-5">
         <button
-          onClick={() => setLang(lang === "ES" ? "EN" : "ES")}
+          onClick={toggleLang}
           className="bg-none border-none cursor-pointer text-sm font-Manrope text-[#00379E] flex items-center gap-[6px] font-Manrope"
         >
           {lang}
@@ -57,12 +83,13 @@ export default function Header() {
       {/* Dropdown menu */}
       {menuOpen && (
         <div className="absolute top-full left-0 right-0 bg-white shadow-lg z-[100]">
-          {["Inicio", "Quiénes somos", "Programas", "Noticias", "Contacto"].map(item => (
+          {menuItems.map(item => (
             <div
-              key={item}
+              key={item.label}
+              onClick={() => scrollToSection(item.id)}
               className="p-3 px-6 text-sm font-medium text-[#333] cursor-pointer border-b border-[#f5f5f5] hover:text-[#00379E] transition-colors"
             >
-              {item}
+              {item.label}
             </div>
           ))}
         </div>
