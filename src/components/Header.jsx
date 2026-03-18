@@ -25,7 +25,7 @@ export default function Header() {
   const menuItems = [
     { label: t.menu.inicio,       id: "proposito"    },
     { label: t.menu.quienesSomos, id: "quienes-somos" },
-    { label: t.menu.programas,    id: "aliados"       },
+    { label: t.menu.aliados,      id: "aliados"       },
     { label: t.menu.noticias,     id: "noticias"      },
     { label: t.menu.contacto,     id: "contacto"      },
   ];
