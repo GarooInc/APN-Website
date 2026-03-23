@@ -29,3 +29,23 @@
   font-style: italic;
   font-display: swap;
 }
+
+.presidente-foto {
+  transition: transform 0.3s ease;
+}
+
+.presidente-foto:hover {
+  transform: scale(1.08);
+}
+
+.junta-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(24px, 4vw, 48px) clamp(16px, 3vw, 32px);
+}
+
+@media (max-width: 600px) {
+  .junta-grid {
+    grid-template-columns: 1fr;
+  }
+}
