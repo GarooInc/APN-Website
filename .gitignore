@@ -25,7 +25,12 @@ coverage
 .settings/
 *.sublime-workspace
 
-# vite
+# Vite
 .env
 .env.local
 .env.*.local
+vite.config.js.timestamp-*.mjs
+
+# Screenshots / assets temporales
+screen*.png
+*.screenshot.png
