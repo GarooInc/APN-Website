@@ -1,159 +1,275 @@
-import Section from '../components/Section';
-import Card from '../components/Card';
-import Button from '../components/Button';
+import { useState } from 'react';
 import { useFadeIn } from '../hooks/useFadeIn';
+
+const boardMembers = [
+  { name: 'Juan Alfonso\nSolares',  role: 'Presidente',    img: '/presidente.png' },
+  { name: 'Álvaro\nCastillo',       role: 'Vicepresidente', img: '/junta1.png' },
+  { name: 'Lucas\nDougherty',       role: 'Tesorero',       img: '/junta2.jpg' },
+  { name: 'Yolanda\nMayora',        role: 'Secretaria',     img: '/junta3.jpg' },
+  { name: 'Alfonso\nBosch',         role: 'Vocal I',        img: '/junta4.png' },
+  { name: 'Edna\nLima',             role: 'Vocal II',       img: '/junta5.png' },
+  { name: 'Carlos\nMérida',         role: 'Vocal III',      img: '/junta6.png' },
+];
+
+const staffMembers = [
+  { name: 'Ana Luisa\nEsquivel',  role: 'Directora Ejecutiva',                  img: '/image12.png' },
+  { name: 'Olga\nLópez',          role: 'Administración y Finanzas',             img: '/image13.jpg' },
+  { name: 'Mónica\nRodríguez',    role: 'Monitoreo, Evaluación y Aprendizaje',   img: '/image14.png' },
+];
+
+const boldStyle = { fontFamily: "'Averta', Georgia, serif", fontWeight: 700 };
 
 export default function Board() {
   useFadeIn();
-  const members = [
-    {
-      id: 1,
-      name: 'Miembro 1',
-      role: 'Presidente',
-      bio: 'Descripción breve del miembro de la junta',
-      image: 'https://via.placeholder.com/300x300?text=Member+1',
-    },
-    {
-      id: 2,
-      name: 'Miembro 2',
-      role: 'Vicepresidente',
-      bio: 'Descripción breve del miembro de la junta',
-      image: 'https://via.placeholder.com/300x300?text=Member+2',
-    },
-    {
-      id: 3,
-      name: 'Miembro 3',
-      role: 'Secretario',
-      bio: 'Descripción breve del miembro de la junta',
-      image: 'https://via.placeholder.com/300x300?text=Member+3',
-    },
-    {
-      id: 4,
-      name: 'Miembro 4',
-      role: 'Tesorero',
-      bio: 'Descripción breve del miembro de la junta',
-      image: 'https://via.placeholder.com/300x300?text=Member+4',
-    },
-  ];
+  const [form, setForm] = useState({ nombre: '', correo: '', telefono: '' });
+  const [sent, setSent] = useState(false);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setSent(true);
+  };
 
   return (
     <div>
-      <Section
-        title="Junta Directiva"
-        subtitle="Conoce a nuestro equipo de liderazgo"
-      >
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {members.map((member) => (
-            <Card
-              key={member.id}
-              title={member.name}
-              image={member.image}
+      {/* Hero */}
+      <div className="w-full h-[380px] overflow-hidden">
+        <img
+          src="/image11.jpg"
+          alt="Junta directiva"
+          className="w-full h-full object-cover"
+          style={{ objectPosition: 'center 30%' }}
+        />
+      </div>
+
+      {/* Mensaje del Presidente */}
+      <section className="bg-neutral-bg px-8 py-16 fade-in">
+        <div className="max-w-3xl mx-auto">
+          <h2
+            className="font-averta font-bold text-primary-dark uppercase mb-8"
+            style={{ fontSize: 'clamp(18px, 3.5vw, 36px)', lineHeight: 1.25, letterSpacing: '0.09em' }}
+          >
+            Mensaje de<br />
+            <span className="font-averta italic font-normal">nuestro presidente</span>
+          </h2>
+
+          {/* Foto + nombre */}
+          <div className="flex items-start gap-5 mb-8">
+            <img
+              src="/presidente.png"
+              alt="Juan Alfonso Solares"
+              className="rounded-full object-cover flex-shrink-0"
+              style={{ width: 'clamp(64px, 10vw, 110px)', height: 'clamp(64px, 10vw, 110px)' }}
+            />
+            <div className="flex flex-col justify-center pt-2">
+              <span
+                className="font-averta font-bold text-primary-dark uppercase"
+                style={{ fontSize: 'clamp(12px, 2.5vw, 20px)', letterSpacing: '0.09em', lineHeight: 1.3 }}
+              >
+                Juan Alfonso<br />Solares
+              </span>
+              <span
+                className="font-averta italic text-primary-dark uppercase mt-1"
+                style={{ fontSize: 'clamp(10px, 1.8vw, 16px)' }}
+              >
+                Presidente
+              </span>
+            </div>
+          </div>
+
+          {/* Discurso */}
+          <div
+            className="font-averta italic text-primary-dark"
+            style={{ fontSize: 'clamp(16px, 3vw, 22px)', lineHeight: 'clamp(26px, 4vw, 42px)' }}
+          >
+            <p className="mb-5">
+              En <strong style={boldStyle}>Guatemala</strong>, ningún niño ni niña debería comenzar su vida con desventajas irreversibles. Sin embargo, la{' '}
+              <strong style={boldStyle}>desnutrición crónica infantil</strong> sigue siendo una realidad que limita sueños, oportunidades y el futuro de nuestro país.
+            </p>
+            <p className="mb-5">
+              En la <strong style={boldStyle}>Alianza por la Nutrición</strong> creemos que cambiar esta historia es posible. Somos una coalición que une al sector privado y a la sociedad civil con un propósito en común:{' '}
+              <strong style={boldStyle}>combatir y prevenir la desnutrición crónica infantil bajo un enfoque integral y multicausal, actuando en la ventana crítica de los primeros 1,000 días de vida.</strong>
+            </p>
+            <p className="mb-5">
+              Cada acción que emprendemos busca garantizar que la niñez crezca sana, fuerte y con las oportunidades que merece. Porque cuando cuidamos a nuestros niños, nutrimos el presente y{' '}
+              <strong style={boldStyle}>transformamos el futuro de Guatemala.</strong>
+            </p>
+            <p>
+              Este es un llamado a todos: empresas, organizaciones, comunidades, familias, ciudadanos, madres y padres:{' '}
+              <strong style={boldStyle}>Juntos Podemos construir una Guatemala donde ningún niño se quede atrás. El cambio comienza hoy, y comienza contigo.</strong>
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Junta Directiva */}
+      <section className="bg-primary-dark px-8 py-14 fade-in">
+        <div className="max-w-3xl mx-auto">
+          <div className="flex items-center gap-2 mb-10">
+            <span
+              className="font-averta font-bold text-white tracking-[0.14em]"
+              style={{ fontSize: 'clamp(16px, 3vw, 24px)' }}
             >
-              <div>
-                <p className="font-averta font-semibold text-primary-light mb-2">
-                  {member.role}
+              Junta Directiva
+            </span>
+            <span className="text-white text-sm">›</span>
+          </div>
+
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+            {boardMembers.map((m) => (
+              <div key={m.name} className="flex flex-col items-center text-center">
+                <img
+                  src={m.img}
+                  alt={m.name.replace('\n', ' ')}
+                  className="rounded-full object-cover mb-3"
+                  style={{ width: 'clamp(60px, 8vw, 90px)', height: 'clamp(60px, 8vw, 90px)' }}
+                />
+                <p
+                  className="font-averta font-bold text-white whitespace-pre-line mb-1"
+                  style={{ fontSize: 'clamp(11px, 1.8vw, 14px)', letterSpacing: '0.06em', lineHeight: 1.35 }}
+                >
+                  {m.name}
                 </p>
-                <p className="font-manrope text-sm text-primary-dark mb-4">
-                  {member.bio}
+                <p
+                  className="font-averta italic text-primary-light"
+                  style={{ fontSize: 'clamp(10px, 1.5vw, 12px)', letterSpacing: '0.08em' }}
+                >
+                  {m.role}
                 </p>
-                <div className="flex gap-3">
-                  <button className="text-primary-dark hover:text-primary-light transition">
-                    <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                      <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
-                    </svg>
-                  </button>
-                  <button className="text-primary-dark hover:text-primary-light transition">
-                    <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                      <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417a9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
-                    </svg>
-                  </button>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Equipo APN */}
+      <section className="bg-neutral-bg px-8 py-14 fade-in">
+        <div className="max-w-3xl mx-auto">
+          <div className="flex items-center gap-2 mb-10">
+            <span
+              className="font-averta font-bold text-primary-dark tracking-[0.12em]"
+              style={{ fontSize: 'clamp(14px, 3vw, 20px)' }}
+            >
+              ALIANZA POR LA NUTRICIÓN
+            </span>
+          </div>
+
+          <div className="flex flex-col divide-y divide-primary-dark/10">
+            {staffMembers.map((s) => (
+              <div key={s.name} className="py-7 flex items-center gap-6">
+                <img
+                  src={s.img}
+                  alt={s.name.replace('\n', ' ')}
+                  className="rounded-full object-cover flex-shrink-0"
+                  style={{ width: 'clamp(50px, 7vw, 80px)', height: 'clamp(50px, 7vw, 80px)' }}
+                />
+                <div>
+                  <p
+                    className="font-averta font-bold text-primary-dark whitespace-pre-line"
+                    style={{ fontSize: 'clamp(13px, 2.5vw, 17px)', letterSpacing: '0.08em', lineHeight: 1.3 }}
+                  >
+                    {s.name}
+                  </p>
+                  <p
+                    className="font-averta italic text-primary-light mt-1"
+                    style={{ fontSize: 'clamp(11px, 2vw, 14px)', letterSpacing: '0.06em' }}
+                  >
+                    {s.role}
+                  </p>
                 </div>
               </div>
-            </Card>
-          ))}
+            ))}
+          </div>
         </div>
-      </Section>
+      </section>
 
-      {/* Únete a la Junta */}
-      <Section
-        id="join"
-        title="Únete a la Junta Directiva"
-        subtitle="Buscamos personas apasionadas por generar impacto"
-        bgColor="bg-primary-dark text-primary-white"
-      >
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center max-w-4xl mx-auto">
-          <div>
-            <h3 className="font-averta font-bold text-2xl mb-6">
-              ¿Qué buscamos?
-            </h3>
-            <ul className="space-y-4 font-manrope">
-              <li className="flex items-start gap-3">
-                <span className="text-primary-light font-bold flex-shrink-0">✓</span>
-                <span>Experiencia en el sector</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <span className="text-primary-light font-bold flex-shrink-0">✓</span>
-                <span>Pasión por la generación de evidencia</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <span className="text-primary-light font-bold flex-shrink-0">✓</span>
-                <span>Compromiso con la misión de APN</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <span className="text-primary-light font-bold flex-shrink-0">✓</span>
-                <span>Disposición para colaborar activamente</span>
-              </li>
-            </ul>
+      {/* Organizaciones aliadas */}
+      <section className="bg-white px-8 py-14 fade-in">
+        <div className="max-w-3xl mx-auto">
+          <div className="flex items-center gap-2 mb-8">
+            <span
+              className="font-averta font-bold text-primary-dark tracking-[0.12em]"
+              style={{ fontSize: 'clamp(14px, 3vw, 20px)' }}
+            >
+              ORGANIZACIONES QUE NOS APOYAN
+            </span>
+            <span className="text-primary-dark text-sm">{'>'}</span>
           </div>
-          <div>
-            <form className="space-y-6 bg-primary-white text-primary-dark p-8 rounded-lg">
-              <div>
-                <label className="block font-manrope font-semibold mb-2">
-                  Nombre Completo
-                </label>
-                <input
-                  type="text"
-                  className="w-full px-4 py-3 border border-neutral-gray rounded-lg focus:outline-none focus:border-primary-light"
-                  placeholder="Tu nombre"
-                />
+          <div className="flex flex-wrap gap-6">
+            {['/Allies1.png', '/Allies2.png', '/Allies3.png'].map((src, i) => (
+              <div
+                key={i}
+                className="w-[160px] h-[90px] border border-neutral-gray flex items-center justify-center p-3"
+              >
+                <img src={src} alt={`Aliado ${i + 1}`} className="max-w-full max-h-full object-contain" />
               </div>
-              <div>
-                <label className="block font-manrope font-semibold mb-2">
-                  Email
-                </label>
-                <input
-                  type="email"
-                  className="w-full px-4 py-3 border border-neutral-gray rounded-lg focus:outline-none focus:border-primary-light"
-                  placeholder="Tu email"
-                />
-              </div>
-              <div>
-                <label className="block font-manrope font-semibold mb-2">
-                  Organización
-                </label>
-                <input
-                  type="text"
-                  className="w-full px-4 py-3 border border-neutral-gray rounded-lg focus:outline-none focus:border-primary-light"
-                  placeholder="Tu organización"
-                />
-              </div>
-              <div>
-                <label className="block font-manrope font-semibold mb-2">
-                  Mensaje
-                </label>
-                <textarea
-                  rows="4"
-                  className="w-full px-4 py-3 border border-neutral-gray rounded-lg focus:outline-none focus:border-primary-light resize-none"
-                  placeholder="Cuéntanos por qué te interesa unirte"
-                ></textarea>
-              </div>
-              <Button variant="primary" size="md" className="w-full">
-                Enviar Solicitud
-              </Button>
-            </form>
+            ))}
           </div>
+          <p className="text-primary-dark/50 text-xs font-averta italic mt-8">
+            *DCI: Desnutrición Crónica Infantil.
+          </p>
         </div>
-      </Section>
+      </section>
+
+      {/* Formulario ÚNETE AQUÍ */}
+      <section className="bg-neutral-bg px-8 py-16 fade-in">
+        <div className="max-w-xl mx-auto">
+          <div className="flex items-center gap-2 mb-8">
+            <span
+              className="font-averta font-bold text-primary-dark tracking-[0.14em]"
+              style={{ fontSize: 'clamp(16px, 3.5vw, 22px)' }}
+            >
+              ÚNETE AQUÍ
+            </span>
+          </div>
+
+          {sent ? (
+            <div className="bg-primary-dark text-white font-averta italic px-8 py-10 text-center">
+              <p style={{ fontSize: 'clamp(15px, 3vw, 20px)' }}>
+                ¡Gracias por contactarnos! Nos pondremos en contacto pronto.
+              </p>
+            </div>
+          ) : (
+            <>
+              <p
+                className="font-averta italic text-primary-dark mb-8"
+                style={{ fontSize: 'clamp(14px, 2.5vw, 18px)', lineHeight: 1.6 }}
+              >
+                ¡Contáctanos hoy!
+              </p>
+              <form onSubmit={handleSubmit} className="flex flex-col gap-5">
+                {[
+                  { label: 'NOMBRE', key: 'nombre', type: 'text' },
+                  { label: 'CORREO', key: 'correo', type: 'email' },
+                  { label: 'TELÉFONO', key: 'telefono', type: 'tel' },
+                ].map(({ label, key, type }) => (
+                  <div key={key}>
+                    <label className="block font-averta font-bold text-primary-dark text-xs tracking-[0.12em] mb-2">
+                      {label}
+                    </label>
+                    <input
+                      type={type}
+                      required={key !== 'telefono'}
+                      value={form[key]}
+                      onChange={(e) => setForm({ ...form, [key]: e.target.value })}
+                      className="w-full border-b-2 border-primary-dark bg-transparent px-0 py-3 font-averta text-primary-dark focus:outline-none focus:border-primary-light transition-colors"
+                      style={{ fontSize: 'clamp(14px, 2.5vw, 16px)' }}
+                    />
+                  </div>
+                ))}
+                <div className="flex justify-center mt-6">
+                  <button
+                    type="submit"
+                    className="border-2 border-primary-dark text-primary-dark font-averta font-bold px-10 py-4 hover:bg-primary-dark hover:text-white transition-all duration-300"
+                    style={{ fontSize: 'clamp(10px, 1.5vw, 12px)', letterSpacing: '0.2em' }}
+                  >
+                    E N V I A R
+                  </button>
+                </div>
+              </form>
+            </>
+          )}
+        </div>
+      </section>
     </div>
   );
 }

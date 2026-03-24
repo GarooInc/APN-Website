@@ -21,7 +21,7 @@ export default function Footer() {
     <footer>
 
       {/* Menú de navegación - fondo azul oscuro */}
-      <div className="bg-[#1a3a8f] px-8 py-10">
+      <div className="bg-[#003da7] px-8 py-10">
         <div className="max-w-3xl mx-auto w-full grid grid-cols-2 gap-x-8 gap-y-6">
 
           {/* Columna izquierda */}
@@ -30,7 +30,7 @@ export default function Footer() {
               <a
                 key={item}
                 href="#"
-                className="transition-all duration-200 hover:text-[#0098DC] hover:tracking-widest"
+                className="transition-all duration-200 hover:text-[#00a1e0] hover:tracking-widest"
                 style={{
                   fontFamily: "'Averta', sans-serif",
                   fontWeight: 700,
@@ -53,7 +53,7 @@ export default function Footer() {
               <a
                 key={item}
                 href="#"
-                className="transition-all duration-200 hover:text-[#0098DC] hover:tracking-widest"
+                className="transition-all duration-200 hover:text-[#00a1e0] hover:tracking-widest"
                 style={{
                   fontFamily: "'Averta', sans-serif",
                   fontWeight: 700,
@@ -81,9 +81,9 @@ export default function Footer() {
               href={social.href}
               className="flex items-center justify-center hover:opacity-80 hover:scale-110 transition-all duration-300" // Added hover:scale-110 and transition-all
               style={{
-                color: "#0098DC",
+                color: "#00a1e0",
                 backgroundColor: "transparent",
-                border: "2px solid #0098DC",
+                border: "2px solid #00a1e0",
                 borderRadius: social.rounded,
                 width: "36px",
                 height: "36px",
@@ -111,7 +111,7 @@ export default function Footer() {
         </div>
 
         {/* Copyright - fondo azul claro */}
-        <div className="bg-[#0098DC] flex items-center justify-center py-6 px-6">
+        <div className="bg-[#00a1e0] flex items-center justify-center py-6 px-6">
           <p
             style={{
               fontFamily: "'Averta', sans-serif",

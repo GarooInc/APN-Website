@@ -8,16 +8,17 @@ export default {
     extend: {
       colors: {
         primary: {
-          dark: '#00379E',
-          light: '#0098DC',
+          dark: '#003da7',   // AZUL — Figma token
+          light: '#00a1e0',  // CELESTE — Figma token
           white: '#FFFFFF',
         },
         neutral: {
           gray: '#C0C8CE',
+          bg: '#d6d8db',     // Fondo gris claro de secciones
         },
       },
       fontFamily: {
-        averta: ['Averta', 'sans-serif'],
+        averta: ['Averta', 'Montserrat', 'sans-serif'],
         manrope: ['Manrope', 'sans-serif'],
       },
     },

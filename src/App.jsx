@@ -8,11 +8,11 @@ import News from './pages/News';
 import NewsDetail from './pages/NewsDetail';
 import Board from './pages/Board';
 import { ROUTES } from './utils/constants';
-// main.jsx o App.jsx
-import '@fontsource/plus-jakarta-sans/400.css';
+import { LanguageProvider } from './context/LanguageContext';
 
 export default function App() {
   return (
+    <LanguageProvider>
     <Router>
       <MainLayout>
         <Routes>
@@ -26,5 +26,6 @@ export default function App() {
         </Routes>
       </MainLayout>
     </Router>
+    </LanguageProvider>
   );
 }

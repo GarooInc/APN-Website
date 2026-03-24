@@ -1,156 +1,169 @@
 import { useParams, Link } from 'react-router-dom';
-import Section from '../components/Section';
-import Button from '../components/Button';
 import { useFadeIn } from '../hooks/useFadeIn';
 import { ROUTES } from '../utils/constants';
+
+const articles = {
+  1: {
+    title: 'ACOMPÁÑAME A CRECER: UN ESFUERZO PÚBLICO-PRIVADO PARA EL DESARROLLO INFANTIL TEMPRANO',
+    subtitle: 'Generando evidencia para transformar vidas',
+    image: '/image3.jpg',
+    imagePosition: 'center 40%',
+    sections: [
+      {
+        question: '¿Cuál es el propósito?',
+        answer:
+          'Medir los avances del programa, cuyo objetivo es contribuir al desarrollo integral de la primera infancia en Guatemala, brindando acompañamiento a familias en situación de vulnerabilidad mediante visitas domiciliarias de promotoras comunitarias.',
+      },
+      {
+        question: '¿Cómo lo hacemos?',
+        answer:
+          'El modelo implementado es el de Jamaica, adaptado al contexto guatemalteco. Se basa en visitas domiciliarias semanales donde promotoras comunitarias trabajan con padres y cuidadores para estimular el desarrollo cognitivo, físico y socioemocional de los niños.',
+        bullets: [
+          'Generación de ingresos',
+          'Estimulación temprana',
+          'Seguridad alimentaria',
+          'Salud y bienestar',
+        ],
+      },
+    ],
+  },
+  2: {
+    title: 'CON NUESTROS SOCIOS IMPLEMENTADORES LAS HISTORIAS SE ESCRIBEN CON DATOS, ABRAZOS Y SONRISAS',
+    subtitle: 'APN y sus socios implementadores de Acompáñame a Crecer han recolectado datos cuantitativos y cualitativos para entender y evaluar el trabajo realizado.',
+    image: '/image4.jpg',
+    imagePosition: 'center 45%',
+    sections: [
+      {
+        question: 'Cada visita,',
+        answer: 'Es evidencia de que el acompañamiento transforma vidas.',
+      },
+      {
+        question: 'Porque medir importa:',
+        answer:
+          'Cada dato recolectado nos permite entender mejor el impacto de nuestras intervenciones y mejorar continuamente nuestra metodología para beneficiar a más familias guatemaltecas.',
+      },
+      {
+        question: 'Y acompañar transforma:',
+        answer:
+          'Cuando una promotora visita a una familia semana tras semana, no solo comparte técnicas de estimulación — construye confianza, esperanza y capacidades que duran toda la vida.',
+      },
+    ],
+  },
+  3: {
+    title: '¿QUÉ ES LA DESNUTRICIÓN CRÓNICA INFANTIL?',
+    subtitle: 'La desnutrición crónica infantil también llamada DCI por sus siglas, está asociada a una baja talla para la edad.',
+    image: '/image2.jpg',
+    imagePosition: 'center 25%',
+    sections: [
+      {
+        question: '¿Cuál es la causa?',
+        answer:
+          'La DCI es el resultado de una ingesta insuficiente de nutrientes durante períodos prolongados, combinada con enfermedades recurrentes, prácticas de cuidado inadecuadas y falta de acceso a servicios de salud y saneamiento básico.',
+      },
+      {
+        question: '¿Cuáles son las consecuencias?',
+        answer:
+          'Un niño con DCI tiene consecuencias que van más allá del físico: afecta el desarrollo cognitivo, el rendimiento escolar, la productividad laboral y los ingresos durante la vida adulta, perpetuando el ciclo de pobreza.',
+      },
+    ],
+  },
+};
 
 export default function NewsDetail() {
   useFadeIn();
   const { id } = useParams();
-
-  // Mock data - En una aplicación real, esto vendría de una API
-  const newsData = {
-    1: {
-      title: 'Lanzamiento de Nuevo Proyecto',
-      date: '2024-02-15',
-      category: 'Proyecto',
-      image: 'https://via.placeholder.com/800x400?text=Noticia+1',
-      content: `
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-        
-        Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-        
-        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-      `,
-    },
-    2: {
-      title: 'Primer Reporte de Resultados',
-      date: '2024-02-10',
-      category: 'Resultados',
-      image: 'https://via.placeholder.com/800x400?text=Noticia+2',
-      content: `
-        Los primeros resultados de nuestros proyectos muestran avances significativos.
-        
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-        
-        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-      `,
-    },
-    3: {
-      title: 'Nuevo Video Disponible',
-      date: '2024-02-05',
-      category: 'Video',
-      image: 'https://via.placeholder.com/800x400?text=Noticia+3',
-      videoUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
-      content: `
-        Mira nuestro último video donde explicamos los resultados de nuestros proyectos.
-        
-        El video incluye:
-        - Explicación de objetivos
-        - Presentación de resultados
-        - Testimonios de participantes
-        - Recomendaciones futuras
-      `,
-    },
-  };
-
-  const news = newsData[id] || newsData[1];
+  const article = articles[id] || articles[1];
 
   return (
     <div>
-      <Section
-        title={news.title}
-        subtitle={`Publicado ${new Date(news.date).toLocaleDateString('es-ES', { 
-          year: 'numeric', 
-          month: 'long', 
-          day: 'numeric' 
-        })}`}
-      >
-        <div className="max-w-4xl mx-auto">
-          <div className="mb-8">
-            <img 
-              src={news.image} 
-              alt={news.title}
-              className="w-full rounded-lg shadow-lg h-96 object-cover"
-            />
-          </div>
+      {/* Hero imagen */}
+      <div className="w-full h-[420px] overflow-hidden">
+        <img
+          src={article.image}
+          alt={article.title}
+          className="w-full h-full object-cover"
+          style={{ objectPosition: article.imagePosition }}
+        />
+      </div>
 
-          <div className="mb-8">
-            <span className="inline-block px-3 py-1 bg-primary-light text-primary-white rounded-full text-sm font-manrope mb-6">
-              {news.category}
-            </span>
-          </div>
-
-          {news.videoUrl && (
-            <div className="mb-12">
-              <h3 className="font-averta font-bold text-2xl text-primary-dark mb-6">
-                Video
-              </h3>
-              <div className="aspect-video rounded-lg overflow-hidden shadow-lg">
-                <iframe
-                  width="100%"
-                  height="100%"
-                  src={news.videoUrl}
-                  title={news.title}
-                  frameBorder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                ></iframe>
-              </div>
-            </div>
-          )}
-
-          <div className="prose max-w-none">
-            {news.content.split('\n\n').map((paragraph, index) => (
-              <p 
-                key={index}
-                className="font-manrope text-primary-dark text-lg leading-relaxed mb-6"
-              >
-                {paragraph.trim()}
-              </p>
-            ))}
-          </div>
-
-          <div className="mt-12 pt-8 border-t border-neutral-gray">
-            <Link to={ROUTES.NEWS}>
-              <Button variant="outline" size="md">
-                ← Volver a Noticias
-              </Button>
-            </Link>
-          </div>
+      {/* Encabezado del artículo */}
+      <section className="bg-primary-dark px-8 py-12 fade-in">
+        <div className="max-w-3xl mx-auto">
+          <h1
+            className="font-averta font-bold text-white mb-4"
+            style={{ fontSize: 'clamp(16px, 3.5vw, 24px)', lineHeight: 1.4, letterSpacing: '0.05em' }}
+          >
+            {article.title}
+          </h1>
+          <p
+            className="font-averta italic text-white/80"
+            style={{ fontSize: 'clamp(14px, 2.5vw, 18px)', lineHeight: 1.65 }}
+          >
+            {article.subtitle}
+          </p>
         </div>
-      </Section>
+      </section>
 
-      {/* Noticias relacionadas */}
-      <Section
-        title="Noticias Relacionadas"
-        bgColor="bg-gray-50"
-      >
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {[1, 2, 3].filter(newsId => newsId !== parseInt(id)).map((relatedId) => {
-            const relatedNews = newsData[relatedId];
-            return (
-              <Link key={relatedId} to={`${ROUTES.NEWS}/${relatedId}`}>
-                <div className="bg-primary-white rounded-lg overflow-hidden shadow hover:shadow-lg transition-shadow cursor-pointer h-full">
-                  <img 
-                    src={relatedNews.image} 
-                    alt={relatedNews.title}
-                    className="w-full h-48 object-cover"
-                  />
-                  <div className="p-6">
-                    <h3 className="font-averta font-bold text-lg text-primary-dark mb-2">
-                      {relatedNews.title}
-                    </h3>
-                    <p className="text-sm text-neutral-gray font-manrope">
-                      {new Date(relatedNews.date).toLocaleDateString('es-ES')}
-                    </p>
-                  </div>
-                </div>
-              </Link>
-            );
-          })}
+      {/* Cuerpo del artículo */}
+      {article.sections.map((sec, i) => (
+        <section
+          key={i}
+          className={`px-8 py-12 fade-in ${i % 2 === 0 ? 'bg-white' : 'bg-neutral-bg'}`}
+        >
+          <div className="max-w-3xl mx-auto">
+            <h3
+              className="font-averta font-bold text-primary-dark mb-5"
+              style={{ fontSize: 'clamp(14px, 2.5vw, 18px)', letterSpacing: '0.06em' }}
+            >
+              {sec.question}
+            </h3>
+            <p
+              className="font-averta italic text-primary-dark"
+              style={{ fontSize: 'clamp(14px, 2.5vw, 17px)', lineHeight: 1.75 }}
+            >
+              {sec.answer}
+            </p>
+            {sec.bullets && (
+              <ul className="mt-6 space-y-2">
+                {sec.bullets.map((b) => (
+                  <li
+                    key={b}
+                    className="font-averta text-primary-dark flex items-center gap-3"
+                    style={{ fontSize: 'clamp(13px, 2vw, 16px)' }}
+                  >
+                    <span className="w-1.5 h-1.5 rounded-full bg-primary-light flex-shrink-0" />
+                    {b}
+                  </li>
+                ))}
+              </ul>
+            )}
+          </div>
+        </section>
+      ))}
+
+      {/* Botón volver */}
+      <section className="bg-white px-8 py-10 fade-in">
+        <div className="max-w-3xl mx-auto flex items-center justify-between">
+          <Link to={ROUTES.NEWS}>
+            <button
+              className="border-2 border-primary-dark text-primary-dark font-averta font-bold tracking-[0.2em] px-6 py-3 hover:bg-primary-dark hover:text-white transition-all duration-300"
+              style={{ fontSize: 'clamp(10px, 1.5vw, 12px)', letterSpacing: '0.2em' }}
+            >
+              V O L V E R
+            </button>
+          </Link>
         </div>
-      </Section>
+      </section>
+
+      {/* Imagen de cierre */}
+      <div className="w-full h-[300px] overflow-hidden">
+        <img
+          src="/image9.jpg"
+          alt="Cierre"
+          className="w-full h-full object-cover"
+          style={{ objectPosition: 'center 28%' }}
+        />
+      </div>
     </div>
   );
 }
