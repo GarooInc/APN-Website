@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { useFadeIn } from '../hooks/useFadeIn';
 
 const boardMembers = [
@@ -182,33 +182,8 @@ export default function Board() {
         </div>
       </section>
 
-      {/* Organizaciones aliadas */}
-      <section className="bg-white px-8 py-14 fade-in">
-        <div className="max-w-3xl mx-auto">
-          <div className="flex items-center gap-2 mb-8">
-            <span
-              className="font-averta font-bold text-primary-dark tracking-[0.12em]"
-              style={{ fontSize: 'clamp(14px, 3vw, 20px)' }}
-            >
-              ORGANIZACIONES QUE NOS APOYAN
-            </span>
-            <span className="text-primary-dark text-sm">{'>'}</span>
-          </div>
-          <div className="flex flex-wrap gap-6">
-            {['/Allies1.png', '/Allies2.png', '/Allies3.png'].map((src, i) => (
-              <div
-                key={i}
-                className="w-[160px] h-[90px] border border-neutral-gray flex items-center justify-center p-3"
-              >
-                <img src={src} alt={`Aliado ${i + 1}`} className="max-w-full max-h-full object-contain" />
-              </div>
-            ))}
-          </div>
-          <p className="text-primary-dark/50 text-xs font-averta italic mt-8">
-            *DCI: Desnutrición Crónica Infantil.
-          </p>
-        </div>
-      </section>
+      {/* Organizaciones aliadas — carrusel animado */}
+      <BoardOrgsCarousel />
 
       {/* Formulario ÚNETE AQUÍ */}
       <section className="bg-neutral-bg px-8 py-16 fade-in">
@@ -271,5 +246,147 @@ export default function Board() {
         </div>
       </section>
     </div>
+  );
+}
+
+/* ── Carrusel animado 3D — mismo patrón que Allies.jsx ── */
+const BOARD_LOGOS = [
+  { src: '/Allies1.png', alt: 'Aliado 1' },
+  { src: '/Allies2.png', alt: 'Aliado 2' },
+  { src: '/Allies3.png', alt: 'Aliado 3' },
+];
+const BGAP = 24;
+const BEXT = [BOARD_LOGOS[BOARD_LOGOS.length - 1], ...BOARD_LOGOS, BOARD_LOGOS[0]];
+
+function BoardOrgsCarousel() {
+  const total = BOARD_LOGOS.length;
+  const [pos, setPos] = useState(1);
+  const [animated, setAnimated] = useState(true);
+  const [card, setCard] = useState(160);
+  const containerRef = useRef(null);
+
+  useEffect(() => {
+    const updateCard = () => {
+      if (containerRef.current) {
+        const w = containerRef.current.offsetWidth;
+        setCard(Math.floor((w - 2 * BGAP) / 3));
+      }
+    };
+    updateCard();
+    window.addEventListener('resize', updateCard);
+    return () => window.removeEventListener('resize', updateCard);
+  }, []);
+
+  useEffect(() => {
+    const timer = setInterval(() => setPos((p) => p + 1), 2500);
+    return () => clearInterval(timer);
+  }, []);
+
+  useEffect(() => {
+    if (pos === BEXT.length - 1) {
+      setTimeout(() => { setAnimated(false); setPos(1); }, 620);
+    } else if (pos === 0) {
+      setTimeout(() => { setAnimated(false); setPos(total); }, 620);
+    }
+  }, [pos, total]);
+
+  useEffect(() => {
+    if (!animated) {
+      const id = requestAnimationFrame(() => requestAnimationFrame(() => setAnimated(true)));
+      return () => cancelAnimationFrame(id);
+    }
+  }, [animated]);
+
+  const trackX = -(pos - 1) * (card + BGAP);
+
+  return (
+    <section
+      className="fade-in"
+      style={{ backgroundColor: '#003da7', padding: 'clamp(48px, 7vw, 96px) clamp(32px, 6vw, 80px)' }}
+    >
+      <div style={{ maxWidth: 760, margin: '0 auto' }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 'clamp(32px, 5vw, 56px)' }}>
+          <span
+            style={{
+              fontFamily: "'Averta', sans-serif",
+              fontWeight: 700,
+              fontSize: 'clamp(14px, 3vw, 20px)',
+              letterSpacing: '0.12em',
+              color: '#fff',
+              textTransform: 'uppercase',
+            }}
+          >
+            ORGANIZACIONES QUE NOS APOYAN
+          </span>
+          <span style={{ color: '#fff', fontSize: 14 }}>›</span>
+        </div>
+
+        <div
+          ref={containerRef}
+          style={{ width: '100%', maxWidth: 3 * 160 + 2 * BGAP, margin: '0 auto', perspective: 900 }}
+        >
+          <div
+            style={{
+              display: 'flex',
+              gap: BGAP,
+              transform: `translateX(${trackX}px)`,
+              transition: animated ? 'transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94)' : 'none',
+            }}
+          >
+            {BEXT.map((logo, i) => {
+              const dist = i - pos;
+              const isCenter = dist === 0;
+              const isSide = Math.abs(dist) === 1;
+              return (
+                <div
+                  key={i}
+                  style={{
+                    width: card,
+                    height: card,
+                    flexShrink: 0,
+                    backgroundColor: '#fff',
+                    borderRadius: 8,
+                    overflow: 'hidden',
+                    boxShadow: isCenter ? '0 12px 40px rgba(0,0,0,0.5)' : '0 4px 16px rgba(0,0,0,0.2)',
+                    padding: 20,
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    transition: 'transform 0.6s ease, opacity 0.6s ease, box-shadow 0.6s ease',
+                    transform: isCenter
+                      ? 'rotateY(0deg) scale(1.08) translateZ(30px)'
+                      : dist === -1
+                      ? 'rotateY(18deg) scale(0.88)'
+                      : dist === 1
+                      ? 'rotateY(-18deg) scale(0.88)'
+                      : 'scale(0.75)',
+                    opacity: isCenter ? 1 : isSide ? 0.65 : 0,
+                    pointerEvents: isCenter ? 'auto' : 'none',
+                  }}
+                >
+                  <img
+                    src={logo.src}
+                    alt={logo.alt}
+                    style={{ maxWidth: '100%', maxHeight: '100%', objectFit: 'contain' }}
+                  />
+                </div>
+              );
+            })}
+          </div>
+        </div>
+
+        <p
+          style={{
+            fontFamily: "'Averta', sans-serif",
+            fontSize: 'clamp(10px, 1.4vw, 13px)',
+            color: 'rgba(255,255,255,0.6)',
+            marginTop: 'clamp(28px, 4vw, 48px)',
+            textAlign: 'center',
+          }}
+        >
+          *DCI: Desnutrición Crónica Infantil.
+        </p>
+      </div>
+    </section>
   );
 }

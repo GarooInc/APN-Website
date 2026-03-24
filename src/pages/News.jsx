@@ -5,10 +5,10 @@ import { ROUTES } from '../utils/constants';
 const articles = [
   {
     id: 1,
-    image: '/image3.jpg',
-    imagePosition: 'center 40%',
+    image: '/image5.jpg',
+    imagePosition: 'center 25%',
     title: 'ACOMPÁÑAME A CRECER: UN ESFUERZO PÚBLICO-PRIVADO PARA EL DESARROLLO INFANTIL TEMPRANO',
-    excerpt: 'Generando evidencia para transformar vidas',
+    excerpt: 'Generando evidencia para transformar vidas en los primeros 1,000 días de vida de la niñez guatemalteca.',
     bg: 'bg-primary-dark',
     titleColor: 'text-white',
     excerptColor: 'text-white/80',
@@ -16,11 +16,11 @@ const articles = [
   },
   {
     id: 2,
-    image: '/image4.jpg',
-    imagePosition: 'center 45%',
+    image: '/image3.jpg',
+    imagePosition: 'center 55%',
     title: 'CON NUESTROS SOCIOS IMPLEMENTADORES LAS HISTORIAS SE ESCRIBEN CON DATOS, ABRAZOS Y SONRISAS',
     excerpt:
-      'APN y sus socios implementadores de Acompáñame a Crecer han recolectado datos cuantitativos y cualitativos para entender y evaluar el trabajo realizado',
+      'APN y sus socios implementadores de Acompáñame a Crecer han recolectado datos cuantitativos y cualitativos para entender y evaluar el trabajo realizado.',
     bg: 'bg-primary-dark',
     titleColor: 'text-white',
     excerptColor: 'text-white/80',
@@ -28,11 +28,11 @@ const articles = [
   },
   {
     id: 3,
-    image: '/image2.jpg',
-    imagePosition: 'center 25%',
+    image: '/image4.jpg',
+    imagePosition: 'center 40%',
     title: '¿QUÉ ES LA DESNUTRICIÓN CRÓNICA INFANTIL?',
     excerpt:
-      'La desnutrición crónica infantil también llamada DCI por sus siglas, está asociada a una baja talla para la edad, debido a...',
+      'La desnutrición crónica infantil, también llamada DCI, está asociada a una baja talla para la edad debido a episodios repetidos de desnutrición durante los períodos críticos de crecimiento.',
     bg: 'bg-primary-dark',
     titleColor: 'text-white',
     excerptColor: 'text-white/80',

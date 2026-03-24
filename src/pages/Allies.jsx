@@ -5,284 +5,150 @@ import './Allies.css';
 export default function Allies() {
   useFadeIn();
 
-  const boldStyle = {
-    fontFamily: "'Averta-Bold', Georgia, serif",
-    fontWeight: 700,
-  };
-
   return (
     <div>
 
-      {/* Mensaje de Nuestro Presidente */}
-      <section
-        className="fade-in"
-        style={{ backgroundColor: "#C0C8CE", margin: 0, padding: 0 }}
-      >
-        <div
-          style={{
-            maxWidth: 900,
-            margin: "0 auto",
-            padding: "clamp(200px, 30vw, 400px) clamp(40px, 6vw, 80px) 60px",
-          }}
-        >
-
-          {/* Título */}
-          <h2
-            style={{
-              fontFamily: "'Averta-Bold'",
-              fontWeight: 400,
-              fontSize: "clamp(18px, 3.5vw, 40px)",
-              lineHeight: 1.25,
-              letterSpacing: "0.0908em",
-              color: "#003da7",
-              textTransform: "uppercase",
-              marginBottom: "clamp(24px, 4vw, 36px)",
-              marginTop: 0,
-            }}
-          >
-            Mensaje de<br /><span style={{ fontFamily: "'Averta-RegularItalic', Georgia, serif", fontStyle: "italic", fontWeight: 400 }}>nuestro presidente</span>
-          </h2>
-
-          {/* Foto + Nombre */}
-          <div style={{ display: "flex", alignItems: "flex-start", gap: "clamp(12px, 3vw, 20px)", marginBottom: "clamp(20px, 4vw, 32px)" }}>
-            <img
-              src="/presidente.png"
-              alt="Juan Alfonso Solares"
-              className="presidente-foto"
-              style={{
-                width: "clamp(64px, 10vw, 120px)",
-                height: "clamp(64px, 10vw, 120px)",
-                borderRadius: "50%",
-                objectFit: "cover",
-                flexShrink: 0,
-              }}
-            />
-            <div style={{ display: "flex", flexDirection: "column", justifyContent: "center", paddingTop: 8 }}>
-              <span
-                style={{
-                  fontFamily: "'Averta-Bold', Georgia, serif",
-                  fontWeight: 400,
-                  fontSize: "clamp(12px, 2.5vw, 22px)",
-                  lineHeight: 1.3,
-                  letterSpacing: "0.0908em",
-                  color: "#003da7",
-                  textTransform: "uppercase",
-                }}
-              >
-                Juan Alfonso<br />Solares
-              </span>
-              <span
-                style={{
-                  fontFamily: "'Averta-RegularItalic', 'Averta', Georgia, serif",
-                  fontWeight: 400,
-                  fontStyle: "italic",
-                  fontSize: "clamp(10px, 1.8vw, 18px)",
-                  lineHeight: 1.4,
-                  color: "#003da7",
-                  textTransform: "uppercase",
-                  marginTop: 4,
-                }}
-              >
-                Presidente
-              </span>
-            </div>
-          </div>
-
-          {/* Discurso */}
-          <div
-            style={{
-              fontFamily: "'Averta-RegularItalic', Georgia, serif",
-              fontWeight: 400,
-              fontStyle: "italic",
-              fontSize: "clamp(16px, 3vw, 26px)",
-              lineHeight: "clamp(24px, 4vw, 49px)",
-              letterSpacing: "0.05%",
-              color: "#003da7",
-            }}
-          >
-            <p style={{ marginBottom: 18 }}>
-              En <strong style={boldStyle}>Guatemala</strong>, ningún niño ni niña debería comenzar su vida con desventajas irreversibles. Sin embargo, la{" "}
-              <strong style={boldStyle}>desnutrición crónica infantil</strong> sigue siendo una realidad que limita sueños, oportunidades y el futuro de nuestro país.
-            </p>
-            <p style={{ marginBottom: 18 }}>
-              En la <strong style={boldStyle}>Alianza por la Nutrición</strong> creemos que cambiar esta historia es posible. Somos una coalición que une al sector privado y a la sociedad civil con un propósito en común:{" "}
-              <strong style={boldStyle}>combatir y prevenir la desnutrición crónica infantil bajo un enfoque integral y multicausal, actuando en la ventana crítica de los primeros 1,000 días de vida.</strong>
-            </p>
-            <p style={{ marginBottom: 18 }}>
-              Cada acción que emprendemos busca garantizar que la niñez crezca sana, fuerte y con las oportunidades que merece. Porque cuando cuidamos a nuestros niños, nutrimos el presente y{" "}
-              <strong style={boldStyle}>transformamos el futuro de Guatemala.</strong>
-            </p>
-            <p>
-              Este es un llamado a todos: empresas, organizaciones, comunidades, familias, ciudadanos, madres y padres:{" "}
-              <strong style={boldStyle}>Juntos Podemos construir una Guatemala donde ningún niño se quede atrás. El cambio comienza hoy, y comienza contigo.</strong>
-            </p>
-          </div>
-
-        </div>
-      </section>
-
-      {/* Hero Image Junta */}
-      <section style={{ margin: 0, padding: 0, lineHeight: 0 }}>
+      {/* Hero */}
+      <section style={{ margin: 0, padding: 0, lineHeight: 0, position: 'relative' }}>
         <img
-          src="/image11.jpg"
-          alt="Junta Directiva"
-          style={{ width: "100%", display: "block", objectFit: "cover", maxHeight: "clamp(200px, 30vw, 420px)" }}
+          src="/image5.jpg"
+          alt="Aliados APN"
+          style={{ width: '100%', display: 'block', objectFit: 'cover', height: 'clamp(260px, 40vw, 520px)', objectPosition: 'center 30%' }}
         />
+        <div style={{ position: 'absolute', inset: 0, background: 'rgba(0,0,0,0.25)' }} />
       </section>
 
-      {/* Junta Directiva */}
+      {/* Encabezado ALIADOS */}
       <section
         className="fade-in"
-        style={{ backgroundColor: "#fff", padding: "clamp(40px, 6vw, 80px) clamp(60px, 12vw, 180px)" }}
+        style={{ backgroundColor: '#fff', padding: 'clamp(40px, 6vw, 80px) clamp(32px, 6vw, 80px) clamp(20px, 3vw, 40px)' }}
       >
-        <div style={{ maxWidth: 760, margin: "0 auto" }}>
-        <h2
-          style={{
-            fontFamily: "'Averta-Bold'",
-            fontWeight: 400,
-            fontSize: "clamp(18px, 3.5vw, 40px)",
-            lineHeight: 1.25,
-            letterSpacing: "0.0908em",
-            color: "#003da7",
-            textTransform: "uppercase",
-            marginBottom: "clamp(32px, 5vw, 60px)",
-            marginTop: 0,
-            paddingLeft: "calc(8% + clamp(8px, 2vw, 20px))",
-          }}
-        >
-          Junta<br />Directiva <span style={{ fontFamily: "'Averta-RegularItalic'", fontStyle: "normal" }}>›</span>
-        </h2>
-
-        <div className="junta-grid">
-          {[
-            { img: "/presidente.png", ext: "png", name: "Juan Alfonso\nSolares", role: "Presidente" },
-            { img: "/junta1.png",     name: "Álvaro\nCastillo",      role: "Vicepresidente" },
-            { img: "/junta2.jpg",     name: "Lucas\nDougherty",      role: "Tesorero" },
-            { img: "/junta3.jpg",     name: "Yolanda\nMayora",       role: "Secretaria" },
-            { img: "/junta4.png",     name: "Alfonso\nBosch",        role: "Vocal I" },
-            { img: "/junta5.png",     name: "Edna\nLima",            role: "Vocal II" },
-            { img: "/junta6.png",     name: "Carlos\nMérida",        role: "Vocal III" },
-          ].map(({ img, name, role }) => (
-            <div key={role} style={{ display: "flex", alignItems: "flex-start", gap: "clamp(12px, 2vw, 20px)" }}>
-              <img
-                src={img}
-                alt={name.replace("\n", " ")}
-                className="presidente-foto"
-                style={{
-                  width: "clamp(64px, 10vw, 130px)",
-                  height: "clamp(64px, 10vw, 130px)",
-                  borderRadius: "50%",
-                  objectFit: "cover",
-                  flexShrink: 0,
-                }}
-              />
-              <div style={{ display: "flex", flexDirection: "column", justifyContent: "center", paddingTop: 24 }}>
-                <span
-                  style={{
-                    fontFamily: "'Averta-Bold', Georgia, serif",
-                    fontWeight: 400,
-                    fontSize: "clamp(11px, 2vw, 20px)",
-                    lineHeight: 1.3,
-                    letterSpacing: "0.0908em",
-                    color: "#003da7",
-                    textTransform: "uppercase",
-                    whiteSpace: "pre-line",
-                  }}
-                >
-                  {name}
-                </span>
-                <span
-                  style={{
-                    fontFamily: "'Averta-RegularItalic', Georgia, serif",
-                    fontStyle: "italic",
-                    fontWeight: 400,
-                    fontSize: "clamp(9px, 1.5vw, 16px)",
-                    lineHeight: 1.4,
-                    color: "#003da7",
-                    textTransform: "uppercase",
-                    marginTop: 4,
-                  }}
-                >
-                  {role}
-                </span>
-              </div>
-            </div>
-          ))}
-        </div>
+        <div style={{ maxWidth: 760, margin: '0 auto' }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 'clamp(16px, 3vw, 28px)' }}>
+            <span
+              style={{
+                fontFamily: "'Averta', sans-serif",
+                fontWeight: 700,
+                fontSize: 'clamp(16px, 3.5vw, 26px)',
+                letterSpacing: '0.12em',
+                color: '#003da7',
+                textTransform: 'uppercase',
+              }}
+            >
+              Aliados
+            </span>
+            <span style={{ color: '#003da7', fontSize: 14 }}>›</span>
+          </div>
+          <p
+            style={{
+              fontFamily: "'Averta', sans-serif",
+              fontStyle: 'italic',
+              fontSize: 'clamp(15px, 2.8vw, 20px)',
+              lineHeight: 1.75,
+              color: '#003da7',
+              maxWidth: 620,
+            }}
+          >
+            La <strong style={{ fontWeight: 700, fontStyle: 'normal' }}>Alianza por la Nutrición</strong> reúne a organizaciones del sector privado y la sociedad civil comprometidas con erradicar la desnutrición crónica infantil en Guatemala.
+          </p>
         </div>
       </section>
 
-      {/* Alianza por la Nutrición - Equipo */}
+      {/* Carrusel de logos */}
+      <OrgsCarousel />
+
+      {/* 5 Áreas de Trabajo */}
       <section
         className="fade-in"
-        style={{ backgroundColor: "#C0C8CE", margin: 0, padding: "clamp(40px, 6vw, 80px) clamp(40px, 8vw, 120px)" }}
+        style={{ backgroundColor: '#003da7', padding: 'clamp(48px, 7vw, 96px) clamp(32px, 6vw, 80px)' }}
       >
-        <div style={{ maxWidth: 760, margin: "0 auto" }}>
+        <div style={{ maxWidth: 760, margin: '0 auto' }}>
           <h2
             style={{
-              fontFamily: "'Averta-Bold'",
-              fontWeight: 400,
-              fontSize: "clamp(18px, 3.5vw, 40px)",
-              lineHeight: 1.25,
-              letterSpacing: "0.0908em",
-              color: "#003da7",
-              textTransform: "uppercase",
-              marginBottom: "clamp(32px, 5vw, 60px)",
+              fontFamily: "'Averta', sans-serif",
+              fontWeight: 700,
+              fontSize: 'clamp(16px, 3.5vw, 28px)',
+              letterSpacing: '0.1em',
+              color: '#fff',
+              textTransform: 'uppercase',
+              marginBottom: 'clamp(32px, 5vw, 56px)',
               marginTop: 0,
             }}
           >
-            Alianza por<br />la Nutrición
+            Áreas de Trabajo <span style={{ fontFamily: "'Averta'" }}>›</span>
           </h2>
 
-          <div className="junta-grid">
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 'clamp(28px, 4vw, 44px)' }}>
             {[
-              { img: "/image12.png", name: "Ana Luisa\nEsquivel",  role: "Directora Ejecutiva" },
-              { img: "/image13.jpg", name: "Olga\nLópez",          role: "Administración\ny Finanzas" },
-              { img: "/image14.png", name: "Mónica\nRodríguez",    role: "Monitoreo, Evaluación\ny Aprendizaje" },
-            ].map(({ img, name, role }) => (
-              <div key={name} style={{ display: "flex", alignItems: "flex-start", gap: "clamp(12px, 2vw, 20px)" }}>
-                <img
-                  src={img}
-                  alt={name.replace("\n", " ")}
-                  className="presidente-foto"
+              {
+                num: '01',
+                title: 'Incidencia',
+                desc: 'Influimos en políticas públicas nacionales para que la prevención de la desnutrición crónica infantil sea una prioridad de Estado, involucrando a tomadores de decisión del sector público y privado.',
+              },
+              {
+                num: '02',
+                title: 'Comunicación',
+                desc: 'Difundimos información estratégica sobre la DCI y su impacto en el desarrollo del país, generando conciencia en la sociedad guatemalteca para impulsar el cambio colectivo.',
+              },
+              {
+                num: '03',
+                title: 'Aprendizaje',
+                desc: 'Facilitamos el intercambio de conocimientos y mejores prácticas entre aliados, implementadores y expertos para fortalecer las intervenciones en los primeros 1,000 días de vida.',
+              },
+              {
+                num: '04',
+                title: 'Generación de Evidencia',
+                desc: 'Producimos datos e investigaciones rigurosas que fundamentan decisiones informadas y demuestran el impacto de nuestras intervenciones en la reducción de la DCI en Guatemala.',
+              },
+              {
+                num: '05',
+                title: 'Alianzas',
+                desc: 'Fortalecemos la red de organizaciones y líderes comprometidos con la nutrición infantil, creando sinergias que multiplican el alcance y la efectividad de nuestras acciones.',
+              },
+            ].map(({ num, title, desc }) => (
+              <div
+                key={num}
+                style={{ display: 'flex', gap: 'clamp(16px, 3vw, 32px)', alignItems: 'flex-start' }}
+              >
+                <span
                   style={{
-                    width: "clamp(64px, 10vw, 130px)",
-                    height: "clamp(64px, 10vw, 130px)",
-                    borderRadius: "50%",
-                    objectFit: "cover",
+                    fontFamily: "'Averta', sans-serif",
+                    fontWeight: 700,
+                    fontSize: 'clamp(28px, 5vw, 52px)',
+                    color: '#00a1e0',
+                    lineHeight: 1,
                     flexShrink: 0,
+                    minWidth: 'clamp(40px, 7vw, 72px)',
                   }}
-                />
-                <div style={{ display: "flex", flexDirection: "column", justifyContent: "center", paddingTop: 24 }}>
-                  <span
+                >
+                  {num}
+                </span>
+                <div>
+                  <h3
                     style={{
-                      fontFamily: "'Averta-Bold', Georgia, serif",
-                      fontWeight: 400,
-                      fontSize: "clamp(11px, 2vw, 20px)",
-                      lineHeight: 1.3,
-                      letterSpacing: "0.0908em",
-                      color: "#003da7",
-                      textTransform: "uppercase",
-                      whiteSpace: "pre-line",
-                    }}
-                  >
-                    {name}
-                  </span>
-                  <span
-                    style={{
-                      fontFamily: "'Averta-RegularItalic', Georgia, serif",
-                      fontStyle: "italic",
-                      fontWeight: 400,
-                      fontSize: "clamp(9px, 1.5vw, 16px)",
-                      lineHeight: 1.4,
-                      color: "#003da7",
-                      textTransform: "uppercase",
+                      fontFamily: "'Averta', sans-serif",
+                      fontWeight: 700,
+                      fontSize: 'clamp(14px, 2.5vw, 20px)',
+                      color: '#00a1e0',
+                      textTransform: 'uppercase',
+                      letterSpacing: '0.08em',
+                      marginBottom: 8,
                       marginTop: 4,
-                      whiteSpace: "pre-line",
                     }}
                   >
-                    {role}
-                  </span>
+                    {title}
+                  </h3>
+                  <p
+                    style={{
+                      fontFamily: "'Averta', sans-serif",
+                      fontStyle: 'italic',
+                      fontSize: 'clamp(13px, 2vw, 17px)',
+                      lineHeight: 1.75,
+                      color: 'rgba(255,255,255,0.88)',
+                    }}
+                  >
+                    {desc}
+                  </p>
                 </div>
               </div>
             ))}
@@ -290,105 +156,197 @@ export default function Allies() {
         </div>
       </section>
 
-      {/* Organizaciones Aliadas - Carrusel */}
-      <OrgsCarousel />
+      {/* Imagen separadora */}
+      <div style={{ width: '100%', lineHeight: 0 }}>
+        <img
+          src="/image6.jpg"
+          alt="Aliados en acción"
+          style={{ width: '100%', display: 'block', objectFit: 'cover', height: 'clamp(180px, 28vw, 360px)', objectPosition: 'center 40%' }}
+        />
+      </div>
 
-      {/* Únete Aquí */}
+      {/* POR QUÉ SER PARTE */}
       <section
         className="fade-in"
-        style={{ backgroundColor: "#fff", padding: "clamp(40px, 6vw, 80px) clamp(40px, 8vw, 120px)" }}
+        style={{ backgroundColor: '#d6d8db', padding: 'clamp(48px, 7vw, 96px) clamp(32px, 6vw, 80px)' }}
       >
-        <div style={{ maxWidth: 560, margin: "0 auto" }}>
+        <div style={{ maxWidth: 760, margin: '0 auto' }}>
           <h2
             style={{
-              fontFamily: "'Averta-Bold'",
-              fontWeight: 400,
-              fontSize: "clamp(18px, 3.5vw, 40px)",
-              lineHeight: 1.25,
-              letterSpacing: "0.0908em",
-              color: "#003da7",
-              textTransform: "uppercase",
-              marginBottom: "clamp(20px, 3vw, 32px)",
+              fontFamily: "'Averta', sans-serif",
+              fontWeight: 700,
+              fontSize: 'clamp(16px, 3.5vw, 28px)',
+              letterSpacing: '0.1em',
+              color: '#003da7',
+              textTransform: 'uppercase',
+              marginBottom: 'clamp(32px, 5vw, 56px)',
               marginTop: 0,
             }}
           >
-            Únete Aquí <span style={{ fontFamily: "'Averta-RegularItalic'", fontStyle: "normal" }}>›</span>
+            Por qué ser parte <span style={{ fontFamily: "'Averta'" }}>›</span>
           </h2>
 
-          <p
-            style={{
-              fontFamily: "'Averta-RegularItalic', Georgia, serif",
-              fontStyle: "italic",
-              fontWeight: 400,
-              fontSize: "clamp(13px, 2vw, 20px)",
-              lineHeight: 1.7,
-              color: "#003da7",
-              marginBottom: 8,
-            }}
-          >
-            La <strong style={{ fontFamily: "'Averta-Bold'", fontWeight: 700, fontStyle: "normal" }}>Alianza por la Nutrición</strong> necesita de todos y todas para erradicar la <strong style={{ fontFamily: "'Averta-Bold'", fontWeight: 700, fontStyle: "normal" }}>DCI*</strong> en Guatemala. Sé parte del cambio: ingresa tus datos y únete a nuestros espacios de diálogo, concientización y acción para generar impacto. Juntos podemos garantizar que ningún niño ni niña quede atrás.
-          </p>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 'clamp(24px, 3.5vw, 36px)' }}>
+            {[
+              {
+                num: '1/',
+                title: 'Coalición con impacto nacional',
+                desc: 'Sé parte de una red multisectorial que une al sector privado y la sociedad civil con un propósito común: garantizar que ningún niño ni niña guatemalteca se quede atrás.',
+              },
+              {
+                num: '2/',
+                title: 'Acceso a evidencia de frontera',
+                desc: 'Conecta con investigaciones, datos y aprendizajes de vanguardia sobre nutrición infantil y desarrollo en la primera infancia, directamente aplicables a tu organización.',
+              },
+              {
+                num: '3/',
+                title: 'Incidencia en políticas públicas',
+                desc: 'Contribuye a un cambio sistémico real. Tu participación fortalece la voz colectiva de la Alianza ante tomadores de decisión y da forma a las políticas de nutrición del país.',
+              },
+              {
+                num: '4/',
+                title: 'Red de líderes comprometidos',
+                desc: 'Conecta con empresas, fundaciones y organizaciones líderes que comparten tu visión de un Guatemala más justo y nutritivo para la próxima generación.',
+              },
+              {
+                num: '5/',
+                title: 'Valor compartido para tu organización',
+                desc: 'Genera impacto medible, refuerza tu reputación institucional y contribuye al desarrollo sostenible del país desde el área más estratégica: la primera infancia.',
+              },
+            ].map(({ num, title, desc }) => (
+              <div
+                key={num}
+                style={{ display: 'flex', gap: 'clamp(16px, 3vw, 28px)', alignItems: 'flex-start' }}
+              >
+                <span
+                  style={{
+                    fontFamily: "'Averta', sans-serif",
+                    fontWeight: 700,
+                    fontSize: 'clamp(20px, 3.5vw, 36px)',
+                    color: '#003da7',
+                    lineHeight: 1,
+                    flexShrink: 0,
+                    minWidth: 'clamp(32px, 5vw, 52px)',
+                  }}
+                >
+                  {num}
+                </span>
+                <div>
+                  <h3
+                    style={{
+                      fontFamily: "'Averta', sans-serif",
+                      fontWeight: 700,
+                      fontSize: 'clamp(13px, 2vw, 18px)',
+                      color: '#003da7',
+                      textTransform: 'uppercase',
+                      letterSpacing: '0.07em',
+                      marginBottom: 6,
+                      marginTop: 2,
+                    }}
+                  >
+                    {title}
+                  </h3>
+                  <p
+                    style={{
+                      fontFamily: "'Averta', sans-serif",
+                      fontStyle: 'italic',
+                      fontSize: 'clamp(13px, 1.8vw, 16px)',
+                      lineHeight: 1.75,
+                      color: '#003da7',
+                    }}
+                  >
+                    {desc}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
 
           <p
             style={{
-              fontFamily: "'Averta', Georgia, serif",
-              fontSize: "clamp(10px, 1.4vw, 14px)",
-              color: "#003da7",
-              marginBottom: "clamp(24px, 4vw, 40px)",
+              fontFamily: "'Averta', sans-serif",
+              fontSize: 'clamp(10px, 1.4vw, 13px)',
+              color: '#003da7',
+              marginTop: 'clamp(28px, 4vw, 48px)',
             }}
           >
             *DCI: Desnutrición Crónica Infantil.
           </p>
+        </div>
+      </section>
+
+      {/* CTA — Únete */}
+      <section
+        className="fade-in"
+        style={{ backgroundColor: '#003da7', padding: 'clamp(48px, 7vw, 96px) clamp(32px, 6vw, 80px)' }}
+      >
+        <div style={{ maxWidth: 560, margin: '0 auto', textAlign: 'center' }}>
+          <h2
+            style={{
+              fontFamily: "'Averta', sans-serif",
+              fontWeight: 700,
+              fontSize: 'clamp(16px, 3.5vw, 28px)',
+              letterSpacing: '0.1em',
+              color: '#fff',
+              textTransform: 'uppercase',
+              marginBottom: 'clamp(12px, 2vw, 20px)',
+              marginTop: 0,
+            }}
+          >
+            ¡Únete hoy!
+          </h2>
 
           <p
             style={{
-              fontFamily: "'Averta-Bold'",
-              fontWeight: 700,
-              fontSize: "clamp(14px, 2vw, 22px)",
-              color: "#003da7",
-              marginBottom: "clamp(16px, 3vw, 28px)",
+              fontFamily: "'Averta', sans-serif",
+              fontStyle: 'italic',
+              fontSize: 'clamp(13px, 2vw, 18px)',
+              lineHeight: 1.75,
+              color: 'rgba(255,255,255,0.88)',
+              marginBottom: 'clamp(28px, 4vw, 44px)',
             }}
           >
-            ¡Contáctanos hoy!
+            Ingresa tus datos y sé parte del cambio.{' '}
+            <strong style={{ fontWeight: 700, fontStyle: 'normal', color: '#fff' }}>
+              Juntos podemos garantizar que ningún niño ni niña quede atrás.
+            </strong>
           </p>
 
-          <form style={{ display: "flex", flexDirection: "column", gap: 12, alignItems: "center" }}>
-            {["Nombre", "Correo", "Teléfono"].map((placeholder) => (
+          <form style={{ display: 'flex', flexDirection: 'column', gap: 12, alignItems: 'center' }}>
+            {['Nombre', 'Correo', 'Teléfono', 'Organización'].map((placeholder) => (
               <input
                 key={placeholder}
-                type={placeholder === "Correo" ? "email" : placeholder === "Teléfono" ? "tel" : "text"}
+                type={placeholder === 'Correo' ? 'email' : placeholder === 'Teléfono' ? 'tel' : 'text'}
                 placeholder={placeholder}
                 style={{
-                  backgroundColor: "#E8E8E8",
-                  border: "none",
+                  backgroundColor: '#E8E8E8',
+                  border: 'none',
                   borderRadius: 4,
-                  padding: "clamp(10px, 1.5vw, 16px) clamp(12px, 2vw, 20px)",
-                  fontFamily: "'Averta', Georgia, serif",
-                  fontSize: "clamp(13px, 1.5vw, 16px)",
-                  color: "#555",
-                  outline: "none",
-                  width: "70%",
-                  boxSizing: "border-box",
+                  padding: 'clamp(10px, 1.5vw, 16px) clamp(12px, 2vw, 20px)',
+                  fontFamily: "'Averta', sans-serif",
+                  fontSize: 'clamp(13px, 1.5vw, 16px)',
+                  color: '#555',
+                  outline: 'none',
+                  width: '72%',
+                  boxSizing: 'border-box',
                 }}
               />
             ))}
-
             <button
               type="submit"
               style={{
                 marginTop: 12,
-                backgroundColor: "#003da7",
-                color: "#fff",
-                border: "none",
+                backgroundColor: '#00a1e0',
+                color: '#fff',
+                border: 'none',
                 borderRadius: 4,
-                padding: "clamp(12px, 2vw, 18px)",
-                fontFamily: "'Averta-Bold'",
-                fontWeight: 400,
-                fontSize: "clamp(13px, 1.8vw, 18px)",
-                letterSpacing: "0.1em",
-                textTransform: "uppercase",
-                cursor: "pointer",
-                width: "45%",
+                padding: 'clamp(12px, 2vw, 18px) clamp(28px, 4vw, 48px)',
+                fontFamily: "'Averta', sans-serif",
+                fontWeight: 700,
+                fontSize: 'clamp(13px, 1.8vw, 18px)',
+                letterSpacing: '0.12em',
+                textTransform: 'uppercase',
+                cursor: 'pointer',
               }}
             >
               Enviar
@@ -401,12 +359,12 @@ export default function Allies() {
   );
 }
 
+/* ── Carousel de logos ── */
 const LOGOS = [
-  { src: "/Allies1.png", alt: "Aliado 1" },
-  { src: "/Allies2.png", alt: "Aliado 2" },
-  { src: "/Allies3.png", alt: "Aliado 3" },
+  { src: '/Allies1.png', alt: 'Aliado 1' },
+  { src: '/Allies2.png', alt: 'Aliado 2' },
+  { src: '/Allies3.png', alt: 'Aliado 3' },
 ];
-
 const GAP = 24;
 const EXT = [LOGOS[LOGOS.length - 1], ...LOGOS, LOGOS[0]];
 
@@ -430,7 +388,7 @@ function OrgsCarousel() {
   }, []);
 
   useEffect(() => {
-    const timer = setInterval(() => setPos(p => p + 1), 2500);
+    const timer = setInterval(() => setPos((p) => p + 1), 2500);
     return () => clearInterval(timer);
   }, []);
 
@@ -444,9 +402,7 @@ function OrgsCarousel() {
 
   useEffect(() => {
     if (!animated) {
-      const id = requestAnimationFrame(() =>
-        requestAnimationFrame(() => setAnimated(true))
-      );
+      const id = requestAnimationFrame(() => requestAnimationFrame(() => setAnimated(true)));
       return () => cancelAnimationFrame(id);
     }
   }, [animated]);
@@ -456,34 +412,35 @@ function OrgsCarousel() {
   return (
     <section
       className="fade-in"
-      style={{ backgroundColor: "#003da7", padding: "clamp(40px, 6vw, 80px) clamp(40px, 8vw, 120px) 0" }}
+      style={{ backgroundColor: '#003da7', padding: 'clamp(48px, 7vw, 96px) clamp(32px, 6vw, 80px)' }}
     >
-      <div style={{ maxWidth: 760, margin: "0 auto" }}>
+      <div style={{ maxWidth: 760, margin: '0 auto' }}>
         <h2
           style={{
-            fontFamily: "'Averta-Bold'",
-            fontWeight: 400,
-            fontSize: "clamp(18px, 3.5vw, 40px)",
-            lineHeight: 1.25,
-            letterSpacing: "0.0908em",
-            color: "#fff",
-            textTransform: "uppercase",
-            marginBottom: "clamp(32px, 5vw, 60px)",
+            fontFamily: "'Averta', sans-serif",
+            fontWeight: 700,
+            fontSize: 'clamp(16px, 3.5vw, 28px)',
+            letterSpacing: '0.1em',
+            color: '#fff',
+            textTransform: 'uppercase',
+            marginBottom: 'clamp(32px, 5vw, 56px)',
             marginTop: 0,
           }}
         >
-          Organizaciones que son<br />parte de la Alianza por<br />la Nutrición{" "}
-          <span style={{ fontFamily: "'Averta-RegularItalic'", fontStyle: "normal" }}>›</span>
+          Organizaciones que son<br />parte de la Alianza por<br />la Nutrición{' '}
+          <span style={{ fontFamily: "'Averta'" }}>›</span>
         </h2>
 
-        {/* Track container */}
-        <div ref={containerRef} style={{ width: "100%", maxWidth: 3 * 160 + 2 * GAP, margin: "0 auto", perspective: 900 }}>
+        <div
+          ref={containerRef}
+          style={{ width: '100%', maxWidth: 3 * 160 + 2 * GAP, margin: '0 auto', perspective: 900 }}
+        >
           <div
             style={{
-              display: "flex",
+              display: 'flex',
               gap: GAP,
               transform: `translateX(${trackX}px)`,
-              transition: animated ? "transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94)" : "none",
+              transition: animated ? 'transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94)' : 'none',
             }}
           >
             {EXT.map((logo, i) => {
@@ -497,35 +454,43 @@ function OrgsCarousel() {
                     width: card,
                     height: card,
                     flexShrink: 0,
-                    backgroundColor: "#fff",
+                    backgroundColor: '#fff',
                     borderRadius: 8,
-                    overflow: "hidden",
-                    boxShadow: isCenter ? "0 12px 40px rgba(0,0,0,0.5)" : "0 4px 16px rgba(0,0,0,0.2)",
+                    overflow: 'hidden',
+                    boxShadow: isCenter ? '0 12px 40px rgba(0,0,0,0.5)' : '0 4px 16px rgba(0,0,0,0.2)',
                     padding: 20,
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    transition: "transform 0.6s ease, opacity 0.6s ease, box-shadow 0.6s ease",
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    transition: 'transform 0.6s ease, opacity 0.6s ease, box-shadow 0.6s ease',
                     transform: isCenter
-                      ? "rotateY(0deg) scale(1.08) translateZ(30px)"
+                      ? 'rotateY(0deg) scale(1.08) translateZ(30px)'
                       : dist === -1
-                        ? "rotateY(18deg) scale(0.88)"
-                        : dist === 1
-                          ? "rotateY(-18deg) scale(0.88)"
-                          : "scale(0.75)",
+                      ? 'rotateY(18deg) scale(0.88)'
+                      : dist === 1
+                      ? 'rotateY(-18deg) scale(0.88)'
+                      : 'scale(0.75)',
                     opacity: isCenter ? 1 : isSide ? 0.65 : 0,
-                    pointerEvents: isCenter ? "auto" : "none",
+                    pointerEvents: isCenter ? 'auto' : 'none',
                   }}
                 >
-                  <img src={logo.src} alt={logo.alt} style={{ maxWidth: "100%", maxHeight: "100%", objectFit: "contain" }} />
+                  <img
+                    src={logo.src}
+                    alt={logo.alt}
+                    style={{ maxWidth: '100%', maxHeight: '100%', objectFit: 'contain' }}
+                  />
                 </div>
               );
             })}
           </div>
         </div>
 
-        <div style={{ display: "flex", justifyContent: "center", marginTop: "clamp(56px, 8vw, 90px)" }}>
-          <img src="/logo3.png" alt="Alianza por la Nutrición" style={{ maxWidth: "clamp(120px, 20vw, 220px)", objectFit: "contain" }} />
+        <div style={{ display: 'flex', justifyContent: 'center', marginTop: 'clamp(48px, 7vw, 80px)' }}>
+          <img
+            src="/logo3.png"
+            alt="Alianza por la Nutrición"
+            style={{ maxWidth: 'clamp(120px, 20vw, 200px)', objectFit: 'contain' }}
+          />
         </div>
       </div>
     </section>

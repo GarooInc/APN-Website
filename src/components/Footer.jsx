@@ -104,9 +104,9 @@ export default function Footer() {
         {/* Logo - fondo blanco */}
         <div className="bg-white flex items-center justify-center py-6 px-6">
           <img
-            src="/logo2.png" 
-            alt="APN Logo" transition-transform duration-500 hover:scale-110
-            className="h-12 object-contain"
+            src="/logo2.png"
+            alt="APN Logo"
+            className="h-12 object-contain transition-transform duration-500 hover:scale-110"
           />
         </div>
 

@@ -56,7 +56,7 @@ export default function Home() {
         </div>
       </div>
 
-      <section id="proposito" className="bg-[#003da7] px-6 sm:px-10 py-8 sm:py-12 flex flex-col justify-center fade-in">
+      <section id="proposito" className="bg-[#003da7] px-6 sm:px-10 py-16 sm:py-28 flex flex-col justify-center fade-in">
         <div className="max-w-3xl mx-auto w-full flex gap-3">
           {/* Línea vertical */}
           <div className="w-0.5 flex-shrink-0 hidden sm:block" style={{ backgroundColor: "#00a1e0", alignSelf: "flex-start", marginTop: "-18px", height: "180px" }} />
@@ -105,7 +105,7 @@ export default function Home() {
         />
       </div>
 
-      <section className="bg-[#d6d8db] px-8 py-10 flex flex-col justify-center min-h-[320px] fade-in">
+      <section className="bg-[#d6d8db] px-8 py-20 flex flex-col justify-center min-h-[420px] fade-in">
         <div className="max-w-2xl mx-auto w-full">
           <div className="flex items-center gap-2 mb-8">
             <span
@@ -151,7 +151,7 @@ export default function Home() {
         />
       </div>
 
-      <section id="quienes-somos" className="bg-white px-8 pt-10 mb-10 flex flex-col justify-center fade-in">
+      <section id="quienes-somos" className="bg-white px-8 pt-16 mb-16 flex flex-col justify-center fade-in">
         <div className="max-w-3xl mx-auto w-full">
 
           <div className="flex items-center gap-2 mb-6">
@@ -220,7 +220,7 @@ export default function Home() {
       </div>
 
       {/* Sección Aliados */}
-      <section id="aliados" className="bg-[#003da7] px-8 pt-10 pb-10 flex flex-col items-center fade-in">
+      <section id="aliados" className="bg-[#003da7] px-8 pt-16 pb-20 flex flex-col items-center fade-in">
 
         <div className="w-full sm:w-[75%] h-[300px] sm:h-[500px] overflow-hidden mb-6">
           <img
@@ -276,7 +276,7 @@ export default function Home() {
       </section>
 
       {/* Generación de Evidencia */}
-      <section className="bg-[#00a1e0] px-8 py-10 flex flex-col items-center fade-in">
+      <section className="bg-[#00a1e0] px-8 py-16 flex flex-col items-center fade-in">
 
         <div className="w-full sm:w-[75%] h-[300px] sm:h-[500px] overflow-hidden mb-6">
           <img
@@ -332,7 +332,7 @@ export default function Home() {
       </section>
 
       {/* Materiales Técnicos */}
-      <section className="bg-[#d6d8db] px-8 py-10 flex flex-col items-center fade-in">
+      <section className="bg-[#d6d8db] px-8 py-16 flex flex-col items-center fade-in">
 
         <div className="w-full sm:w-[75%] h-[300px] sm:h-[550px] overflow-hidden mb-6">
           <img
@@ -399,7 +399,7 @@ export default function Home() {
           />
         </div>
 
-        <div className="px-10 py-12 max-w-3xl mx-auto w-full">
+        <div className="px-10 py-16 max-w-3xl mx-auto w-full">
 
           <div className="flex items-center gap-2 mb-3">
             <span
@@ -454,7 +454,7 @@ export default function Home() {
       </section>
 
       {/* Contáctanos */}
-      <section id="contacto" className="bg-[#d6d8db] px-8 py-10 fade-in">
+      <section id="contacto" className="bg-[#d6d8db] px-8 py-16 fade-in">
         <div className="max-w-3xl mx-auto w-full">
 
           <div className="flex items-center gap-2 mb-8">
