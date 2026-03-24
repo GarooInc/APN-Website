@@ -4,7 +4,7 @@ import { AiOutlineInstagram } from "react-icons/ai";
 import { useState, useEffect } from "react";
 import { useLang } from "../context/LanguageContext";
 
-export default function Footer() {
+export default function Footer({ variant = "dark" }) {
   const [isVisible, setIsVisible] = useState(false);
   const { t } = useLang();
 
@@ -22,12 +22,12 @@ export default function Footer() {
   return (
     <footer>
 
-      {/* Menú de navegación - fondo azul oscuro */}
-      <div className="bg-[#1a3a8f] px-8 py-10">
-        <div className="max-w-3xl mx-auto w-full grid grid-cols-2 gap-x-8 gap-y-6">
+      {/* Menú de navegación */}
+      <div className="px-6 py-10 sm:px-8" style={{ backgroundColor: variant === "light" ? "#C0C8CE" : "#1a3a8f" }}>
+        <div className="max-w-3xl mx-auto w-full grid grid-cols-2 gap-x-6 gap-y-4 sm:gap-x-8 sm:gap-y-6">
 
           {/* Columna izquierda */}
-          <div className="flex flex-col gap-6">
+          <div className="flex flex-col gap-6 sm:gap-10">
             {t.footer.left.map((item) => (
               <a
                 key={item}
@@ -38,7 +38,7 @@ export default function Footer() {
                   fontWeight: 700,
                   fontSize: "clamp(11px, 2.5vw, 14px)",
                   letterSpacing: "0.12em",
-                  color: "white",
+                  color: variant === "light" ? "#00379E" : "white",
                   textDecoration: "none",
                   whiteSpace: "pre-line",
                   ...navLinkStyle(0),
@@ -50,7 +50,7 @@ export default function Footer() {
           </div>
 
           {/* Columna derecha */}
-          <div className="flex flex-col gap-6">
+          <div className="flex flex-col gap-6 sm:gap-10">
             {t.footer.right.map((item) => (
               <a
                 key={item}
@@ -61,7 +61,7 @@ export default function Footer() {
                   fontWeight: 700,
                   fontSize: "clamp(11px, 2.5vw, 14px)",
                   letterSpacing: "0.12em",
-                  color: "white",
+                  color: variant === "light" ? "#00379E" : "white",
                   textDecoration: "none",
                   ...navLinkStyle(4),
                 }}
@@ -103,10 +103,10 @@ export default function Footer() {
       {/* Barra inferior */}
       <div className="grid grid-cols-2">
 
-        {/* Logo - fondo blanco */}
-        <div className="bg-white flex items-center justify-center py-6 px-6">
+        {/* Logo */}
+        <div className="flex items-center justify-center py-6 px-6" style={{ backgroundColor: variant === "light" ? "#00379E" : "white" }}>
           <img
-            src="/logo2.png" 
+            src={variant === "light" ? "/logo-apn.png" : "/logo2.png"}
             alt="APN Logo" transition-transform duration-500 hover:scale-110
             className="h-12 object-contain"
           />
