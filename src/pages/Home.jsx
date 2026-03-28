@@ -322,6 +322,7 @@ export default function Home() {
               variant="primary"
               size="md"
               className="font-averta font-bold text-[clamp(12px,2.5vw,16px)] tracking-[0.15em] px-[40px] py-[12px]"
+              onClick={() => navigate('/evidence')}
             >
               {t.evidencia.btn}
             </Button>
