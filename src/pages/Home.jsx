@@ -166,7 +166,7 @@ export default function Home() {
             >
               {t.quienesSomos.label}
             </span>
-            <span className="text-[#1a3a8f] text-sm">{">"}</span>
+            <span className="text-[#00379E] text-sm">{">"}</span>
           </div>
 
           <div
@@ -191,7 +191,7 @@ export default function Home() {
             </p>
           </div>
 
-          <p className="text-xs italic mb-10 font-averta text-[#1a3a8f]">
+          <p className="text-xs italic mb-10 font-averta text-[#00379E]">
             {t.quienesSomos.footnote}
           </p>
 

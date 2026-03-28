@@ -169,8 +169,8 @@ export default function Allies() {
                 alt={name.replace("\n", " ")}
                 className="presidente-foto"
                 style={{
-                  width: "clamp(64px, 10vw, 130px)",
-                  height: "clamp(64px, 10vw, 130px)",
+                  width: "clamp(80px, 13vw, 160px)",
+                  height: "clamp(80px, 13vw, 160px)",
                   borderRadius: "50%",
                   objectFit: "cover",
                   flexShrink: 0,
@@ -246,8 +246,8 @@ export default function Allies() {
                   alt={name.replace("\n", " ")}
                   className="presidente-foto"
                   style={{
-                    width: "clamp(64px, 10vw, 130px)",
-                    height: "clamp(64px, 10vw, 130px)",
+                    width: "clamp(80px, 13vw, 160px)",
+                    height: "clamp(80px, 13vw, 160px)",
                     borderRadius: "50%",
                     objectFit: "cover",
                     flexShrink: 0,
