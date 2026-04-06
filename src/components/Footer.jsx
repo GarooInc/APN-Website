@@ -2,9 +2,11 @@ import { LiaLinkedinIn } from "react-icons/lia";
 import { FaFacebookF, FaYoutube } from "react-icons/fa";
 import { AiOutlineInstagram } from "react-icons/ai";
 import { useState, useEffect } from "react";
+import { useLang } from "../context/LanguageContext";
 
-export default function Footer() {
+export default function Footer({ variant = "dark" }) {
   const [isVisible, setIsVisible] = useState(false);
+  const { t } = useLang();
 
   useEffect(() => {
     // Trigger animation after component mounts
@@ -20,23 +22,23 @@ export default function Footer() {
   return (
     <footer>
 
-      {/* Menú de navegación - fondo azul oscuro */}
-      <div className="bg-[#003da7] px-8 py-10">
-        <div className="max-w-3xl mx-auto w-full grid grid-cols-2 gap-x-8 gap-y-6">
+      {/* Menú de navegación */}
+      <div className="px-6 py-10 sm:px-8" style={{ backgroundColor: variant === "light" ? "#C0C8CE" : "#1a3a8f" }}>
+        <div className="max-w-3xl mx-auto w-full grid grid-cols-2 gap-x-6 gap-y-4 sm:gap-x-8 sm:gap-y-6">
 
           {/* Columna izquierda */}
-          <div className="flex flex-col gap-6">
-            {["PROPÓSITO", "MISIÓN", "GENERACIÓN\nDE EVIDENCIA", "ALIADOS"].map((item) => (
+          <div className="flex flex-col gap-6 sm:gap-10">
+            {t.footer.left.map((item) => (
               <a
                 key={item}
                 href="#"
-                className="transition-all duration-200 hover:text-[#00a1e0] hover:tracking-widest"
+                className="transition-all duration-200 hover:text-[#0098DC] hover:tracking-widest"
                 style={{
                   fontFamily: "'Averta', sans-serif",
                   fontWeight: 700,
                   fontSize: "clamp(11px, 2.5vw, 14px)",
                   letterSpacing: "0.12em",
-                  color: "white",
+                  color: variant === "light" ? "#00379E" : "white",
                   textDecoration: "none",
                   whiteSpace: "pre-line",
                   ...navLinkStyle(0),
@@ -48,18 +50,18 @@ export default function Footer() {
           </div>
 
           {/* Columna derecha */}
-          <div className="flex flex-col gap-6">
-            {["ÚNETE", "MATERIALES TÉCNICOS", "NOTICIAS", "CONTÁCTANOS"].map((item) => (
+          <div className="flex flex-col gap-6 sm:gap-10">
+            {t.footer.right.map((item) => (
               <a
                 key={item}
                 href="#"
-                className="transition-all duration-200 hover:text-[#00a1e0] hover:tracking-widest"
+                className="transition-all duration-200 hover:text-[#0098DC] hover:tracking-widest"
                 style={{
                   fontFamily: "'Averta', sans-serif",
                   fontWeight: 700,
                   fontSize: "clamp(11px, 2.5vw, 14px)",
                   letterSpacing: "0.12em",
-                  color: "white",
+                  color: variant === "light" ? "#00379E" : "white",
                   textDecoration: "none",
                   ...navLinkStyle(4),
                 }}
@@ -81,9 +83,9 @@ export default function Footer() {
               href={social.href}
               className="flex items-center justify-center hover:opacity-80 hover:scale-110 transition-all duration-300" // Added hover:scale-110 and transition-all
               style={{
-                color: "#00a1e0",
+                color: "#0098DC",
                 backgroundColor: "transparent",
-                border: "2px solid #00a1e0",
+                border: "2px solid #0098DC",
                 borderRadius: social.rounded,
                 width: "36px",
                 height: "36px",
@@ -101,17 +103,17 @@ export default function Footer() {
       {/* Barra inferior */}
       <div className="grid grid-cols-2">
 
-        {/* Logo - fondo blanco */}
-        <div className="bg-white flex items-center justify-center py-6 px-6">
+        {/* Logo */}
+        <div className="flex items-center justify-center py-6 px-6" style={{ backgroundColor: variant === "light" ? "#00379E" : "white" }}>
           <img
-            src="/logo2.png"
-            alt="APN Logo"
-            className="h-12 object-contain transition-transform duration-500 hover:scale-110"
+            src={variant === "light" ? "/logo-apn.png" : "/logo2.png"}
+            alt="APN Logo" transition-transform duration-500 hover:scale-110
+            className="h-12 object-contain"
           />
         </div>
 
         {/* Copyright - fondo azul claro */}
-        <div className="bg-[#00a1e0] flex items-center justify-center py-6 px-6">
+        <div className="bg-[#0098DC] flex items-center justify-center py-6 px-6">
           <p
             style={{
               fontFamily: "'Averta', sans-serif",
@@ -120,8 +122,9 @@ export default function Footer() {
               lineHeight: "1.5",
             }}
           >
-            © 2026 Alianza por la Nutrición.<br />
-            All Rights Reserved.
+            {t.footer.copyright.split("\n").map((line, i) => (
+              <span key={i}>{line}{i === 0 && <br />}</span>
+            ))}
           </p>
         </div>
       </div>

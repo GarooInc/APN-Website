@@ -56,10 +56,10 @@ export default function Home() {
         </div>
       </div>
 
-      <section id="proposito" className="bg-[#003da7] px-6 sm:px-10 py-16 sm:py-28 flex flex-col justify-center fade-in">
+      <section id="proposito" className="bg-[#1a3a8f] px-6 sm:px-10 py-8 sm:py-12 flex flex-col justify-center fade-in">
         <div className="max-w-3xl mx-auto w-full flex gap-3">
           {/* Línea vertical */}
-          <div className="w-0.5 flex-shrink-0 hidden sm:block" style={{ backgroundColor: "#00a1e0", alignSelf: "flex-start", marginTop: "-18px", height: "180px" }} />
+          <div className="w-0.5 flex-shrink-0 hidden sm:block" style={{ backgroundColor: "#0098DC", alignSelf: "flex-start", marginTop: "-18px", height: "180px" }} />
           <div>
             <div className="flex items-center gap-2 mb-6">
               <span
@@ -105,7 +105,7 @@ export default function Home() {
         />
       </div>
 
-      <section className="bg-[#d6d8db] px-8 py-20 flex flex-col justify-center min-h-[420px] fade-in">
+      <section className="bg-[#d6d8db] px-8 py-10 flex flex-col justify-center min-h-[320px] fade-in">
         <div className="max-w-2xl mx-auto w-full">
           <div className="flex items-center gap-2 mb-8">
             <span
@@ -115,12 +115,12 @@ export default function Home() {
                 fontWeight: 700,
                 fontSize: "clamp(14px, 3vw, 22px)",
                 letterSpacing: "0.15em",
-                color: "#003da7",
+                color: "#1a3a8f",
               }}
             >
               {t.mision.label}
             </span>
-            <span className="text-[#003da7] text-sm">{">"}</span>
+            <span className="text-[#1a3a8f] text-sm">{">"}</span>
           </div>
 
           <p
@@ -129,13 +129,13 @@ export default function Home() {
               fontFamily: "'Averta', sans-serif",
               fontWeight: 400,
               lineHeight: "1.6",
-              color: "#003da7",
+              color: "#1a3a8f",
             }}
           >
             {t.mision.text}
           </p>
 
-          <p className="mt-8 text-xs italic font-averta text-[#003da7]">
+          <p className="mt-8 text-xs italic font-averta text-[#1a3a8f]">
             {t.mision.footnote}
           </p>
         </div>
@@ -151,7 +151,7 @@ export default function Home() {
         />
       </div>
 
-      <section id="quienes-somos" className="bg-white px-8 pt-16 mb-16 flex flex-col justify-center fade-in">
+      <section id="quienes-somos" className="bg-white px-8 pt-10 mb-10 flex flex-col justify-center fade-in">
         <div className="max-w-3xl mx-auto w-full">
 
           <div className="flex items-center gap-2 mb-6">
@@ -161,12 +161,12 @@ export default function Home() {
                 fontWeight: 700,
                 fontSize: "clamp(14px, 3vw, 22px)",
                 letterSpacing: "0.1em",
-                color: "#003da7",
+                color: "#1a3a8f",
               }}
             >
               {t.quienesSomos.label}
             </span>
-            <span className="text-[#003da7] text-sm">{">"}</span>
+            <span className="text-[#00379E] text-sm">{">"}</span>
           </div>
 
           <div
@@ -176,7 +176,7 @@ export default function Home() {
               fontWeight: 400,
               fontSize: "clamp(16px, 3.5vw, 20px)",
               lineHeight: "1.6",
-              color: "#003da7",
+              color: "#1a3a8f",
               fontStyle: "italic",
             }}
           >
@@ -191,7 +191,7 @@ export default function Home() {
             </p>
           </div>
 
-          <p className="text-xs italic mb-10 font-averta text-[#003da7]">
+          <p className="text-xs italic mb-10 font-averta text-[#00379E]">
             {t.quienesSomos.footnote}
           </p>
 
@@ -220,7 +220,7 @@ export default function Home() {
       </div>
 
       {/* Sección Aliados */}
-      <section id="aliados" className="bg-[#003da7] px-8 pt-16 pb-20 flex flex-col items-center fade-in">
+      <section id="aliados" className="bg-[#1a3a8f] px-8 pt-10 pb-10 flex flex-col items-center fade-in">
 
         <div className="w-full sm:w-[75%] h-[300px] sm:h-[500px] overflow-hidden mb-6">
           <img
@@ -240,12 +240,12 @@ export default function Home() {
                 fontWeight: 700,
                 fontSize: "clamp(14px, 3vw, 22px)",
                 letterSpacing: "0.1em",
-                color: "#00a1e0",
+                color: "#0098DC",
               }}
             >
               {t.aliados.label}
             </span>
-            <span className="text-[#00a1e0] text-sm">{">"}</span>
+            <span className="text-[#0098DC] text-sm">{">"}</span>
           </div>
 
           <p
@@ -276,7 +276,7 @@ export default function Home() {
       </section>
 
       {/* Generación de Evidencia */}
-      <section className="bg-[#00a1e0] px-8 py-16 flex flex-col items-center fade-in">
+      <section className="bg-[#0098DC] px-8 py-10 flex flex-col items-center fade-in">
 
         <div className="w-full sm:w-[75%] h-[300px] sm:h-[500px] overflow-hidden mb-6">
           <img
@@ -332,7 +332,7 @@ export default function Home() {
       </section>
 
       {/* Materiales Técnicos */}
-      <section className="bg-[#d6d8db] px-8 py-16 flex flex-col items-center fade-in">
+      <section className="bg-[#d6d8db] px-8 py-10 flex flex-col items-center fade-in">
 
         <div className="w-full sm:w-[75%] h-[300px] sm:h-[550px] overflow-hidden mb-6">
           <img
@@ -352,12 +352,12 @@ export default function Home() {
                 fontWeight: 700,
                 fontSize: "clamp(16px, 3vw, 20px)",
                 letterSpacing: "0.1em",
-                color: "#003da7",
+                color: "#1a3a8f",
               }}
             >
               {t.materiales.label[0]}<br />{t.materiales.label[1]}
             </span>
-            <span className="text-[#003da7] text-sm self-end mb-1">{">"}</span>
+            <span className="text-[#1a3a8f] text-sm self-end mb-1">{">"}</span>
           </div>
 
           <p
@@ -367,7 +367,7 @@ export default function Home() {
               fontWeight: 400,
               fontSize: "clamp(14px, 3.5vw, 18px)",
               lineHeight: "1.6",
-              color: "#003da7",
+              color: "#1a3a8f",
             }}
           >
             {t.materiales.text}
@@ -399,7 +399,7 @@ export default function Home() {
           />
         </div>
 
-        <div className="px-10 py-16 max-w-3xl mx-auto w-full">
+        <div className="px-10 py-12 max-w-3xl mx-auto w-full">
 
           <div className="flex items-center gap-2 mb-3">
             <span
@@ -408,12 +408,12 @@ export default function Home() {
                 fontWeight: 700,
                 fontSize: "clamp(14px, 3vw, 22px)",
                 letterSpacing: "0.1em",
-                color: "#003da7",
+                color: "#1a3a8f",
               }}
             >
               {t.noticias.label}
             </span>
-            <span className="text-[#003da7] text-sm">{">"}</span>
+            <span className="text-[#1a3a8f] text-sm">{">"}</span>
           </div>
 
           <p
@@ -423,7 +423,7 @@ export default function Home() {
               fontWeight: 400,
               fontSize: "clamp(14px, 3.5vw, 18px)",
               lineHeight: "1.6",
-              color: "#003da7",
+              color: "#1a3a8f",
             }}
           >
             {t.noticias.text}
@@ -454,7 +454,7 @@ export default function Home() {
       </section>
 
       {/* Contáctanos */}
-      <section id="contacto" className="bg-[#d6d8db] px-8 py-16 fade-in">
+      <section id="contacto" className="bg-[#d6d8db] px-8 py-10 fade-in">
         <div className="max-w-3xl mx-auto w-full">
 
           <div className="flex items-center gap-2 mb-8">
@@ -464,63 +464,63 @@ export default function Home() {
                 fontWeight: 700,
                 fontSize: "clamp(14px, 3vw, 22px)",
                 letterSpacing: "0.1em",
-                color: "#003da7",
+                color: "#1a3a8f",
               }}
             >
               {t.contacto.label}
             </span>
-            <span className="text-[#003da7] text-sm">{">"}</span>
+            <span className="text-[#1a3a8f] text-sm">{">"}</span>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
 
             <div>
-              <p style={{ fontFamily: "'Averta', sans-serif", fontWeight: 700, fontSize: "clamp(13px, 2.5vw, 16px)", color: "#003da7" }}>
+              <p style={{ fontFamily: "'Averta', sans-serif", fontWeight: 700, fontSize: "clamp(13px, 2.5vw, 16px)", color: "#1a3a8f" }}>
                 Ana Luisa Esquivel
               </p>
-              <p style={{ fontFamily: "'Averta', sans-serif", fontStyle: "italic", fontSize: "clamp(11px, 2vw, 14px)", color: "#003da7" }} className="mb-1">
+              <p style={{ fontFamily: "'Averta', sans-serif", fontStyle: "italic", fontSize: "clamp(11px, 2vw, 14px)", color: "#1a3a8f" }} className="mb-1">
                 {t.contacto.roles.directoraEjecutiva}
               </p>
-              <p style={{ fontFamily: "'Averta', sans-serif", fontSize: "clamp(11px, 2vw, 14px)", color: "#003da7" }} className="flex items-center gap-1">
-                <Phone size={14} color="#003da7" /> (502) 5318-3523
+              <p style={{ fontFamily: "'Averta', sans-serif", fontSize: "clamp(11px, 2vw, 14px)", color: "#1a3a8f" }} className="flex items-center gap-1">
+                <Phone size={14} color="#1a3a8f" /> (502) 5318-3523
               </p>
-              <p style={{ fontFamily: "'Averta', sans-serif", fontSize: "clamp(11px, 2vw, 14px)", color: "#003da7" }} className="flex items-center gap-1">
-                <Mail size={14} color="#003da7" /> analuisa.esquivel@apn.org.gt
+              <p style={{ fontFamily: "'Averta', sans-serif", fontSize: "clamp(11px, 2vw, 14px)", color: "#1a3a8f" }} className="flex items-center gap-1">
+                <Mail size={14} color="#1a3a8f" /> analuisa.esquivel@apn.org.gt
               </p>
             </div>
 
             <div>
-              <p style={{ fontFamily: "'Averta', sans-serif", fontWeight: 700, fontSize: "clamp(13px, 2.5vw, 16px)", color: "#003da7" }}>Olga López
+              <p style={{ fontFamily: "'Averta', sans-serif", fontWeight: 700, fontSize: "clamp(13px, 2.5vw, 16px)", color: "#1a3a8f" }}>Olga López
               </p>
-              <p style={{ fontFamily: "'Averta', sans-serif", fontStyle: "italic", fontSize: "clamp(11px, 2vw, 14px)", color: "#003da7" }} className="mb-1">
+              <p style={{ fontFamily: "'Averta', sans-serif", fontStyle: "italic", fontSize: "clamp(11px, 2vw, 14px)", color: "#1a3a8f" }} className="mb-1">
                 {t.contacto.roles.adminFinanzas}
               </p>
-              <p style={{ fontFamily: "'Averta', sans-serif", fontSize: "clamp(11px, 2vw, 14px)", color: "#003da7" }} className="flex items-center gap-1">
-                <Phone size={14} color="#003da7" /> (502) 3481-1617
+              <p style={{ fontFamily: "'Averta', sans-serif", fontSize: "clamp(11px, 2vw, 14px)", color: "#1a3a8f" }} className="flex items-center gap-1">
+                <Phone size={14} color="#1a3a8f" /> (502) 3481-1617
               </p>
-              <p style={{ fontFamily: "'Averta', sans-serif", fontSize: "clamp(11px, 2vw, 14px)", color: "#003da7" }} className="flex items-center gap-1">
-                <Mail size={14} color="#003da7" /> olga.lopez@apn.org.gt
+              <p style={{ fontFamily: "'Averta', sans-serif", fontSize: "clamp(11px, 2vw, 14px)", color: "#1a3a8f" }} className="flex items-center gap-1">
+                <Mail size={14} color="#1a3a8f" /> olga.lopez@apn.org.gt
               </p>
             </div>
 
             <div>
-              <p style={{ fontFamily: "'Averta', sans-serif", fontWeight: 700, fontSize: "clamp(13px, 2.5vw, 16px)", color: "#003da7" }}>Mónica Rodríguez
+              <p style={{ fontFamily: "'Averta', sans-serif", fontWeight: 700, fontSize: "clamp(13px, 2.5vw, 16px)", color: "#1a3a8f" }}>Mónica Rodríguez
               </p>
-              <p style={{ fontFamily: "'Averta', sans-serif", fontStyle: "italic", fontSize: "clamp(11px, 2vw, 14px)", color: "#003da7" }} className="mb-1">
+              <p style={{ fontFamily: "'Averta', sans-serif", fontStyle: "italic", fontSize: "clamp(11px, 2vw, 14px)", color: "#1a3a8f" }} className="mb-1">
                 {t.contacto.roles.monitoreo}
               </p>
-              <p style={{ fontFamily: "'Averta', sans-serif", fontSize: "clamp(11px, 2vw, 14px)", color: "#003da7" }} className="flex items-center gap-1">
-                <Phone size={14} color="#003da7" /> (502) 3483-2517
+              <p style={{ fontFamily: "'Averta', sans-serif", fontSize: "clamp(11px, 2vw, 14px)", color: "#1a3a8f" }} className="flex items-center gap-1">
+                <Phone size={14} color="#1a3a8f" /> (502) 3483-2517
               </p>
-              <p style={{ fontFamily: "'Averta', sans-serif", fontSize: "clamp(11px, 2vw, 14px)", color: "#003da7" }} className="flex items-center gap-1">
-                <Mail size={14} color="#003da7" /> monica.rodriguez@apn.org.gt
+              <p style={{ fontFamily: "'Averta', sans-serif", fontSize: "clamp(11px, 2vw, 14px)", color: "#1a3a8f" }} className="flex items-center gap-1">
+                <Mail size={14} color="#1a3a8f" /> monica.rodriguez@apn.org.gt
               </p>
             </div>
 
             <div>
-              <p style={{ fontFamily: "'Averta', sans-serif", fontWeight: 700, fontSize: "clamp(13px, 2.5vw, 16px)", color: "#003da7" }}>Alianza por la Nutrición
+              <p style={{ fontFamily: "'Averta', sans-serif", fontWeight: 700, fontSize: "clamp(13px, 2.5vw, 16px)", color: "#1a3a8f" }}>Alianza por la Nutrición
               </p>
-              <p style={{ fontFamily: "'Averta', sans-serif", fontSize: "clamp(11px, 2vw, 14px)", color: "#003da7", lineHeight: "1.6" }}>
+              <p style={{ fontFamily: "'Averta', sans-serif", fontSize: "clamp(11px, 2vw, 14px)", color: "#1a3a8f", lineHeight: "1.6" }}>
                 Boulevard Los Proceres 24-64, Zona 10<br />
                 Torre 1 Oficina 1402, 01001.<br />
                 Guatemala, Ciudad.
