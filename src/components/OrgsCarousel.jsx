@@ -68,7 +68,36 @@ export default function OrgsCarousel({ title, bgColor = "#00379E", textColor = "
     }
   }, [animated]);
 
+  const timerRef = useRef(null);
+  const resetTimer = () => {
+    clearInterval(timerRef.current);
+    timerRef.current = setInterval(() => setPos(p => p + 1), 2500);
+  };
+  const goNext = () => { setAnimated(true); setPos(p => p + 1); resetTimer(); };
+  const goPrev = () => { setAnimated(true); setPos(p => p - 1); resetTimer(); };
+
   const trackX = -(pos - 1) * (card + GAP);
+
+  const arrowStyle = {
+    position: "absolute",
+    top: "50%",
+    transform: "translateY(-50%)",
+    background: "transparent",
+    border: `2px solid ${textColor}`,
+    borderRadius: "50%",
+    width: "clamp(28px, 4vw, 36px)",
+    height: "clamp(28px, 4vw, 36px)",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    cursor: "pointer",
+    color: textColor,
+    fontSize: "clamp(16px, 2.5vw, 22px)",
+    opacity: 0.8,
+    transition: "opacity 0.2s",
+    zIndex: 2,
+    lineHeight: 1,
+  };
 
   return (
     <section
@@ -92,7 +121,20 @@ export default function OrgsCarousel({ title, bgColor = "#00379E", textColor = "
           {title}
         </h2>
 
-        <div ref={containerRef} style={{ width: "100%", maxWidth: 3 * minCardSize + 2 * GAP, margin: "0 auto", perspective: 900 }}>
+        <div style={{ position: "relative", width: "100%", maxWidth: 3 * minCardSize + 2 * GAP, margin: "0 auto" }}>
+          <button
+            onClick={goPrev}
+            style={{ ...arrowStyle, left: -48 }}
+            onMouseEnter={e => e.currentTarget.style.opacity = 1}
+            onMouseLeave={e => e.currentTarget.style.opacity = 0.8}
+          >‹</button>
+          <button
+            onClick={goNext}
+            style={{ ...arrowStyle, right: -48 }}
+            onMouseEnter={e => e.currentTarget.style.opacity = 1}
+            onMouseLeave={e => e.currentTarget.style.opacity = 0.8}
+          >›</button>
+        <div ref={containerRef} style={{ width: "100%", perspective: 900 }}>
           <div
             style={{
               display: "flex",
@@ -138,6 +180,7 @@ export default function OrgsCarousel({ title, bgColor = "#00379E", textColor = "
               );
             })}
           </div>
+        </div>
         </div>
 
         {showLogo && (
