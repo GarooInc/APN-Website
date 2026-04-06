@@ -1,9 +1,27 @@
 import { useState, useEffect, useRef } from 'react';
 
 const LOGOS = [
-  { src: "/Allies1.png", alt: "Aliado 1" },
-  { src: "/Allies2.png", alt: "Aliado 2" },
-  { src: "/Allies3.png", alt: "Aliado 3" },
+  { src: "/Allies1.png",   alt: "Aliado 1" },
+  { src: "/Allies2.png",   alt: "Aliado 2" },
+  { src: "/Allies3.png",   alt: "Aliado 3" },
+  { src: "/Allies4.png",   alt: "Aliado 4" },
+  { src: "/Allies5.jpg",   alt: "Aliado 5" },
+  { src: "/Allies6.webp",  alt: "Aliado 6" },
+  { src: "/Allies7.png",   alt: "Aliado 7" },
+  { src: "/Allies8.webp",  alt: "Aliado 8" },
+  { src: "/Allies9.jpg",   alt: "Aliado 9" },
+  { src: "/Allies10.jpg",  alt: "Aliado 10" },
+  { src: "/Allies11.jpeg", alt: "Aliado 11" },
+  { src: "/Allies12.jpg",  alt: "Aliado 12" },
+  { src: "/Allies13.png",  alt: "Aliado 13" },
+  { src: "/Allies14.png",  alt: "Aliado 14" },
+  { src: "/Allies15.webp", alt: "Aliado 15" },
+  { src: "/Allies16.png",  alt: "Aliado 16" },
+  { src: "/Allies17.jpg",  alt: "Aliado 17" },
+  { src: "/Allies18.png",  alt: "Aliado 18" },
+  { src: "/Allies19.jpeg", alt: "Aliado 19" },
+  { src: "/Allies20.png",  alt: "Aliado 20" },
+  { src: "/Allies21.webp", alt: "Aliado 21" },
 ];
 
 const GAP = 24;

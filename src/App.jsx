@@ -1,4 +1,11 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
+import { useEffect } from 'react';
+
+function ScrollToTop() {
+  const { pathname } = useLocation();
+  useEffect(() => { window.scrollTo(0, 0); }, [pathname]);
+  return null;
+}
 import MainLayout from './layout/MainLayout';
 import Home from './pages/Home';
 import Allies from './pages/Allies';
@@ -17,6 +24,7 @@ export default function App() {
     <LanguageProvider>
     <Router>
       <MainLayout>
+        <ScrollToTop />
         <Routes>
           <Route path={ROUTES.HOME} element={<Home />} />
           <Route path={ROUTES.ALLIES} element={<Allies />} />

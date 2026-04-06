@@ -1,115 +1,138 @@
-import { Link } from 'react-router-dom';
 import { useFadeIn } from '../hooks/useFadeIn';
-import { ROUTES } from '../utils/constants';
-
-const articles = [
-  {
-    id: 1,
-    image: '/image5.jpg',
-    imagePosition: 'center 25%',
-    title: 'ACOMPÁÑAME A CRECER: UN ESFUERZO PÚBLICO-PRIVADO PARA EL DESARROLLO INFANTIL TEMPRANO',
-    excerpt: 'Generando evidencia para transformar vidas en los primeros 1,000 días de vida de la niñez guatemalteca.',
-    bg: 'bg-primary-dark',
-    titleColor: 'text-white',
-    excerptColor: 'text-white/80',
-    btnVariant: 'outline-light',
-  },
-  {
-    id: 2,
-    image: '/image3.jpg',
-    imagePosition: 'center 55%',
-    title: 'CON NUESTROS SOCIOS IMPLEMENTADORES LAS HISTORIAS SE ESCRIBEN CON DATOS, ABRAZOS Y SONRISAS',
-    excerpt:
-      'APN y sus socios implementadores de Acompáñame a Crecer han recolectado datos cuantitativos y cualitativos para entender y evaluar el trabajo realizado.',
-    bg: 'bg-primary-dark',
-    titleColor: 'text-white',
-    excerptColor: 'text-white/80',
-    btnVariant: 'outline-light',
-  },
-  {
-    id: 3,
-    image: '/image4.jpg',
-    imagePosition: 'center 40%',
-    title: '¿QUÉ ES LA DESNUTRICIÓN CRÓNICA INFANTIL?',
-    excerpt:
-      'La desnutrición crónica infantil, también llamada DCI, está asociada a una baja talla para la edad debido a episodios repetidos de desnutrición durante los períodos críticos de crecimiento.',
-    bg: 'bg-primary-dark',
-    titleColor: 'text-white',
-    excerptColor: 'text-white/80',
-    btnVariant: 'outline-light',
-  },
-];
+import { useNavigate } from 'react-router-dom';
 
 export default function News() {
   useFadeIn();
+  const navigate = useNavigate();
 
   return (
     <div>
-      {/* Encabezado */}
-      <section className="bg-primary-light px-8 pt-28 pb-10 fade-in">
-        <div className="max-w-3xl mx-auto">
-          <div className="flex items-center gap-2">
-            <span
-              className="font-averta font-bold text-white tracking-[0.12em]"
-              style={{ fontSize: 'clamp(16px, 3.5vw, 24px)' }}
-            >
-              NOTICIAS
-            </span>
-            <span className="text-white text-sm">{'>'}</span>
+      {/* Hero */}
+      <section style={{ margin: 0, padding: 0, lineHeight: 0, position: 'relative' }}>
+        <img
+          src="/image8.jpg"
+          alt="Noticias"
+          style={{
+            width: '100%',
+            display: 'block',
+            objectFit: 'cover',
+            height: 'clamp(220px, 35vw, 460px)',
+            objectPosition: 'center 30%',
+          }}
+        />
+        <div style={{ position: 'absolute', inset: 0, background: 'rgba(0,61,167,0.45)' }} />
+      </section>
+
+      {/* En Construcción */}
+      <section
+        className="fade-in"
+        style={{
+          backgroundColor: '#003da7',
+          padding: 'clamp(60px, 10vw, 130px) clamp(32px, 6vw, 80px)',
+          textAlign: 'center',
+        }}
+      >
+        <div style={{ maxWidth: 640, margin: '0 auto' }}>
+          {/* Ícono */}
+          <div style={{ marginBottom: 'clamp(24px, 4vw, 40px)' }}>
+            <svg width="72" height="72" viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="36" cy="36" r="35" stroke="#00a1e0" strokeWidth="2" />
+              <path d="M22 50L36 24L50 50H22Z" stroke="#00a1e0" strokeWidth="2" strokeLinejoin="round" fill="none"/>
+              <rect x="34" y="38" width="4" height="4" rx="1" fill="#00a1e0"/>
+              <rect x="34" y="30" width="4" height="6" rx="1" fill="#00a1e0"/>
+            </svg>
           </div>
+
+          <h1
+            style={{
+              fontFamily: "'Averta', sans-serif",
+              fontWeight: 700,
+              fontSize: 'clamp(20px, 4vw, 36px)',
+              letterSpacing: '0.1em',
+              color: '#fff',
+              textTransform: 'uppercase',
+              marginBottom: 'clamp(12px, 2vw, 20px)',
+              marginTop: 0,
+            }}
+          >
+            Noticias
+          </h1>
+
+          <div
+            style={{
+              width: 60,
+              height: 3,
+              backgroundColor: '#00a1e0',
+              margin: '0 auto clamp(24px, 4vw, 40px)',
+              borderRadius: 2,
+            }}
+          />
+
+          <p
+            style={{
+              fontFamily: "'Averta', sans-serif",
+              fontWeight: 700,
+              fontSize: 'clamp(18px, 3.5vw, 30px)',
+              color: '#00a1e0',
+              letterSpacing: '0.08em',
+              marginBottom: 'clamp(16px, 2.5vw, 24px)',
+              marginTop: 0,
+            }}
+          >
+            Página en construcción
+          </p>
+
+          <p
+            style={{
+              fontFamily: "'Averta', sans-serif",
+              fontStyle: 'italic',
+              fontSize: 'clamp(14px, 2.2vw, 19px)',
+              lineHeight: 1.8,
+              color: 'rgba(255,255,255,0.82)',
+              marginBottom: 'clamp(32px, 5vw, 56px)',
+            }}
+          >
+            Estamos trabajando para traerte las últimas noticias sobre nuestros proyectos e iniciativas para combatir la <strong style={{ fontWeight: 700, fontStyle: 'normal', color: '#fff' }}>Desnutrición Crónica Infantil</strong> en Guatemala. Pronto estará disponible.
+          </p>
+
+          <button
+            onClick={() => navigate('/')}
+            style={{
+              backgroundColor: 'transparent',
+              border: '2px solid #00a1e0',
+              color: '#00a1e0',
+              borderRadius: 4,
+              padding: 'clamp(12px, 2vw, 16px) clamp(28px, 4vw, 48px)',
+              fontFamily: "'Averta', sans-serif",
+              fontWeight: 700,
+              fontSize: 'clamp(12px, 1.8vw, 15px)',
+              letterSpacing: '0.15em',
+              textTransform: 'uppercase',
+              cursor: 'pointer',
+              transition: 'background 0.3s, color 0.3s',
+            }}
+            onMouseEnter={(e) => { e.target.style.backgroundColor = '#00a1e0'; e.target.style.color = '#fff'; }}
+            onMouseLeave={(e) => { e.target.style.backgroundColor = 'transparent'; e.target.style.color = '#00a1e0'; }}
+          >
+            ← Volver al inicio
+          </button>
         </div>
       </section>
 
-      {/* Artículos */}
-      <div className="flex flex-col">
-        {articles.map((article) => (
-          <article key={article.id} className={`${article.bg} fade-in`}>
-            {/* Imagen */}
-            <div className="w-full h-[300px] md:h-[380px] overflow-hidden">
-              <img
-                src={article.image}
-                alt={article.title}
-                className="w-full h-full object-cover"
-                style={{ objectPosition: article.imagePosition }}
-              />
-            </div>
-
-            {/* Contenido */}
-            <div className="px-8 py-10 max-w-3xl mx-auto w-full">
-              <h2
-                className={`font-averta font-bold ${article.titleColor} mb-4`}
-                style={{ fontSize: 'clamp(14px, 3vw, 20px)', lineHeight: 1.45, letterSpacing: '0.05em' }}
-              >
-                {article.title}
-              </h2>
-              <p
-                className={`font-averta ${article.excerptColor} mb-8`}
-                style={{ fontSize: 'clamp(13px, 2.5vw, 16px)', lineHeight: 1.65 }}
-              >
-                {article.excerpt}
-              </p>
-              <Link to={`${ROUTES.NEWS}/${article.id}`}>
-                <button
-                  className="border-2 border-white text-white font-averta font-bold tracking-[0.2em] px-6 py-3 hover:bg-white hover:text-primary-dark transition-all duration-300"
-                  style={{ fontSize: 'clamp(10px, 1.5vw, 12px)', letterSpacing: '0.2em' }}
-                >
-                  L E E R &nbsp; A H O R A
-                </button>
-              </Link>
-            </div>
-          </article>
-        ))}
-      </div>
-
       {/* Imagen cierre */}
-      <div className="w-full h-[280px] overflow-hidden">
+      <section style={{ margin: 0, padding: 0, lineHeight: 0 }}>
         <img
-          src="/image9.jpg"
-          alt="Niña mirando"
-          className="w-full h-full object-cover"
-          style={{ objectPosition: 'center 28%' }}
+          src="/image7.jpg"
+          alt="Niños"
+          style={{
+            width: '100%',
+            display: 'block',
+            objectFit: 'cover',
+            height: 'clamp(180px, 25vw, 320px)',
+            objectPosition: 'center 35%',
+          }}
         />
-      </div>
+      </section>
     </div>
   );
 }
