@@ -111,17 +111,6 @@ export default function Materials() {
         </div>
       </section>
 
-      {/* CTA bottom */}
-      <section className="bg-primary-dark px-8 py-14 fade-in">
-        <div className="max-w-3xl mx-auto text-center">
-          <p
-            className="font-averta italic text-white/90"
-            style={{ fontSize: 'clamp(15px, 3vw, 20px)', lineHeight: 1.7 }}
-          >
-            Descarga material de apoyo y ayúdanos a ampliar nuestro impacto
-          </p>
-        </div>
-      </section>
     </div>
   );
 }
