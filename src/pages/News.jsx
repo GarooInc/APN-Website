@@ -1,5 +1,56 @@
 import { useFadeIn } from '../hooks/useFadeIn';
 import { useNavigate } from 'react-router-dom';
+import Button from '../components/Button';
+
+const excerpt2 = (
+  <><strong>APN</strong> y sus socios implementadores de <strong>Acompáñame a Crecer</strong> han recolectado datos cuantitativos y cualitativos para entender y evaluar el trabajo realizado.</>
+);
+
+const excerpt3 = (
+  <>La <strong>desnutrición crónica infantil</strong> también llamada <strong>DCI</strong> por sus siglas, está asociada a una <strong>baja talla para la edad</strong>, debido a episodios repetidos de desnutrición durante los períodos críticos de crecimiento.</>
+);
+
+const articles = [
+  {
+    id: 1,
+    image: '/image17.png',
+    imagePosition: 'center 30%',
+    title: 'ACOMPÁÑAME A CRECER: UN ESFUERZO PÚBLICO-PRIVADO PARA EL DESARROLLO INFANTIL TEMPRANO',
+    excerpt: 'Generando evidencia para transformar vidas.',
+    excerptSize: 'clamp(16px, 2.5vw, 22px)',
+    bg: '#00a1e0',
+    titleColor: '#003da7',
+    excerptColor: '#fff',
+  },
+  {
+    id: 2,
+    image: '/image18.png',
+    imagePosition: 'center 60%',
+    imageTopPadding: '40px',
+    title: 'CON NUESTROS SOCIOS IMPLEMENTADORES LAS HISTORIAS SE ESCRIBEN CON DATOS, ABRAZOS Y SONRISAS',
+    titleSize: 'clamp(16px, 3vw, 24px)',
+    titleMarginBottom: 'clamp(24px, 4vw, 40px)',
+    excerpt: excerpt2,
+    excerptSize: 'clamp(16px, 2.5vw, 22px)',
+    bg: '#003da7',
+    titleColor: '#0098DC',
+    excerptColor: 'rgba(255,255,255,0.85)',
+  },
+  {
+    id: 3,
+    image: '/image19.png',
+    imagePosition: 'center 60%',
+    imageTopPadding: '40px',
+    title: '¿QUÉ ES LA DESNUTRICIÓN CRÓNICA INFANTIL?',
+    titleSize: 'clamp(16px, 3vw, 24px)',
+    titleMarginBottom: 'clamp(24px, 4vw, 40px)',
+    excerpt: excerpt3,
+    excerptSize: 'clamp(16px, 2.5vw, 22px)',
+    bg: '#fff',
+    titleColor: '#003da7',
+    excerptColor: '#003da7',
+  },
+];
 
 export default function News() {
   useFadeIn();
@@ -7,132 +58,87 @@ export default function News() {
 
   return (
     <div>
-      {/* Hero */}
-      <section style={{ margin: 0, padding: 0, lineHeight: 0, position: 'relative' }}>
-        <img
-          src="/image8.jpg"
-          alt="Noticias"
-          style={{
-            width: '100%',
-            display: 'block',
-            objectFit: 'cover',
-            height: 'clamp(220px, 35vw, 460px)',
-            objectPosition: 'center 30%',
-          }}
-        />
-        <div style={{ position: 'absolute', inset: 0, background: 'rgba(0,61,167,0.45)' }} />
-      </section>
+      {articles.map((article) => (
+        <article key={article.id} className="fade-in" style={{ backgroundColor: article.bg, margin: 0 }}>
 
-      {/* En Construcción */}
-      <section
-        className="fade-in"
-        style={{
-          backgroundColor: '#003da7',
-          padding: 'clamp(60px, 10vw, 130px) clamp(32px, 6vw, 80px)',
-          textAlign: 'center',
-        }}
-      >
-        <div style={{ maxWidth: 640, margin: '0 auto' }}>
-          {/* Ícono */}
-          <div style={{ marginBottom: 'clamp(24px, 4vw, 40px)' }}>
-            <svg width="72" height="72" viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <circle cx="36" cy="36" r="35" stroke="#00a1e0" strokeWidth="2" />
-              <path d="M22 50L36 24L50 50H22Z" stroke="#00a1e0" strokeWidth="2" strokeLinejoin="round" fill="none"/>
-              <rect x="34" y="38" width="4" height="4" rx="1" fill="#00a1e0"/>
-              <rect x="34" y="30" width="4" height="6" rx="1" fill="#00a1e0"/>
-            </svg>
+          {/* Título NOTICIAS solo en el primer artículo */}
+          {article.id === 1 && (
+            <div style={{ padding: 'clamp(200px, 30vw, 400px) clamp(32px, 6vw, 80px) clamp(16px, 3vw, 32px)' }}>
+              <div style={{ maxWidth: 760, margin: '0 auto' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+                  <span style={{
+                    fontFamily: "'Averta-Bold', sans-serif",
+                    fontWeight: 700,
+                    fontSize: 'clamp(16px, 3.5vw, 24px)',
+                    letterSpacing: '0.12em',
+                    color: '#003da7',
+                    textTransform: 'uppercase',
+                  }}>
+                    NOTICIAS
+                  </span>
+                  <span style={{ color: '#003da7', fontSize: 'clamp(14px, 2vw, 18px)' }}>›</span>
+                </div>
+              </div>
+            </div>
+          )}
+
+          {/* Imagen */}
+          <div className="w-[90%] sm:w-[75%] mx-auto h-[300px] sm:h-[500px] overflow-hidden">
+            <img
+              src={article.image}
+              alt={article.title}
+              className="w-full h-full object-cover"
+              style={{
+                objectPosition: article.imagePosition,
+                transform: article.imageTopPadding ? `translateY(${article.imageTopPadding})` : 'none',
+              }}
+            />
           </div>
 
-          <h1
-            style={{
-              fontFamily: "'Averta', sans-serif",
+          {/* Contenido */}
+          <div style={{ padding: 'clamp(28px, 5vw, 56px) clamp(32px, 6vw, 80px)', maxWidth: 760, margin: '0 auto' }}>
+            <h2 style={{
+              fontFamily: "'Averta-Bold', sans-serif",
               fontWeight: 700,
-              fontSize: 'clamp(20px, 4vw, 36px)',
-              letterSpacing: '0.1em',
-              color: '#fff',
+              fontSize: article.titleSize || 'clamp(16px, 3vw, 24px)',
+              lineHeight: 1.4,
+              letterSpacing: '0.05em',
+              color: article.titleColor,
               textTransform: 'uppercase',
-              marginBottom: 'clamp(12px, 2vw, 20px)',
               marginTop: 0,
-            }}
-          >
-            Noticias
-          </h1>
+              marginBottom: article.titleMarginBottom || 'clamp(12px, 2vw, 20px)',
+            }}>
+              {article.title}
+            </h2>
 
-          <div
-            style={{
-              width: 60,
-              height: 3,
-              backgroundColor: '#00a1e0',
-              margin: '0 auto clamp(24px, 4vw, 40px)',
-              borderRadius: 2,
-            }}
-          />
-
-          <p
-            style={{
+            <p style={{
               fontFamily: "'Averta', sans-serif",
-              fontWeight: 700,
-              fontSize: 'clamp(18px, 3.5vw, 30px)',
-              color: '#00a1e0',
-              letterSpacing: '0.08em',
-              marginBottom: 'clamp(16px, 2.5vw, 24px)',
-              marginTop: 0,
-            }}
-          >
-            Página en construcción
-          </p>
+              fontSize: article.excerptSize || 'clamp(13px, 2vw, 16px)',
+              lineHeight: 1.7,
+              color: article.excerptColor,
+              marginBottom: 'clamp(24px, 4vw, 40px)',
+            }}>
+              {article.excerpt}
+            </p>
 
-          <p
-            style={{
-              fontFamily: "'Averta', sans-serif",
-              fontStyle: 'italic',
-              fontSize: 'clamp(14px, 2.2vw, 19px)',
-              lineHeight: 1.8,
-              color: 'rgba(255,255,255,0.82)',
-              marginBottom: 'clamp(32px, 5vw, 56px)',
-            }}
-          >
-            Estamos trabajando para traerte las últimas noticias sobre nuestros proyectos e iniciativas para combatir la <strong style={{ fontWeight: 700, fontStyle: 'normal', color: '#fff' }}>Desnutrición Crónica Infantil</strong> en Guatemala. Pronto estará disponible.
-          </p>
+            <div className="flex justify-center">
+              <Button
+                variant="primary"
+                size="md"
+                className="font-averta font-bold text-[clamp(12px,2.5vw,16px)] tracking-[0.15em] px-[40px] py-[12px]"
+                style={
+                  article.id === 2 ? { backgroundColor: '#0098DC', borderColor: '#0098DC' } :
+                  article.id === 3 ? { backgroundColor: '#0098DC', borderColor: '#0098DC' } : {}
+                }
+                onClick={() => navigate(`/news/${article.id}`)}
+              >
+                LEER AHORA
+              </Button>
+            </div>
+          </div>
 
-          <button
-            onClick={() => navigate('/')}
-            style={{
-              backgroundColor: 'transparent',
-              border: '2px solid #00a1e0',
-              color: '#00a1e0',
-              borderRadius: 4,
-              padding: 'clamp(12px, 2vw, 16px) clamp(28px, 4vw, 48px)',
-              fontFamily: "'Averta', sans-serif",
-              fontWeight: 700,
-              fontSize: 'clamp(12px, 1.8vw, 15px)',
-              letterSpacing: '0.15em',
-              textTransform: 'uppercase',
-              cursor: 'pointer',
-              transition: 'background 0.3s, color 0.3s',
-            }}
-            onMouseEnter={(e) => { e.target.style.backgroundColor = '#00a1e0'; e.target.style.color = '#fff'; }}
-            onMouseLeave={(e) => { e.target.style.backgroundColor = 'transparent'; e.target.style.color = '#00a1e0'; }}
-          >
-            ← Volver al inicio
-          </button>
-        </div>
-      </section>
-
-      {/* Imagen cierre */}
-      <section style={{ margin: 0, padding: 0, lineHeight: 0 }}>
-        <img
-          src="/image7.jpg"
-          alt="Niños"
-          style={{
-            width: '100%',
-            display: 'block',
-            objectFit: 'cover',
-            height: 'clamp(180px, 25vw, 320px)',
-            objectPosition: 'center 35%',
-          }}
-        />
-      </section>
+        </article>
+      ))}
     </div>
   );
 }

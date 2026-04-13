@@ -5,7 +5,8 @@ import { ROUTES } from '../utils/constants';
 
 export default function MainLayout({ children }) {
   const { pathname } = useLocation();
-  const footerVariant = pathname === ROUTES.ALLIES ? "light" : "dark";
+  const lightFooterRoutes = [ROUTES.ALLIES, ROUTES.NEWS];
+  const footerVariant = lightFooterRoutes.includes(pathname) ? "light" : "dark";
 
   return (
     <div className="min-h-screen flex flex-col bg-primary-white">
