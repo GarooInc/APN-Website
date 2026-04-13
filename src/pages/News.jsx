@@ -123,13 +123,21 @@ export default function News() {
 
             <div className="flex justify-center">
               <Button
-                variant="primary"
+                variant="filled-light"
                 size="md"
                 className="font-averta font-bold text-[clamp(12px,2.5vw,16px)] tracking-[0.15em] px-[40px] py-[12px]"
                 style={
-                  article.id === 2 ? { backgroundColor: '#0098DC', borderColor: '#0098DC' } :
-                  article.id === 3 ? { backgroundColor: '#0098DC', borderColor: '#0098DC' } : {}
+                  article.id === 1 ? { backgroundColor: '#00379E', borderColor: '#00379E' } :
+                  article.id === 2 ? { backgroundColor: '#0098DC', borderColor: '#0098DC' } : {}
                 }
+                onMouseEnter={(e) => {
+                  if (article.id === 1) e.currentTarget.style.backgroundColor = '#0098DC';
+                  else if (article.id === 2) e.currentTarget.style.backgroundColor = '#00379E';
+                }}
+                onMouseLeave={(e) => {
+                  if (article.id === 1) e.currentTarget.style.backgroundColor = '#00379E';
+                  else if (article.id === 2) e.currentTarget.style.backgroundColor = '#0098DC';
+                }}
                 onClick={() => navigate(`/news/${article.id}`)}
               >
                 LEER AHORA
