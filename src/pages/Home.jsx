@@ -13,7 +13,7 @@ export default function Home() {
   return (
     <div>
       {/* Hero Section */}
-      <div className="relative w-full overflow-hidden min-h-[90vh] md:min-h-[165vh]">
+      <div className="relative w-full overflow-hidden mt-[70px] md:mt-0 min-h-[72vh] md:min-h-[165vh]">
 
         {/* Imagen de fondo */}
         <div
@@ -25,12 +25,12 @@ export default function Home() {
         <div className="absolute inset-0 bg-black/40" />
 
         {/* Contenido del hero — pegado abajo */}
-        <div className="absolute bottom-[15%] md:bottom-[10%] left-0 right-0 z-10 px-6 pb-4 md:px-12 md:pb-6 text-center">
+        <div className="absolute bottom-[5%] md:bottom-[10%] left-0 right-0 z-10 px-6 pb-4 md:px-12 md:pb-6 text-center">
           <p
             className="text-white/80 mb-3 tracking-[0.15em] uppercase"
             style={{
               fontFamily: "'Manrope', 'Montserrat', sans-serif",
-              fontSize: "clamp(7px, 2vw, 24px)",
+              fontSize: "clamp(11px, 2vw, 24px)",
               letterSpacing: "0.20em",
             }}
           >

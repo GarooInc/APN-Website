@@ -83,7 +83,7 @@ section {
 @media (max-width: 767px) {
   .hero-bg {
     background-size: cover;
-    background-position: top center;
+    background-position: 45% 95%;
   }
 }
 
