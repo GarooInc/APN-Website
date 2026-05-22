@@ -75,6 +75,18 @@ section {
   background: linear-gradient(135deg, #00379E 0%, #0098DC 100%);
 }
 
+.hero-bg {
+  background-size: cover;
+  background-position: top center;
+}
+
+@media (max-width: 767px) {
+  .hero-bg {
+    background-size: cover;
+    background-position: top center;
+  }
+}
+
 /* Utilities personalizadas */
 @layer components {
   .btn-primary {

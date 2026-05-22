@@ -12,7 +12,7 @@ const translations = {
     },
     hero: {
       subtitle: ["Yo soy parte de la", "Alianza por la Nutrición"],
-      title:    ["y el desarrollo integral", "de la primera infancia"],
+      title:    ["Juntos por un desarrollo", "pleno de la niñez en Guatemala"],
     },
     proposito: {
       label: "PROPÓSITO",
@@ -77,7 +77,7 @@ const translations = {
     },
     hero: {
       subtitle: ["I am part of the", "Alliance for Nutrition"],
-      title:    ["and the integral development", "of early childhood"],
+      title:    ["Together for the full", "development of children in Guatemala"],
     },
     proposito: {
       label: "PURPOSE",

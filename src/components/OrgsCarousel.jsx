@@ -32,13 +32,18 @@ export default function OrgsCarousel({ title, bgColor = "#00379E", textColor = "
   const [pos, setPos] = useState(1);
   const [animated, setAnimated] = useState(true);
   const [card, setCard] = useState(minCardSize);
+  const [isMobile, setIsMobile] = useState(false);
+  const [containerW, setContainerW] = useState(0);
   const containerRef = useRef(null);
 
   useEffect(() => {
     const updateCard = () => {
       if (containerRef.current) {
         const w = containerRef.current.offsetWidth;
-        setCard(Math.floor((w - 2 * GAP) / 3));
+        const mobile = w < 480;
+        setIsMobile(mobile);
+        setContainerW(w);
+        setCard(mobile ? Math.floor(w * 0.80) : Math.floor((w - 2 * GAP) / 3));
       }
     };
     updateCard();
@@ -76,7 +81,11 @@ export default function OrgsCarousel({ title, bgColor = "#00379E", textColor = "
   const goNext = () => { setAnimated(true); setPos(p => p + 1); resetTimer(); };
   const goPrev = () => { setAnimated(true); setPos(p => p - 1); resetTimer(); };
 
-  const trackX = -(pos - 1) * (card + GAP);
+  const trackX = isMobile
+    ? (containerW - card) / 2 - pos * (card + GAP)
+    : -(pos - 1) * (card + GAP);
+
+  const arrowOffset = isMobile ? -22 : -48;
 
   const arrowStyle = {
     position: "absolute",
@@ -85,14 +94,14 @@ export default function OrgsCarousel({ title, bgColor = "#00379E", textColor = "
     background: "transparent",
     border: `2px solid ${textColor}`,
     borderRadius: "50%",
-    width: "clamp(28px, 4vw, 36px)",
-    height: "clamp(28px, 4vw, 36px)",
+    width: isMobile ? 32 : "clamp(28px, 4vw, 36px)",
+    height: isMobile ? 32 : "clamp(28px, 4vw, 36px)",
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
     cursor: "pointer",
     color: textColor,
-    fontSize: "clamp(16px, 2.5vw, 22px)",
+    fontSize: isMobile ? 18 : "clamp(16px, 2.5vw, 22px)",
     opacity: 0.8,
     transition: "opacity 0.2s",
     zIndex: 2,
@@ -124,17 +133,17 @@ export default function OrgsCarousel({ title, bgColor = "#00379E", textColor = "
         <div style={{ position: "relative", width: "100%", maxWidth: 3 * minCardSize + 2 * GAP, margin: "0 auto" }}>
           <button
             onClick={goPrev}
-            style={{ ...arrowStyle, left: -48 }}
+            style={{ ...arrowStyle, left: arrowOffset }}
             onMouseEnter={e => e.currentTarget.style.opacity = 1}
             onMouseLeave={e => e.currentTarget.style.opacity = 0.8}
           >‹</button>
           <button
             onClick={goNext}
-            style={{ ...arrowStyle, right: -48 }}
+            style={{ ...arrowStyle, right: arrowOffset }}
             onMouseEnter={e => e.currentTarget.style.opacity = 1}
             onMouseLeave={e => e.currentTarget.style.opacity = 0.8}
           >›</button>
-        <div ref={containerRef} style={{ width: "100%", perspective: 900 }}>
+        <div ref={containerRef} style={{ width: "100%", perspective: 900, overflow: "hidden" }}>
           <div
             style={{
               display: "flex",
@@ -164,14 +173,16 @@ export default function OrgsCarousel({ title, bgColor = "#00379E", textColor = "
                     alignItems: "center",
                     justifyContent: "center",
                     transition: "transform 0.6s ease, opacity 0.6s ease, box-shadow 0.6s ease",
-                    transform: isCenter
-                      ? "rotateY(0deg) scale(1.08) translateZ(30px)"
-                      : dist === -1
-                        ? "rotateY(18deg) scale(0.88)"
-                        : dist === 1
-                          ? "rotateY(-18deg) scale(0.88)"
-                          : "scale(0.75)",
-                    opacity: isCenter ? 1 : isSide ? 0.65 : 0,
+                    transform: isMobile
+                      ? isCenter ? "scale(1)" : "scale(0.75)"
+                      : isCenter
+                        ? "rotateY(0deg) scale(1.08) translateZ(30px)"
+                        : dist === -1
+                          ? "rotateY(18deg) scale(0.88)"
+                          : dist === 1
+                            ? "rotateY(-18deg) scale(0.88)"
+                            : "scale(0.75)",
+                    opacity: isCenter ? 1 : (isMobile ? 0 : isSide ? 0.65 : 0),
                     pointerEvents: isCenter ? "auto" : "none",
                   }}
                 >

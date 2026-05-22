@@ -13,11 +13,11 @@ export default function Home() {
   return (
     <div>
       {/* Hero Section */}
-      <div className="relative w-full overflow-hidden" style={{ height: "clamp(500px, 100svh, 160svh)" }}>
+      <div className="relative w-full overflow-hidden min-h-[90vh] md:min-h-[165vh]">
 
         {/* Imagen de fondo */}
         <div
-          className="absolute inset-0 bg-contain bg-cover bg-top"
+          className="hero-bg absolute inset-0"
           style={{ backgroundImage: 'url("/image1.png")' }}
         />
 
@@ -25,13 +25,13 @@ export default function Home() {
         <div className="absolute inset-0 bg-black/40" />
 
         {/* Contenido del hero — pegado abajo */}
-        <div className="absolute bottom-1/3 md:bottom-24 left-0 right-0 z-10 px-6 pb-10 md:px-12 md:pb-14 text-center">
+        <div className="absolute bottom-[15%] md:bottom-[10%] left-0 right-0 z-10 px-6 pb-4 md:px-12 md:pb-6 text-center">
           <p
             className="text-white/80 mb-3 tracking-[0.15em] uppercase"
             style={{
               fontFamily: "'Manrope', 'Montserrat', sans-serif",
-              fontSize: "clamp(11px, 2vw, 16px)",
-              letterSpacing: "0.15em",
+              fontSize: "clamp(7px, 2vw, 24px)",
+              letterSpacing: "0.20em",
             }}
           >
             {t.hero.subtitle[0]}<br />
@@ -41,13 +41,13 @@ export default function Home() {
           <h1
             className="text-white m-0 text-center mx-auto"
             style={{
-              fontFamily: "'Averta', 'Averta-Bold', 'Georgia', 'serif', 'Averta-BoldItalic'",
-              fontWeight: 700,
+              fontFamily: "'Averta', sans-serif",
+              fontWeight: 400,
               fontStyle: "italic",
-              fontSize: "clamp(26px, 6vw, 52px)",
+              fontSize: "clamp(20px, 6vw, 52px)",
               lineHeight: 1.15,
-              letterSpacing: "-0.02em",
-              maxWidth: 600,
+              letterSpacing: "0.06em",
+              maxWidth: 850,
             }}
           >
             {t.hero.title[0]}<br />

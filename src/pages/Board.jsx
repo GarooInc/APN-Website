@@ -109,7 +109,7 @@ export default function Allies() {
               <strong style={boldStyle}>combatir y prevenir la desnutrición crónica infantil bajo un enfoque integral y multicausal, actuando en la ventana crítica de los primeros 1,000 días de vida.</strong>
             </p>
             <p style={{ marginBottom: 18 }}>
-              Cada acción que emprendemos busca garantizar que la niñez crezca sana, fuerte y con las oportunidades que merece. Porque cuando cuidamos a nuestros niños, nutrimos el presente y{" "}
+              Cada acción que emprendemos busca garantizar que la niñez crezca sana, fuerte y con las oportunidades que merece. Porque cuando los cuidamos, nutrimos…{" "}
               <strong style={boldStyle}>transformamos el futuro de Guatemala.</strong>
             </p>
             <p>
@@ -237,9 +237,9 @@ export default function Allies() {
           <div className="junta-grid">
             {[
               { img: "/image12.png", name: "Ana Luisa\nEsquivel",  role: "Directora Ejecutiva" },
-              { img: "/image13.jpg", name: "Olga\nLópez",          role: "Administración\ny Finanzas" },
-              { img: "/image14.png", name: "Mónica\nRodríguez",    role: "Monitoreo, Evaluación\ny Aprendizaje" },
-            ].map(({ img, name, role }) => (
+              { img: "/image13.jpg", name: "Olga\nLópez",          role: "Coordinadora",  subrole: "Administración y Finanzas" },
+              { img: "/image14.png", name: "Mónica\nRodríguez",    role: "Coordinadora",  subrole: "Monitoreo, Evaluación y Aprendizaje" },
+            ].map(({ img, name, role, subrole }) => (
               <div key={name} style={{ display: "flex", alignItems: "flex-start", gap: "clamp(12px, 2vw, 20px)" }}>
                 <img
                   src={img}
@@ -282,6 +282,11 @@ export default function Allies() {
                     }}
                   >
                     {role}
+                    {subrole && (
+                      <>
+                        <br />{subrole}
+                      </>
+                    )}
                   </span>
                 </div>
               </div>

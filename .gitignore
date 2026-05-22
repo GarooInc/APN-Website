@@ -34,3 +34,7 @@ vite.config.js.timestamp-*.mjs
 # Screenshots / assets temporales
 screen*.png
 *.screenshot.png
+
+# Claude Code
+CLAUDE.md
+.claude/
