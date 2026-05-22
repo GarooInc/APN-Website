@@ -42,7 +42,7 @@ export default function Home() {
             className="text-white m-0 text-center mx-auto"
             style={{
               fontFamily: "'Averta', sans-serif",
-              fontWeight: 400,
+              fontWeight: 800,
               fontStyle: "italic",
               fontSize: "clamp(20px, 6vw, 52px)",
               lineHeight: 1.15,
@@ -56,31 +56,31 @@ export default function Home() {
         </div>
       </div>
 
-      <section id="proposito" className="bg-[#1a3a8f] px-6 sm:px-10 py-8 sm:py-12 flex flex-col justify-center fade-in">
-        <div className="max-w-3xl mx-auto w-full flex gap-3">
+      <section id="proposito" className="bg-[#1a3a8f] px-16 sm:px-32 py-12 sm:py-20 flex flex-col justify-center fade-in">
+        <div className="w-full sm:max-w-2xl sm:mx-auto flex gap-4 sm:gap-16">
           {/* Línea vertical */}
-          <div className="w-0.5 flex-shrink-0 hidden sm:block" style={{ backgroundColor: "#0098DC", alignSelf: "flex-start", marginTop: "-18px", height: "180px" }} />
-          <div>
+          <div className="w-0.5 flex-shrink-0" style={{ backgroundColor: "#0098DC", alignSelf: "flex-start", marginTop: "-1px", height: "clamp(180px, 40vw, 340px)" }} />
+          <div className="flex-1 min-w-0">
             <div className="flex items-center gap-2 mb-6">
               <span
                 style={{
                   fontFamily: "'Averta', sans-serif",
                   fontWeight: 700,
-                  fontSize: "clamp(14px, 3vw, 22px)",
-                  letterSpacing: "0.15em",
+                  fontSize: "clamp(14px, 3vw, 30px)",
+                  letterSpacing: "0.09em",
                   color: "white",
                 }}
               >
                 {t.proposito.label}
               </span>
-              <span className="text-white text-sm">{">"}</span>
+              <span className="text-white text-sm sm:text-2xl" style={{ letterSpacing: "0.5em" }}>{">"}</span>
             </div>
 
             <p
               style={{
                 fontFamily: "'Averta', sans-serif",
                 fontWeight: 400,
-                fontSize: "clamp(16px, 4vw, 28px)",
+                fontSize: "clamp(18px, 4vw, 34px)",
                 lineHeight: "1.6",
                 color: "rgba(255,255,255,0.85)",
                 fontStyle: "italic",
