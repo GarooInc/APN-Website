@@ -390,11 +390,11 @@ export default function Home() {
       {/* Noticias */}
       <section id="noticias" className="bg-white flex flex-col fade-in">
 
-        <div className="w-full h-[550px] overflow-hidden">
+        <div className="w-full h-[300px] sm:h-[550px] overflow-hidden">
           <img
             src="/image8.jpg"
             alt="Niños en clase"
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover scale-110 sm:scale-100"
             style={{ objectPosition: "center 50%" }}
           />
         </div>
@@ -442,12 +442,12 @@ export default function Home() {
 
         </div>
 
-        <div className="w-full h-[580px] overflow-hidden">
+        <div className="w-full h-[300px] sm:h-[550px] overflow-hidden">
           <img
-            src="/image9.jpg"
+            src="/image9.png"
             alt="Niña mirando"
             className="w-full h-full object-cover"
-            style={{ objectPosition: "center 28%" }}
+            style={{ objectPosition: "center 15%" }}
           />
         </div>
 
