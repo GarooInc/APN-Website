@@ -96,12 +96,12 @@ export default function Home() {
         </div>
       </section>
 
-      <div className="w-full h-[200px] sm:h-[350px] overflow-hidden">
+      <div className="w-full h-[150px] sm:h-[300px] overflow-hidden">
         <img
           src="/image2.jpg"
           alt="Niña"
           className="w-full h-full object-cover object-top"
-          style={{ objectPosition: "center 25%" }}
+          style={{ objectPosition: "center 18%" }}
         />
       </div>
 
@@ -124,15 +124,56 @@ export default function Home() {
           </div>
 
           <p
-            className="text-lg sm:text-xl md:text-2xl italic text-center"
+            className="italic text-center"
             style={{
               fontFamily: "'Averta', sans-serif",
               fontWeight: 400,
+              fontSize: "clamp(18px, 4vw, 34px)",
               lineHeight: "1.6",
               color: "#1a3a8f",
             }}
           >
-            {t.mision.text}
+            {(() => {
+              const text = t.mision.text;
+              const keywords = ['Guatemala', 'alianza nacional', 'DCI*'];
+              let result = [];
+              let lastIndex = 0;
+              
+              // Create array of all matches with their positions
+              const matches = [];
+              keywords.forEach(keyword => {
+                let index = text.indexOf(keyword);
+                while (index !== -1) {
+                  matches.push({ keyword, index, endIndex: index + keyword.length });
+                  index = text.indexOf(keyword, index + 1);
+                }
+              });
+              
+              // Sort by position
+              matches.sort((a, b) => a.index - b.index);
+              
+              // Build result
+              matches.forEach((match, i) => {
+                // Add text before this match
+                if (match.index > lastIndex) {
+                  result.push(text.substring(lastIndex, match.index));
+                }
+                // Add the bold keyword
+                result.push(
+                  <strong key={`bold-${i}`} style={{ fontWeight: 700 }}>
+                    {match.keyword}
+                  </strong>
+                );
+                lastIndex = match.endIndex;
+              });
+              
+              // Add remaining text
+              if (lastIndex < text.length) {
+                result.push(text.substring(lastIndex));
+              }
+              
+              return result;
+            })()}
           </p>
 
           <p className="mt-8 text-xs italic font-averta text-[#1a3a8f]">
@@ -142,7 +183,7 @@ export default function Home() {
       </section>
 
       {/* Quiénes Somos */}
-      <div className="w-full h-[490px] overflow-hidden">
+      <div className="w-full h-[280px] sm:h-[490px] overflow-hidden">
         <img
           src="/image3.jpg"
           alt="Niños en actividad"
@@ -151,8 +192,8 @@ export default function Home() {
         />
       </div>
 
-      <section id="quienes-somos" className="bg-white px-8 pt-10 mb-10 flex flex-col justify-center fade-in">
-        <div className="max-w-3xl mx-auto w-full">
+      <section id="quienes-somos" className="bg-white px-14 sm:px-15 md:px-16 pt-10 mb-10 flex flex-col justify-center fade-in">
+        <div className="max-w-xs sm:max-w-xl md:max-w-2xl mx-auto w-full">
 
           <div className="flex items-center gap-2 mb-6">
             <span
@@ -170,7 +211,6 @@ export default function Home() {
           </div>
 
           <div
-            className="p-6 rounded-lg"
             style={{
               fontFamily: "'Averta', sans-serif",
               fontWeight: 400,
@@ -191,11 +231,11 @@ export default function Home() {
             </p>
           </div>
 
-          <p className="text-xs italic mb-10 font-averta text-[#00379E]">
+          <p className="text-xs italic font-averta text-[#00379E]">
             {t.quienesSomos.footnote}
           </p>
 
-          <div className="flex justify-center">
+          <div className="flex justify-center mt-6">
             <Button
               variant="filled-light"
               size="md"
@@ -210,7 +250,7 @@ export default function Home() {
       </section>
 
       {/* Imagen superior - full width */}
-      <div className="w-full h-[310px] overflow-hidden">
+      <div className="w-full h-[140px] md:h-[220px] lg:h-[300px] overflow-hidden">
         <img
           src="/image4.jpg"
           alt="Niñas guatemaltecas"
