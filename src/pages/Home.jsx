@@ -1,6 +1,5 @@
 import Button from '../components/Button';
 import { useNavigate } from 'react-router-dom';
-import { Phone, Mail } from "lucide-react";
 import { useFadeIn } from '../hooks/useFadeIn';
 import { useLang } from '../context/LanguageContext';
 import '@fontsource/plus-jakarta-sans/400.css';
@@ -522,10 +521,10 @@ export default function Home() {
                 {t.contacto.roles.directoraEjecutiva}
               </p>
               <p style={{ fontFamily: "'Averta', sans-serif", fontSize: "clamp(11px, 2vw, 14px)", color: "#1a3a8f" }} className="flex items-center gap-1">
-                <Phone size={14} color="#1a3a8f" /> (502) 5318-3523
+                <img src="/phone.svg" alt="Teléfono" className="w-3.5 h-3.5" style={{ filter: 'invert(19%) sepia(85%) saturate(1472%) hue-rotate(204deg) brightness(68%) contrast(97%)' }} /> (502) 5318-3523
               </p>
               <p style={{ fontFamily: "'Averta', sans-serif", fontSize: "clamp(11px, 2vw, 14px)", color: "#1a3a8f" }} className="flex items-center gap-1">
-                <Mail size={14} color="#1a3a8f" /> analuisa.esquivel@apn.org.gt
+                <img src="/message.svg" alt="Correo" className="w-3.5 h-3.5" style={{ filter: 'invert(19%) sepia(85%) saturate(1472%) hue-rotate(204deg) brightness(68%) contrast(97%)' }} /> analuisa.esquivel@apn.org.gt
               </p>
             </div>
 
@@ -536,10 +535,10 @@ export default function Home() {
                 {t.contacto.roles.adminFinanzas}
               </p>
               <p style={{ fontFamily: "'Averta', sans-serif", fontSize: "clamp(11px, 2vw, 14px)", color: "#1a3a8f" }} className="flex items-center gap-1">
-                <Phone size={14} color="#1a3a8f" /> (502) 3481-1617
+                <img src="/phone.svg" alt="Teléfono" className="w-3.5 h-3.5" style={{ filter: 'invert(19%) sepia(85%) saturate(1472%) hue-rotate(204deg) brightness(68%) contrast(97%)' }} /> (502) 3481-1617
               </p>
               <p style={{ fontFamily: "'Averta', sans-serif", fontSize: "clamp(11px, 2vw, 14px)", color: "#1a3a8f" }} className="flex items-center gap-1">
-                <Mail size={14} color="#1a3a8f" /> olga.lopez@apn.org.gt
+                <img src="/message.svg" alt="Correo" className="w-3.5 h-3.5" style={{ filter: 'invert(19%) sepia(85%) saturate(1472%) hue-rotate(204deg) brightness(68%) contrast(97%)' }} /> olga.lopez@apn.org.gt
               </p>
             </div>
 
@@ -550,10 +549,10 @@ export default function Home() {
                 {t.contacto.roles.monitoreo}
               </p>
               <p style={{ fontFamily: "'Averta', sans-serif", fontSize: "clamp(11px, 2vw, 14px)", color: "#1a3a8f" }} className="flex items-center gap-1">
-                <Phone size={14} color="#1a3a8f" /> (502) 3483-2517
+                <img src="/phone.svg" alt="Teléfono" className="w-3.5 h-3.5" style={{ filter: 'invert(19%) sepia(85%) saturate(1472%) hue-rotate(204deg) brightness(68%) contrast(97%)' }} /> (502) 3483-2517
               </p>
               <p style={{ fontFamily: "'Averta', sans-serif", fontSize: "clamp(11px, 2vw, 14px)", color: "#1a3a8f" }} className="flex items-center gap-1">
-                <Mail size={14} color="#1a3a8f" /> monica.rodriguez@apn.org.gt
+                <img src="/message.svg" alt="Correo" className="w-3.5 h-3.5" style={{ filter: 'invert(19%) sepia(85%) saturate(1472%) hue-rotate(204deg) brightness(68%) contrast(97%)' }} /> monica.rodriguez@apn.org.gt
               </p>
             </div>
 

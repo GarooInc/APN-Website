@@ -109,7 +109,8 @@ export default function Allies() {
               <strong style={boldStyle}>combatir y prevenir la desnutrición crónica infantil bajo un enfoque integral y multicausal, actuando en la ventana crítica de los primeros 1,000 días de vida.</strong>
             </p>
             <p style={{ marginBottom: 18 }}>
-              Cada acción que emprendemos busca garantizar que la niñez crezca sana, fuerte y con las oportunidades que merece. Porque cuando los cuidamos, nutrimos…{" "}
+              Cada acción que emprendemos busca garantizar que la niñez crezca sana, fuerte y con las oportunidades que merece. Porque cuando
+              los cuidamos, nutrimos el presente y {" "}
               <strong style={boldStyle}>transformamos el futuro de Guatemala.</strong>
             </p>
             <p>

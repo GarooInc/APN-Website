@@ -7,7 +7,7 @@ const articles = {
     title: 'ACOMPÁÑAME A CRECER: UN ESFUERZO PÚBLICO-PRIVADO PARA EL DESARROLLO INFANTIL TEMPRANO',
     subtitle: 'Generando evidencia para transformar vidas.',
     image: '/image3.jpg',
-    imagePosition: 'center 40%',
+    imagePosition: 'center 10%', // Ajustado para enfocar más la parte superior de la imagen según Figma
     intro: (
       <>
         La <strong>Alianza por la Nutrición (APN)</strong>, junto con sus socios implementadores —Fundación
@@ -28,16 +28,16 @@ const articles = {
         question: '¿Cómo lo hacemos?',
         answer: (
           <>
-            <p style={{ marginTop: 0, marginBottom: '1em' }}>
-              El modelo implementado es el programa <strong>Acompáñame a Crecer</strong>, diseñado para
+            <p style={{ margin: 0, marginBottom: '1em' }}>
+              El modelo implementado es el programa <strong style={{ fontStyle: 'normal' }}>Acompáñame a Crecer</strong>, diseñado para
               promover el desarrollo en la primera infancia (0 a 4 años). Este programa fue impulsado por el{' '}
-              <strong>Ministerio de Educación</strong> mediante el{' '}
-              <strong>Acuerdo Ministerial 3512-2018</strong> y, en 2020, evolucionó hacia una atención
-              integral con el <strong>Acuerdo Gubernativo 239.</strong>
+              <strong style={{ fontStyle: 'normal' }}>Ministerio de Educación</strong> mediante el{' '}
+              <strong style={{ fontStyle: 'normal' }}>Acuerdo Ministerial 3512-2018</strong> y, en 2020, evolucionó hacia una atención
+              integral con el <strong style={{ fontStyle: 'normal' }}>Acuerdo Gubernativo 239.</strong>
             </p>
             <p style={{ margin: 0 }}>
               Gracias a un convenio interinstitucional con el Ministerio de Educación,{' '}
-              <strong>APN</strong> implementa el programa junto a sus socios. En diciembre 2025 cumplimos 5
+              <strong style={{ fontStyle: 'normal' }}>APN</strong> implementa el programa junto a sus socios. En diciembre 2025 cumplimos 5
               años de su implementación, de un esfuerzo público&#8209;privado.
             </p>
           </>
@@ -102,18 +102,18 @@ const articles = {
 };
 
 const bodyText = {
-  fontFamily: "'Averta', sans-serif",
-  fontSize: 'clamp(15px, 2.5vw, 32px)',
+  fontFamily: "'Averta', sans-serif", // El texto del cuerpo no es itálico por defecto en Figma
+  fontSize: 'clamp(15px, 2.5vw, 20px)', // Ajustado el tamaño de fuente para que coincida con Figma
   lineHeight: 1.75,
   color: 'white',
   margin: 0,
 };
 
 const questionStyle = {
-  fontFamily: "'Averta-Bold', sans-serif",
+  fontFamily: "'Averta', sans-serif", // Las preguntas son en negrita, no negrita-itálica en Figma
   fontWeight: 700,
-  fontSize: 'clamp(15px, 2.5vw, 32px)',
-  lineHeight: 1.5,
+  fontSize: 'clamp(15px, 2.5vw, 24px)', // Ajustado el tamaño de fuente para que coincida con Figma
+  lineHeight: 1.2, // Ajustado el interlineado para que coincida con Figma
   color: 'white',
   marginTop: 0,
   marginBottom: 'clamp(10px, 1.5vw, 16px)',
@@ -173,17 +173,17 @@ export default function NewsDetail() {
         className="fade-in"
         style={{
           backgroundColor: '#003da7',
-          padding: 'clamp(8px, 2vw, 24px) clamp(24px, 10vw, 160px) clamp(36px, 5vw, 72px)',
+          padding: 'clamp(40px, 6vw, 80px) clamp(24px, 10vw, 160px) clamp(36px, 5vw, 72px)', // Ajustado el padding superior
         }}
       >
         <div style={{ maxWidth: 920, margin: '0 auto' }}>
 
-          <p style={{ ...bodyText, marginBottom: 'clamp(20px, 3vw, 36px)' }}>
+          <p style={{ ...bodyText, fontStyle: 'italic', marginBottom: 'clamp(20px, 3vw, 36px)' }}> {/* Aplicado estilo itálico */}
             {article.subtitle}
           </p>
 
           {article.intro && (
-            <p style={{ ...bodyText, marginBottom: 'clamp(28px, 4vw, 56px)' }}>
+            <p style={{ ...bodyText, fontStyle: 'italic', marginBottom: 'clamp(28px, 4vw, 56px)' }}> {/* Aplicado estilo itálico */}
               {article.intro}
             </p>
           )}
@@ -235,11 +235,25 @@ export default function NewsDetail() {
           <div style={{ marginTop: 'clamp(40px, 6vw, 80px)', textAlign: 'center' }}>
             <Link
               to={ROUTES.NEWS}
-              className="font-manrope font-bold text-white uppercase hover:opacity-70 transition-opacity duration-200"
+              className="font-manrope font-bold uppercase transition-all duration-200" // Eliminado text-white y hover:opacity-70 para aplicar estilos personalizados
               style={{
                 fontSize: 'clamp(14px, 2vw, 27px)',
                 letterSpacing: '0.2em',
                 textDecoration: 'none',
+                backgroundColor: 'transparent', // Fondo transparente
+                border: '2px solid white', // Borde blanco
+                color: 'white', // Texto blanco
+                padding: 'clamp(12px, 2vw, 16px) clamp(28px, 4vw, 48px)', // Padding para el botón
+                borderRadius: '4px', // Bordes ligeramente redondeados
+              }}
+              // Efectos hover personalizados
+              onMouseEnter={(e) => {
+                e.currentTarget.style.backgroundColor = 'white';
+                e.currentTarget.style.color = '#003da7'; // Color azul oscuro del fondo de la sección
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.backgroundColor = 'transparent';
+                e.currentTarget.style.color = 'white';
               }}
             >
               VOLVER
