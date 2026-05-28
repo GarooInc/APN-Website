@@ -2,7 +2,7 @@ import OrgsCarousel from '../components/OrgsCarousel';
 import { useFadeIn } from '../hooks/useFadeIn';
 import './Allies.css';
 
-export default function Allies() {
+export default function Board() {
   useFadeIn();
 
   const boldStyle = {
@@ -302,7 +302,7 @@ export default function Allies() {
         bgColor="#00379E"
         textColor="#fff"
         showLogo={true}
-        minCardSize={220}
+        minCardSize={300}
       />
 
       {/* Únete Aquí */}
@@ -412,4 +412,3 @@ export default function Allies() {
     </div>
   );
 }
-

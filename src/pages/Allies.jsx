@@ -22,7 +22,7 @@ export default function Allies() {
         bgColor="#fff"
         textColor="#00379E"
         showLogo={false}
-        minCardSize={250}
+        minCardSize={300}
       />
 
       {/* Por qué ser parte */}
