@@ -9,7 +9,7 @@ export default function MainLayout({ children }) {
   const footerVariant = lightFooterRoutes.includes(pathname) ? "light" : "dark";
 
   return (
-    <div className="min-h-screen flex flex-col bg-primary-white">
+    <div className="relative min-h-screen flex flex-col bg-primary-white overflow-x-hidden">
       <Header />
       <main className="flex-grow">
         {children}

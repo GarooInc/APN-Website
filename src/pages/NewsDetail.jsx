@@ -4,10 +4,10 @@ import { ROUTES } from '../utils/constants';
 
 const articles = {
   1: {
-    title: 'ACOMPÁÑAME A CRECER: UN ESFUERZO PÚBLICO-PRIVADO PARA EL DESARROLLO INFANTIL TEMPRANO',
+    title: 'ACOMPÁÑAME A CRECER: UN ESFUERZO PÚBLICO-PRIVADO PARA EL DESARROLLO INFANTIL TEMPRANO', // Revertido el cambio de título
     subtitle: 'Generando evidencia para transformar vidas.',
-    image: '/image3.jpg',
-    imagePosition: 'center 10%', // Ajustado para enfocar más la parte superior de la imagen según Figma
+    image: '/image17.png',
+    imagePosition: 'center 1%',
     intro: (
       <>
         La <strong>Alianza por la Nutrición (APN)</strong>, junto con sus socios implementadores —Fundación
@@ -25,15 +25,13 @@ const articles = {
           'Medir los avances del programa, cuyo objetivo es garantizar el desarrollo integral de los niños desde la concepción hasta los cuatro años.',
       },
       {
-        question: '¿Cómo lo hacemos?',
+        question: '¿Qué es el programa Acompáñame a Crecer?',
         answer: (
           <>
             <p style={{ margin: 0, marginBottom: '1em' }}>
-              El modelo implementado es el programa <strong style={{ fontStyle: 'normal' }}>Acompáñame a Crecer</strong>, diseñado para
-              promover el desarrollo en la primera infancia (0 a 4 años). Este programa fue impulsado por el{' '}
-              <strong style={{ fontStyle: 'normal' }}>Ministerio de Educación</strong> mediante el{' '}
-              <strong style={{ fontStyle: 'normal' }}>Acuerdo Ministerial 3512-2018</strong> y, en 2020, evolucionó hacia una atención
-              integral con el <strong style={{ fontStyle: 'normal' }}>Acuerdo Gubernativo 239.</strong>
+              El modelo implementado es el programa Es una iniciativa del Ministerio de Educación de Guatemala (MINEDUC) centrada en el desarrollo integral de niños de 0 a 4 años, especialmente en zonas rurales. 
+              Se ofrece talleres de estimulación temprana, educación inicial, salud, nutrición y protección, trabajando junto a las familias para preparar a la niñez antes de la vida escolar.  
+              <strong style={{ fontStyle: 'normal' }}> Desde el 2020 APN firmó un convenio interinstitucional con el MINEDUC y por ello es posible que sus socios puedan implementar.</strong>
             </p>
             <p style={{ margin: 0 }}>
               Gracias a un convenio interinstitucional con el Ministerio de Educación,{' '}
@@ -126,59 +124,80 @@ export default function NewsDetail() {
 
   return (
     <div>
-      {/* Hero imagen con onda blanca al final */}
+      {/* Hero imagen */}
       <div style={{ position: 'relative' }}>
-        <div className="w-full overflow-hidden" style={{ height: 'clamp(280px, 45vw, 560px)' }}>
+        <div className="w-full mt-[70px] md:mt-0" style={{ height: 'clamp(400px, 85vh, 950px)' }}>
           <img
             src={article.image}
-            alt={article.title}
-            className="w-full h-full object-cover"
-            style={{ objectPosition: article.imagePosition }}
+            alt=""
+            style={{ display: 'block', width: '100%', height: '100%', objectFit: 'cover', objectPosition: article.imagePosition }}
           />
         </div>
-        <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, lineHeight: 0 }}>
-          <svg viewBox="0 0 1440 80" preserveAspectRatio="none" style={{ width: '100%', height: 'clamp(36px, 5vw, 80px)' }}>
-            <path d="M0,80 C360,0 1080,0 1440,80 L1440,80 L0,80 Z" fill="white" />
-          </svg>
-        </div>
+        {id !== '1' && (
+          <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, lineHeight: 0 }}>
+            <svg viewBox="0 0 1440 80" preserveAspectRatio="none" style={{ width: '100%', height: 'clamp(36px, 5vw, 80px)' }}>
+              <path d="M0,80 C360,0 1080,0 1440,80 L1440,80 L0,80 Z" fill="white" />
+            </svg>
+          </div>
+        )}
       </div>
 
       {/* Título */}
-      <section className="bg-white fade-in" style={{ padding: 'clamp(20px, 4vw, 56px) clamp(24px, 10vw, 160px) clamp(0px, 2vw, 16px)' }}>
-        <div style={{ maxWidth: 920, margin: '0 auto' }}>
-          <h1
-            className="font-averta font-bold"
-            style={{
-              fontSize: 'clamp(18px, 3vw, 42px)',
-              lineHeight: 1.3,
-              letterSpacing: '0.08em',
-              color: '#00379e',
-              margin: 0,
-            }}
-          >
-            {article.title}
-          </h1>
-        </div>
-      </section>
+      {id !== '1' && (
+        <section className="bg-white fade-in" style={{ padding: 'clamp(20px, 4vw, 56px) clamp(24px, 10vw, 160px) clamp(0px, 2vw, 16px)' }}>
+          <div style={{ maxWidth: 920, margin: '0 auto' }}>
+            <h1
+              className="font-averta font-bold"
+              style={{
+                fontSize: 'clamp(18px, 3vw, 42px)',
+                lineHeight: 1.3,
+                letterSpacing: '0.08em',
+                color: '#00379e',
+                margin: 0,
+              }}
+            >
+              {article.title}
+            </h1>
+          </div>
+        </section>
+      )}
 
       {/* Onda de transición blanco → azul */}
-      <div style={{ backgroundColor: 'white', lineHeight: 0 }}>
-        <svg viewBox="0 0 1440 80" preserveAspectRatio="none" style={{ width: '100%', height: 'clamp(36px, 5vw, 80px)' }}>
-          <path d="M0,0 C360,80 1080,80 1440,0 L1440,80 L0,80 Z" fill="#003da7" />
-        </svg>
-      </div>
+      {id !== '1' ? (
+        <div style={{ backgroundColor: 'white', lineHeight: 0 }}>
+          <svg viewBox="0 0 1440 80" preserveAspectRatio="none" style={{ width: '100%', height: 'clamp(36px, 5vw, 80px)' }}>
+            <path d="M0,0 C360,80 1080,80 1440,0 L1440,80 L0,80 Z" fill="#003da7" />
+          </svg>
+        </div>
+      ) : null}
 
       {/* Cuerpo */}
       <section
         className="fade-in"
         style={{
-          backgroundColor: '#003da7',
-          padding: 'clamp(40px, 6vw, 80px) clamp(24px, 10vw, 160px) clamp(36px, 5vw, 72px)', // Ajustado el padding superior
+          backgroundColor: id === '1' ? '#0098DC' : '#003da7',
+          padding: 'clamp(40px, 6vw, 80px) clamp(24px, 10vw, 160px) clamp(36px, 5vw, 72px)',
         }}
       >
         <div style={{ maxWidth: 920, margin: '0 auto' }}>
 
-          <p style={{ ...bodyText, fontStyle: 'italic', marginBottom: 'clamp(20px, 3vw, 36px)' }}> {/* Aplicado estilo itálico */}
+          {id === '1' && (
+            <h1
+              className="font-averta font-bold"
+              style={{
+                fontSize: 'clamp(18px, 3vw, 42px)',
+                lineHeight: 1.3,
+                letterSpacing: '0.08em',
+                color: '#00379E',
+                margin: 0,
+                marginBottom: 'clamp(20px, 3vw, 36px)',
+              }}
+            >
+              {article.title}
+            </h1>
+          )}
+
+          <p style={{ ...bodyText, fontStyle: 'italic', marginBottom: 'clamp(20px, 3vw, 36px)' }}>
             {article.subtitle}
           </p>
 
