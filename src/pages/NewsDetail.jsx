@@ -57,24 +57,50 @@ const articles = {
   },
   2: {
     title: 'CON NUESTROS SOCIOS IMPLEMENTADORES LAS HISTORIAS SE ESCRIBEN CON DATOS, ABRAZOS Y SONRISAS',
-    subtitle:
-      'APN y sus socios implementadores de Acompáñame a Crecer han recolectado datos cuantitativos y cualitativos para entender y evaluar el trabajo realizado.',
-    image: '/image4.jpg',
+    image: '/image20.png',
     imagePosition: 'center 45%',
     sections: [
       {
-        question: 'Cada visita,',
-        answer: 'Es evidencia de que el acompañamiento transforma vidas.',
+        question: null,
+        answer: (
+          <p style={{ margin: 0 }}>
+            <strong>APN</strong> y sus socios implementadores de <strong>Acompáñame a Crecer</strong> han recolectado datos cuantitativos y cualitativos para entender y evaluar el trabajo realizado con familias y cuidadores.
+          </p>
+        ),
       },
       {
-        question: 'Porque medir importa:',
-        answer:
-          'Cada dato recolectado nos permite entender mejor el impacto de nuestras intervenciones y mejorar continuamente nuestra metodología para beneficiar a más familias guatemaltecas.',
+        question: null,
+        answer: (
+          <div>
+            <p style={{ margin: 0 }}>Cada visita,</p>
+            <p style={{ margin: 0 }}>Cada abrazo,</p>
+            <p style={{ margin: 0 }}>Cada conversación…</p>
+          </div>
+        ),
       },
       {
-        question: 'Y acompañar transforma:',
-        answer:
-          'Cuando una promotora visita a una familia semana tras semana, no solo comparte técnicas de estimulación — construye confianza, esperanza y capacidades que duran toda la vida.',
+        question: null,
+        answer: (
+          <p style={{ margin: 0 }}>
+            <strong>Es evidencia</strong> viva de lo que significa trabajar por el desarrollo infantil con corazón y con método.
+          </p>
+        ),
+      },
+      {
+        question: null,
+        answer: (
+          <p style={{ margin: 0 }}>
+            <strong>Porque medir importa:</strong> los datos nos permiten entender qué funciona, cómo mejorar y dónde acompañar mejor.
+          </p>
+        ),
+      },
+      {
+        question: null,
+        answer: (
+          <p style={{ margin: 0 }}>
+            Y acompañar transforma: cuando una mamá se siente escuchada, cuando un niño se siente seguro, cuando una comunidad se siente parte del cambio, <em>todo empieza a crecer.</em>
+          </p>
+        ),
       },
     ],
   },
@@ -133,7 +159,7 @@ export default function NewsDetail() {
             style={{ display: 'block', width: '100%', height: '100%', objectFit: 'cover', objectPosition: article.imagePosition }}
           />
         </div>
-        {id !== '1' && (
+        {id === '3' && (
           <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, lineHeight: 0 }}>
             <svg viewBox="0 0 1440 80" preserveAspectRatio="none" style={{ width: '100%', height: 'clamp(36px, 5vw, 80px)' }}>
               <path d="M0,80 C360,0 1080,0 1440,80 L1440,80 L0,80 Z" fill="white" />
@@ -142,8 +168,8 @@ export default function NewsDetail() {
         )}
       </div>
 
-      {/* Título */}
-      {id !== '1' && (
+      {/* Título — solo para id=3 en sección blanca */}
+      {id === '3' && (
         <section className="bg-white fade-in" style={{ padding: 'clamp(20px, 4vw, 56px) clamp(24px, 10vw, 160px) clamp(0px, 2vw, 16px)' }}>
           <div style={{ maxWidth: 920, margin: '0 auto' }}>
             <h1
@@ -162,8 +188,8 @@ export default function NewsDetail() {
         </section>
       )}
 
-      {/* Onda de transición blanco → azul */}
-      {id !== '1' ? (
+      {/* Onda de transición blanco → azul — solo para id=3 */}
+      {id === '3' ? (
         <div style={{ backgroundColor: 'white', lineHeight: 0 }}>
           <svg viewBox="0 0 1440 80" preserveAspectRatio="none" style={{ width: '100%', height: 'clamp(36px, 5vw, 80px)' }}>
             <path d="M0,0 C360,80 1080,80 1440,0 L1440,80 L0,80 Z" fill="#003da7" />
@@ -181,14 +207,14 @@ export default function NewsDetail() {
       >
         <div style={{ maxWidth: 920, margin: '0 auto' }}>
 
-          {id === '1' && (
+          {(id === '1' || id === '2') && (
             <h1
               className="font-averta font-bold"
               style={{
                 fontSize: 'clamp(18px, 3vw, 42px)',
                 lineHeight: 1.3,
                 letterSpacing: '0.08em',
-                color: '#00379E',
+                color: id === '2' ? '#0098dc' : '#00379E',
                 margin: 0,
                 marginBottom: 'clamp(20px, 3vw, 36px)',
               }}
@@ -197,19 +223,21 @@ export default function NewsDetail() {
             </h1>
           )}
 
-          <p style={{ ...bodyText, fontStyle: 'italic', marginBottom: 'clamp(20px, 3vw, 36px)' }}>
-            {article.subtitle}
-          </p>
+          {article.subtitle && (
+            <p style={{ ...bodyText, fontStyle: 'italic', marginBottom: 'clamp(20px, 3vw, 36px)' }}>
+              {article.subtitle}
+            </p>
+          )}
 
           {article.intro && (
-            <p style={{ ...bodyText, fontStyle: 'italic', marginBottom: 'clamp(28px, 4vw, 56px)' }}> {/* Aplicado estilo itálico */}
+            <p style={{ ...bodyText, fontStyle: 'italic', marginBottom: 'clamp(28px, 4vw, 56px)' }}>
               {article.intro}
             </p>
           )}
 
           {article.sections.map((sec, i) => (
             <div key={i} style={{ marginBottom: 'clamp(24px, 4vw, 48px)' }}>
-              <h3 style={questionStyle}>{sec.question}</h3>
+              {sec.question && <h3 style={questionStyle}>{sec.question}</h3>}
 
               <div style={bodyText}>
                 {typeof sec.answer === 'string'
