@@ -1,9 +1,13 @@
+import { useRef, useState } from 'react';
+import ReCAPTCHA from 'react-google-recaptcha';
 import OrgsCarousel from '../components/OrgsCarousel';
 import { useFadeIn } from '../hooks/useFadeIn';
 import './Allies.css';
 
 export default function Board() {
   useFadeIn();
+  const recaptchaRef = useRef(null);
+  const [captchaToken, setCaptchaToken] = useState(null);
 
   const boldStyle = {
     fontFamily: "'Averta-Bold', Georgia, serif",
@@ -364,46 +368,75 @@ export default function Board() {
             ¡Contáctanos hoy!
           </p>
 
-          <form style={{ display: "flex", flexDirection: "column", gap: 12, alignItems: "center" }}>
-            {["Nombre", "Correo", "Teléfono"].map((placeholder) => (
-              <input
-                key={placeholder}
-                type={placeholder === "Correo" ? "email" : placeholder === "Teléfono" ? "tel" : "text"}
-                placeholder={placeholder}
-                style={{
-                  backgroundColor: "#E8E8E8",
-                  border: "none",
-                  borderRadius: 4,
-                  padding: "clamp(10px, 1.5vw, 16px) clamp(12px, 2vw, 20px)",
-                  fontFamily: "'Averta', Georgia, serif",
-                  fontSize: "clamp(13px, 1.5vw, 16px)",
-                  color: "#555",
-                  outline: "none",
-                  width: "70%",
-                  boxSizing: "border-box",
-                }}
-              />
-            ))}
+          <form
+            style={{ display: "flex", flexDirection: "column", gap: 16, alignItems: "center" }}
+            onSubmit={(e) => {
+              e.preventDefault();
+              if (!captchaToken) {
+                alert('Por favor completa el captcha.');
+                return;
+              }
+            }}
+          >
+            {/* Campos con borde azul */}
+            <div
+              style={{
+                border: "2px solid #00379E",
+                borderRadius: 4,
+                width: "70%",
+                overflow: "hidden",
+              }}
+            >
+              {["Nombre", "Correo", "Teléfono"].map((placeholder, idx) => (
+                <input
+                  key={placeholder}
+                  type={placeholder === "Correo" ? "email" : placeholder === "Teléfono" ? "tel" : "text"}
+                  placeholder={placeholder}
+                  style={{
+                    backgroundColor: "#E8E8E8",
+                    border: "none",
+                    borderBottom: idx < 2 ? "1px solid #ccc" : "none",
+                    padding: "clamp(12px, 1.5vw, 18px) clamp(14px, 2vw, 22px)",
+                    fontFamily: "'Averta', Georgia, serif",
+                    fontSize: "clamp(13px, 1.5vw, 16px)",
+                    color: "#555",
+                    outline: "none",
+                    width: "100%",
+                    boxSizing: "border-box",
+                    display: "block",
+                  }}
+                />
+              ))}
+            </div>
 
+            {/* reCAPTCHA v2 */}
+            <ReCAPTCHA
+              ref={recaptchaRef}
+              sitekey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MFLndUL7"
+              onChange={(token) => setCaptchaToken(token)}
+              onExpired={() => setCaptchaToken(null)}
+            />
+
+            {/* Botón ENVIAR */}
             <button
               type="submit"
               style={{
-                marginTop: 12,
+                marginTop: 4,
                 backgroundColor: "#00379E",
                 color: "#fff",
                 border: "none",
                 borderRadius: 4,
-                padding: "clamp(12px, 2vw, 18px)",
+                padding: "clamp(14px, 2vw, 20px)",
                 fontFamily: "'Averta-Bold'",
                 fontWeight: 400,
                 fontSize: "clamp(13px, 1.8vw, 18px)",
-                letterSpacing: "0.1em",
+                letterSpacing: "0.15em",
                 textTransform: "uppercase",
                 cursor: "pointer",
-                width: "45%",
+                width: "70%",
               }}
             >
-              Enviar
+              ENVIAR
             </button>
           </form>
         </div>

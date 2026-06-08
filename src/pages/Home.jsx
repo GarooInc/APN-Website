@@ -112,14 +112,14 @@ export default function Home() {
               style={{
                 fontFamily: "'Averta', sans-serif",
                 fontWeight: 700,
-                fontSize: "clamp(14px, 3vw, 22px)",
+                fontSize: "clamp(18px, 3vw, 30px)",
                 letterSpacing: "0.15em",
-                color: "#1a3a8f",
+                color: "#00379E",
               }}
             >
               {t.mision.label}
             </span>
-            <span className="text-[#1a3a8f] text-sm">{">"}</span>
+            <span className="text-[#00379E] text-sm">{">"}</span>
           </div>
 
           <p
@@ -129,7 +129,7 @@ export default function Home() {
               fontWeight: 400,
               fontSize: "clamp(18px, 4vw, 34px)",
               lineHeight: "1.6",
-              color: "#1a3a8f",
+              color: "#00379E",
             }}
           >
             {(() => {
@@ -201,7 +201,7 @@ export default function Home() {
                 fontWeight: 700,
                 fontSize: "clamp(14px, 3vw, 22px)",
                 letterSpacing: "0.1em",
-                color: "#1a3a8f",
+                color: "#00379E",
               }}
             >
               {t.quienesSomos.label}
@@ -215,7 +215,7 @@ export default function Home() {
               fontWeight: 400,
               fontSize: "clamp(16px, 3.5vw, 20px)",
               lineHeight: "1.6",
-              color: "#1a3a8f",
+              color: "#00379E",
               fontStyle: "italic",
             }}
           >
@@ -292,7 +292,7 @@ export default function Home() {
             style={{
               fontFamily: "'Averta', sans-serif",
               fontWeight: 400,
-              fontSize: "clamp(14px, 3.5vw, 18px)",
+              fontSize: "clamp(18px, 3.5vw, 24px)",
               lineHeight: "1.6",
               color: "rgba(255,255,255,0.85)",
             }}
@@ -348,7 +348,7 @@ export default function Home() {
             style={{
               fontFamily: "'Averta', sans-serif",
               fontWeight: 400,
-              fontSize: "clamp(14px, 3.5vw, 18px)",
+              fontSize: "clamp(18px, 3.5vw, 24px)",
               lineHeight: "1.6",
               color: "rgba(255,255,255,0.85)",
             }}
@@ -391,12 +391,12 @@ export default function Home() {
                 fontWeight: 700,
                 fontSize: "clamp(16px, 3vw, 20px)",
                 letterSpacing: "0.1em",
-                color: "#1a3a8f",
+                color: "#00379E",
               }}
             >
               {t.materiales.label[0]}<br />{t.materiales.label[1]}
             </span>
-            <span className="text-[#1a3a8f] text-sm self-end mb-1">{">"}</span>
+            <span className="text-[#00379E] text-sm self-end mb-1">{">"}</span>
           </div>
 
           <p
@@ -404,9 +404,9 @@ export default function Home() {
             style={{
               fontFamily: "'Averta', sans-serif",
               fontWeight: 400,
-              fontSize: "clamp(14px, 3.5vw, 18px)",
+              fontSize: "clamp(18px, 3.5vw, 24px)",
               lineHeight: "1.6",
-              color: "#1a3a8f",
+              color: "#00379E",
             }}
           >
             {t.materiales.text}
@@ -447,12 +447,12 @@ export default function Home() {
                 fontWeight: 700,
                 fontSize: "clamp(14px, 3vw, 22px)",
                 letterSpacing: "0.1em",
-                color: "#1a3a8f",
+                color: "#00379E",
               }}
             >
               {t.noticias.label}
             </span>
-            <span className="text-[#1a3a8f] text-sm">{">"}</span>
+            <span className="text-[#00379E] text-sm">{">"}</span>
           </div>
 
           <p
@@ -460,9 +460,9 @@ export default function Home() {
             style={{
               fontFamily: "'Averta', sans-serif",
               fontWeight: 400,
-              fontSize: "clamp(14px, 3.5vw, 18px)",
+              fontSize: "clamp(18px, 3.5vw, 24px)",
               lineHeight: "1.6",
-              color: "#1a3a8f",
+              color: "#00379E",
             }}
           >
             {t.noticias.text}
@@ -503,63 +503,63 @@ export default function Home() {
                 fontWeight: 700,
                 fontSize: "clamp(14px, 3vw, 22px)",
                 letterSpacing: "0.1em",
-                color: "#1a3a8f",
+                color: "#00379E",
               }}
             >
               {t.contacto.label}
             </span>
-            <span className="text-[#1a3a8f] text-sm">{">"}</span>
+            <span className="text-[#00379E] text-sm">{">"}</span>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
 
             <div>
-              <p style={{ fontFamily: "'Averta', sans-serif", fontWeight: 700, fontSize: "clamp(13px, 2.5vw, 16px)", color: "#1a3a8f" }}>
+              <p style={{ fontFamily: "'Averta', sans-serif", fontWeight: 700, fontSize: "clamp(13px, 2.5vw, 16px)", color: "#00379E" }}>
                 Ana Luisa Esquivel
               </p>
-              <p style={{ fontFamily: "'Averta', sans-serif", fontStyle: "italic", fontSize: "clamp(11px, 2vw, 14px)", color: "#1a3a8f" }} className="mb-1">
+              <p style={{ fontFamily: "'Averta', sans-serif", fontStyle: "italic", fontSize: "clamp(11px, 2vw, 14px)", color: "#00379E" }} className="mb-1">
                 {t.contacto.roles.directoraEjecutiva}
               </p>
-              <p style={{ fontFamily: "'Averta', sans-serif", fontSize: "clamp(11px, 2vw, 14px)", color: "#1a3a8f" }} className="flex items-center gap-1">
+              <p style={{ fontFamily: "'Averta', sans-serif", fontSize: "clamp(11px, 2vw, 14px)", color: "#00379E" }} className="flex items-center gap-1">
                 <img src="/phone.svg" alt="Teléfono" className="w-3.5 h-3.5" style={{ filter: 'invert(19%) sepia(85%) saturate(1472%) hue-rotate(204deg) brightness(68%) contrast(97%)' }} /> (502) 5318-3523
               </p>
-              <p style={{ fontFamily: "'Averta', sans-serif", fontSize: "clamp(11px, 2vw, 14px)", color: "#1a3a8f" }} className="flex items-center gap-1">
+              <p style={{ fontFamily: "'Averta', sans-serif", fontSize: "clamp(11px, 2vw, 14px)", color: "#00379E" }} className="flex items-center gap-1">
                 <img src="/message.svg" alt="Correo" className="w-3.5 h-3.5" style={{ filter: 'invert(19%) sepia(85%) saturate(1472%) hue-rotate(204deg) brightness(68%) contrast(97%)' }} /> analuisa.esquivel@apn.org.gt
               </p>
             </div>
 
             <div>
-              <p style={{ fontFamily: "'Averta', sans-serif", fontWeight: 700, fontSize: "clamp(13px, 2.5vw, 16px)", color: "#1a3a8f" }}>Olga López
+              <p style={{ fontFamily: "'Averta', sans-serif", fontWeight: 700, fontSize: "clamp(13px, 2.5vw, 16px)", color: "#00379E" }}>Olga López
               </p>
-              <p style={{ fontFamily: "'Averta', sans-serif", fontStyle: "italic", fontSize: "clamp(11px, 2vw, 14px)", color: "#1a3a8f" }} className="mb-1">
+              <p style={{ fontFamily: "'Averta', sans-serif", fontStyle: "italic", fontSize: "clamp(11px, 2vw, 14px)", color: "#00379E" }} className="mb-1">
                 {t.contacto.roles.adminFinanzas}
               </p>
-              <p style={{ fontFamily: "'Averta', sans-serif", fontSize: "clamp(11px, 2vw, 14px)", color: "#1a3a8f" }} className="flex items-center gap-1">
+              <p style={{ fontFamily: "'Averta', sans-serif", fontSize: "clamp(11px, 2vw, 14px)", color: "#00379E" }} className="flex items-center gap-1">
                 <img src="/phone.svg" alt="Teléfono" className="w-3.5 h-3.5" style={{ filter: 'invert(19%) sepia(85%) saturate(1472%) hue-rotate(204deg) brightness(68%) contrast(97%)' }} /> (502) 3481-1617
               </p>
-              <p style={{ fontFamily: "'Averta', sans-serif", fontSize: "clamp(11px, 2vw, 14px)", color: "#1a3a8f" }} className="flex items-center gap-1">
+              <p style={{ fontFamily: "'Averta', sans-serif", fontSize: "clamp(11px, 2vw, 14px)", color: "#00379E" }} className="flex items-center gap-1">
                 <img src="/message.svg" alt="Correo" className="w-3.5 h-3.5" style={{ filter: 'invert(19%) sepia(85%) saturate(1472%) hue-rotate(204deg) brightness(68%) contrast(97%)' }} /> olga.lopez@apn.org.gt
               </p>
             </div>
 
             <div>
-              <p style={{ fontFamily: "'Averta', sans-serif", fontWeight: 700, fontSize: "clamp(13px, 2.5vw, 16px)", color: "#1a3a8f" }}>Mónica Rodríguez
+              <p style={{ fontFamily: "'Averta', sans-serif", fontWeight: 700, fontSize: "clamp(13px, 2.5vw, 16px)", color: "#00379E" }}>Mónica Rodríguez
               </p>
-              <p style={{ fontFamily: "'Averta', sans-serif", fontStyle: "italic", fontSize: "clamp(11px, 2vw, 14px)", color: "#1a3a8f" }} className="mb-1">
+              <p style={{ fontFamily: "'Averta', sans-serif", fontStyle: "italic", fontSize: "clamp(11px, 2vw, 14px)", color: "#00379E" }} className="mb-1">
                 {t.contacto.roles.monitoreo}
               </p>
-              <p style={{ fontFamily: "'Averta', sans-serif", fontSize: "clamp(11px, 2vw, 14px)", color: "#1a3a8f" }} className="flex items-center gap-1">
+              <p style={{ fontFamily: "'Averta', sans-serif", fontSize: "clamp(11px, 2vw, 14px)", color: "#00379E" }} className="flex items-center gap-1">
                 <img src="/phone.svg" alt="Teléfono" className="w-3.5 h-3.5" style={{ filter: 'invert(19%) sepia(85%) saturate(1472%) hue-rotate(204deg) brightness(68%) contrast(97%)' }} /> (502) 3483-2517
               </p>
-              <p style={{ fontFamily: "'Averta', sans-serif", fontSize: "clamp(11px, 2vw, 14px)", color: "#1a3a8f" }} className="flex items-center gap-1">
+              <p style={{ fontFamily: "'Averta', sans-serif", fontSize: "clamp(11px, 2vw, 14px)", color: "#00379E" }} className="flex items-center gap-1">
                 <img src="/message.svg" alt="Correo" className="w-3.5 h-3.5" style={{ filter: 'invert(19%) sepia(85%) saturate(1472%) hue-rotate(204deg) brightness(68%) contrast(97%)' }} /> monica.rodriguez@apn.org.gt
               </p>
             </div>
 
             <div>
-              <p style={{ fontFamily: "'Averta', sans-serif", fontWeight: 700, fontSize: "clamp(13px, 2.5vw, 16px)", color: "#1a3a8f" }}>Alianza por la Nutrición
+              <p style={{ fontFamily: "'Averta', sans-serif", fontWeight: 700, fontSize: "clamp(13px, 2.5vw, 16px)", color: "#00379E" }}>Alianza por la Nutrición
               </p>
-              <p style={{ fontFamily: "'Averta', sans-serif", fontSize: "clamp(11px, 2vw, 14px)", color: "#1a3a8f", lineHeight: "1.6" }}>
+              <p style={{ fontFamily: "'Averta', sans-serif", fontSize: "clamp(11px, 2vw, 14px)", color: "#00379E", lineHeight: "1.6" }}>
                 Boulevard Los Proceres 24-64, Zona 10<br />
                 Torre 1 Oficina 1402, 01001.<br />
                 Guatemala, Ciudad.

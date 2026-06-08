@@ -81,11 +81,11 @@ export default function Footer({ variant = "dark" }) {
             <a
               key={i}
               href={social.href}
-              className="flex items-center justify-center hover:opacity-80 hover:scale-110 transition-all duration-300" // Added hover:scale-110 and transition-all
+              className="flex items-center justify-center hover:opacity-80 hover:scale-110 transition-all duration-300"
               style={{
-                color: "#0098DC",
-                backgroundColor: "transparent",
-                border: "2px solid #0098DC",
+                color: "white",
+                backgroundColor: "#0098DC",
+                border: "none",
                 borderRadius: social.rounded,
                 width: "36px",
                 height: "36px",

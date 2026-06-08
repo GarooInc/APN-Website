@@ -2,12 +2,14 @@ import { useParams, Link } from 'react-router-dom';
 import { useFadeIn } from '../hooks/useFadeIn';
 import { ROUTES } from '../utils/constants';
 
+// ─── Article data for News/1 and News/2 ───────────────────────────────────────
+
 const articles = {
   1: {
-    title: 'ACOMPÁÑAME A CRECER: UN ESFUERZO PÚBLICO-PRIVADO PARA EL DESARROLLO INFANTIL TEMPRANO', // Revertido el cambio de título
+    title: 'ACOMPÁÑAME A CRECER: UN ESFUERZO PÚBLICO-PRIVADO PARA EL DESARROLLO INFANTIL TEMPRANO',
     subtitle: 'Generando evidencia para transformar vidas.',
     image: '/image17.png',
-    imagePosition: 'center 1%',
+    imagePosition: 'center center',
     intro: (
       <>
         La <strong>Alianza por la Nutrición (APN)</strong>, junto con sus socios implementadores —Fundación
@@ -25,13 +27,15 @@ const articles = {
           'Medir los avances del programa, cuyo objetivo es garantizar el desarrollo integral de los niños desde la concepción hasta los cuatro años.',
       },
       {
-        question: '¿Qué es el programa Acompáñame a Crecer?',
+        question: '¿Cómo lo hacemos?',
         answer: (
           <>
             <p style={{ margin: 0, marginBottom: '1em' }}>
-              El modelo implementado es el programa Es una iniciativa del Ministerio de Educación de Guatemala (MINEDUC) centrada en el desarrollo integral de niños de 0 a 4 años, especialmente en zonas rurales. 
-              Se ofrece talleres de estimulación temprana, educación inicial, salud, nutrición y protección, trabajando junto a las familias para preparar a la niñez antes de la vida escolar.  
-              <strong style={{ fontStyle: 'normal' }}> Desde el 2020 APN firmó un convenio interinstitucional con el MINEDUC y por ello es posible que sus socios puedan implementar.</strong>
+              El modelo implementado es el programa <strong style={{ fontStyle: 'normal' }}>Acompáñame a Crecer</strong>, diseñado para promover el
+              desarrollo en la primera infancia (0 a 4 años). Este programa fue impulsado por el{' '}
+              <strong style={{ fontStyle: 'normal' }}>Ministerio de Educación</strong> mediante el{' '}
+              <strong style={{ fontStyle: 'normal' }}>Acuerdo Ministerial 3512-2018</strong> y, en 2020, evolucionó
+              hacia una atención integral con el <strong style={{ fontStyle: 'normal' }}>Acuerdo Gubernativo 239.</strong>
             </p>
             <p style={{ margin: 0 }}>
               Gracias a un convenio interinstitucional con el Ministerio de Educación,{' '}
@@ -104,49 +108,228 @@ const articles = {
       },
     ],
   },
-  3: {
-    title: '¿QUÉ ES LA DESNUTRICIÓN CRÓNICA INFANTIL?',
-    subtitle:
-      'La desnutrición crónica infantil también llamada DCI por sus siglas, está asociada a una baja talla para la edad.',
-    image: '/image2.jpg',
-    imagePosition: 'center 25%',
-    sections: [
-      {
-        question: '¿Cuál es la causa?',
-        answer:
-          'La DCI es el resultado de una ingesta insuficiente de nutrientes durante períodos prolongados, combinada con enfermedades recurrentes, prácticas de cuidado inadecuadas y falta de acceso a servicios de salud y saneamiento básico.',
-      },
-      {
-        question: '¿Cuáles son las consecuencias?',
-        answer:
-          'Un niño con DCI tiene consecuencias que van más allá del físico: afecta el desarrollo cognitivo, el rendimiento escolar, la productividad laboral y los ingresos durante la vida adulta, perpetuando el ciclo de pobreza.',
-      },
-    ],
-  },
 };
 
+// ─── Shared styles for News/1 and News/2 ──────────────────────────────────────
+
 const bodyText = {
-  fontFamily: "'Averta', sans-serif", // El texto del cuerpo no es itálico por defecto en Figma
-  fontSize: 'clamp(15px, 2.5vw, 20px)', // Ajustado el tamaño de fuente para que coincida con Figma
+  fontFamily: "'Averta', sans-serif",
+  fontSize: 'clamp(16px, 2.5vw, 22px)',
   lineHeight: 1.75,
   color: 'white',
   margin: 0,
 };
 
 const questionStyle = {
-  fontFamily: "'Averta', sans-serif", // Las preguntas son en negrita, no negrita-itálica en Figma
+  fontFamily: "'Averta', sans-serif",
   fontWeight: 700,
-  fontSize: 'clamp(15px, 2.5vw, 24px)', // Ajustado el tamaño de fuente para que coincida con Figma
-  lineHeight: 1.2, // Ajustado el interlineado para que coincida con Figma
+  fontSize: 'clamp(16px, 2.5vw, 26px)',
+  lineHeight: 1.2,
   color: 'white',
   marginTop: 0,
   marginBottom: 'clamp(10px, 1.5vw, 16px)',
 };
 
+const volverBtn = {
+  fontSize: 'clamp(12px, 1.5vw, 16px)',
+  letterSpacing: '0.2em',
+  textDecoration: 'none',
+  backgroundColor: 'transparent',
+  border: '2px solid white',
+  color: 'white',
+  padding: 'clamp(10px, 1.5vw, 14px) clamp(32px, 4vw, 56px)',
+  borderRadius: '4px',
+  fontFamily: "'Averta', sans-serif",
+  fontWeight: 700,
+  textTransform: 'uppercase',
+  display: 'inline-block',
+  transition: 'background-color 0.2s, color 0.2s',
+};
+
+// ─── News/3 — Desktop 8 ───────────────────────────────────────────────────────
+
+function News3() {
+  useFadeIn();
+
+  const headingStyle = {
+    fontFamily: "'Averta', sans-serif",
+    fontWeight: 700,
+    fontSize: 'clamp(20px, 3vw, 42px)',
+    lineHeight: 1.25,
+    letterSpacing: '0.08em',
+    color: '#0098dc',
+    margin: 0,
+    marginBottom: 'clamp(16px, 2.5vw, 28px)',
+    textTransform: 'uppercase',
+  };
+
+  const bodyDark = {
+    fontFamily: "'Averta', sans-serif",
+    fontWeight: 400,
+    fontSize: 'clamp(16px, 2vw, 26px)',
+    lineHeight: 1.7,
+    color: '#00379e',
+    margin: 0,
+  };
+
+  const sectionGap = { marginBottom: 'clamp(40px, 6vw, 80px)' };
+
+  return (
+    <div>
+      {/* Hero imagen */}
+      <div className="w-full mt-[70px] md:mt-0" style={{ height: 'clamp(360px, 60vh, 800px)', overflow: 'hidden' }}>
+        <img
+          src="/image2.jpg"
+          alt="Desnutrición Crónica Infantil"
+          style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center 25%', display: 'block' }}
+        />
+      </div>
+
+      {/* Onda de transición imagen → blanco */}
+      <div style={{ backgroundColor: 'white', lineHeight: 0 }}>
+        <svg viewBox="0 0 1440 60" preserveAspectRatio="none" style={{ width: '100%', height: 'clamp(30px, 4vw, 60px)', display: 'block' }}>
+          <path d="M0,0 C480,60 960,60 1440,0 L1440,60 L0,60 Z" fill="white" />
+        </svg>
+      </div>
+
+      {/* Contenido principal — fondo blanco */}
+      <section
+        className="fade-in"
+        style={{
+          backgroundColor: 'white',
+          padding: 'clamp(32px, 5vw, 80px) clamp(24px, 10vw, 160px) clamp(48px, 7vw, 100px)',
+        }}
+      >
+        <div style={{ maxWidth: 920, margin: '0 auto' }}>
+
+          {/* Título principal */}
+          <h1 style={{ ...headingStyle, marginBottom: 'clamp(24px, 4vw, 48px)' }}>
+            ¿Qué es la desnutrición crónica infantil?
+          </h1>
+
+          {/* Sección 1 */}
+          <div style={sectionGap}>
+            <p style={bodyDark}>
+              La <strong>desnutrición crónica infantil</strong> también llamada <strong>DCI</strong> por sus siglas, está asociada a una{' '}
+              <strong>baja talla para la edad</strong>, debido a la falta de nutrientes a largo plazo. Esto quiere decir que el niño
+              tiene un retraso en su crecimiento, pero además muestra otros signos como la disminución de capacidades mentales
+              y productivas que le afectarán el resto de su vida.
+            </p>
+            <p style={{ ...bodyDark, marginTop: 'clamp(16px, 2vw, 28px)' }}>
+              Si no se atiende oportunamente, la desnutrición crónica <strong>provoca un daño irreversible</strong> que afecta al niño
+              por el <strong>resto de su vida</strong> expresándose en menor productividad, menores ingresos y mayor prevalencia de
+              enfermedades.
+            </p>
+          </div>
+
+          {/* Sección 2 */}
+          <div style={sectionGap}>
+            <h2 style={headingStyle}>¿Cuál es el periodo de mayor desarrollo de un niño?</h2>
+            <p style={bodyDark}>
+              Desde que la madre está embarazada hasta que el niño tiene 2 años es el periodo de un{' '}
+              <em><strong>notable crecimiento y desarrollo cerebral</strong></em> y por eso tienen los mayores requerimientos
+              nutricionales. A este periodo se le conoce como la <strong>ventana de los 1,000 días</strong>, y es especialmente
+              importante asegurar un cuidado integral para lograr su óptimo desarrollo.
+            </p>
+          </div>
+
+          {/* Sección 3 */}
+          <div style={sectionGap}>
+            <h2 style={headingStyle}>¿Dónde estamos parados como país?</h2>
+            <p style={bodyDark}>
+              La <strong>desnutrición crónica</strong> en Guatemala es un asunto preocupante. Afecta a <strong>uno de cada dos
+              niños</strong> menores de cinco años. Pese a la gravedad del asunto, se trata de un tema que pasa desapercibido
+              para la población en general, incluso para los familiares de los que la padecen.
+            </p>
+            <p style={{ ...bodyDark, marginTop: 'clamp(16px, 2vw, 28px)' }}>
+              En Guatemala, la prevalencia de la <em><strong>DCI*</strong></em> en menores de 5 años es de <strong>46.5%</strong> según
+              la ENSMI (encuesta nacional salud materno infantil — 2014/2015).
+            </p>
+            <p style={{ ...bodyDark, marginTop: 'clamp(16px, 2vw, 28px)' }}>
+              <strong>Guatemala ocupa el primer lugar en la prevalencia de desnutrición crónica</strong> en la niñez menor de 5
+              años en América Latina y el Caribe, y el sexto lugar a nivel mundial.
+            </p>
+            <p style={{ ...bodyDark, fontSize: 'clamp(13px, 1.5vw, 18px)', marginTop: 'clamp(12px, 1.5vw, 20px)', fontStyle: 'italic' }}>
+              *DCI: Desnutrición Crónica Infantil.
+            </p>
+          </div>
+
+          {/* Sección 4 */}
+          <div style={sectionGap}>
+            <h2 style={headingStyle}>¿Qué pasará si no hacemos nada?</h2>
+            <p style={bodyDark}>
+              Requeriremos cada vez más mayor nivel de recursos económicos para tratar a una{' '}
+              <strong>población enferma</strong> con sobrepeso y obesidad, enfermedades crónicas como diabetes, problemas
+              cardiovasculares, respiratorios.
+            </p>
+            <p style={{ ...bodyDark, marginTop: 'clamp(16px, 2vw, 28px)' }}>
+              Como país <strong>perderemos competitividad</strong> porque nuestro capital humano no tiene las capacidades
+              cognitivas que la vida actual demanda.
+            </p>
+            <p style={{ ...bodyDark, marginTop: 'clamp(16px, 2vw, 28px)' }}>
+              Más efectos sociales: Migración forzada por falta de oportunidades. Incremento de actividades delictivas.
+            </p>
+          </div>
+
+          {/* Botón VIDEO DCI */}
+          <div style={{ textAlign: 'center', marginBottom: 'clamp(32px, 5vw, 64px)' }}>
+            <button
+              style={{
+                backgroundColor: '#0098dc',
+                color: 'white',
+                border: 'none',
+                padding: 'clamp(14px, 2vw, 20px) clamp(40px, 6vw, 80px)',
+                fontFamily: "'Averta', sans-serif",
+                fontWeight: 700,
+                fontSize: 'clamp(14px, 1.8vw, 20px)',
+                letterSpacing: '0.2em',
+                textTransform: 'uppercase',
+                cursor: 'pointer',
+                borderRadius: '4px',
+              }}
+            >
+              VIDEO DCI
+            </button>
+          </div>
+
+          {/* VOLVER */}
+          <div style={{ textAlign: 'center' }}>
+            <Link
+              to={ROUTES.NEWS}
+              style={{
+                ...volverBtn,
+                color: '#00379e',
+                border: '2px solid #00379e',
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.backgroundColor = '#00379e';
+                e.currentTarget.style.color = 'white';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.backgroundColor = 'transparent';
+                e.currentTarget.style.color = '#00379e';
+              }}
+            >
+              VOLVER
+            </Link>
+          </div>
+
+        </div>
+      </section>
+    </div>
+  );
+}
+
+// ─── Main component ────────────────────────────────────────────────────────────
+
 export default function NewsDetail() {
   useFadeIn();
   const { id } = useParams();
+
+  if (id === '3') return <News3 />;
+
   const article = articles[id] || articles[1];
+  const bgColor = id === '1' ? '#0098DC' : '#003da7';
 
   return (
     <div>
@@ -156,81 +339,50 @@ export default function NewsDetail() {
           <img
             src={article.image}
             alt=""
-            style={{ display: 'block', width: '100%', height: '100%', objectFit: 'cover', objectPosition: article.imagePosition }}
+            style={{
+              display: 'block',
+              width: '100%',
+              height: '100%',
+              objectFit: 'cover',
+              objectPosition: article.imagePosition,
+            }}
           />
         </div>
-        {id === '3' && (
-          <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, lineHeight: 0 }}>
-            <svg viewBox="0 0 1440 80" preserveAspectRatio="none" style={{ width: '100%', height: 'clamp(36px, 5vw, 80px)' }}>
-              <path d="M0,80 C360,0 1080,0 1440,80 L1440,80 L0,80 Z" fill="white" />
-            </svg>
-          </div>
-        )}
       </div>
-
-      {/* Título — solo para id=3 en sección blanca */}
-      {id === '3' && (
-        <section className="bg-white fade-in" style={{ padding: 'clamp(20px, 4vw, 56px) clamp(24px, 10vw, 160px) clamp(0px, 2vw, 16px)' }}>
-          <div style={{ maxWidth: 920, margin: '0 auto' }}>
-            <h1
-              className="font-averta font-bold"
-              style={{
-                fontSize: 'clamp(18px, 3vw, 42px)',
-                lineHeight: 1.3,
-                letterSpacing: '0.08em',
-                color: '#00379e',
-                margin: 0,
-              }}
-            >
-              {article.title}
-            </h1>
-          </div>
-        </section>
-      )}
-
-      {/* Onda de transición blanco → azul — solo para id=3 */}
-      {id === '3' ? (
-        <div style={{ backgroundColor: 'white', lineHeight: 0 }}>
-          <svg viewBox="0 0 1440 80" preserveAspectRatio="none" style={{ width: '100%', height: 'clamp(36px, 5vw, 80px)' }}>
-            <path d="M0,0 C360,80 1080,80 1440,0 L1440,80 L0,80 Z" fill="#003da7" />
-          </svg>
-        </div>
-      ) : null}
 
       {/* Cuerpo */}
       <section
         className="fade-in"
         style={{
-          backgroundColor: id === '1' ? '#0098DC' : '#003da7',
+          backgroundColor: bgColor,
           padding: 'clamp(40px, 6vw, 80px) clamp(24px, 10vw, 160px) clamp(36px, 5vw, 72px)',
         }}
       >
         <div style={{ maxWidth: 920, margin: '0 auto' }}>
 
-          {(id === '1' || id === '2') && (
-            <h1
-              className="font-averta font-bold"
-              style={{
-                fontSize: 'clamp(18px, 3vw, 42px)',
-                lineHeight: 1.3,
-                letterSpacing: '0.08em',
-                color: id === '2' ? '#0098dc' : '#00379E',
-                margin: 0,
-                marginBottom: 'clamp(20px, 3vw, 36px)',
-              }}
-            >
-              {article.title}
-            </h1>
-          )}
+          {/* Título */}
+          <h1
+            className="font-averta font-bold"
+            style={{
+              fontSize: 'clamp(18px, 3vw, 42px)',
+              lineHeight: 1.3,
+              letterSpacing: '0.08em',
+              color: id === '2' ? '#0098dc' : '#00379E',
+              margin: 0,
+              marginBottom: 'clamp(20px, 3vw, 36px)',
+            }}
+          >
+            {article.title}
+          </h1>
 
           {article.subtitle && (
-            <p style={{ ...bodyText, fontStyle: 'italic', marginBottom: 'clamp(20px, 3vw, 36px)' }}>
+            <p style={{ ...bodyText, marginBottom: 'clamp(20px, 3vw, 36px)' }}>
               {article.subtitle}
             </p>
           )}
 
           {article.intro && (
-            <p style={{ ...bodyText, fontStyle: 'italic', marginBottom: 'clamp(28px, 4vw, 56px)' }}>
+            <p style={{ ...bodyText, marginBottom: 'clamp(28px, 4vw, 56px)' }}>
               {article.intro}
             </p>
           )}
@@ -279,24 +431,14 @@ export default function NewsDetail() {
             </div>
           ))}
 
+          {/* VOLVER */}
           <div style={{ marginTop: 'clamp(40px, 6vw, 80px)', textAlign: 'center' }}>
             <Link
               to={ROUTES.NEWS}
-              className="font-manrope font-bold uppercase transition-all duration-200" // Eliminado text-white y hover:opacity-70 para aplicar estilos personalizados
-              style={{
-                fontSize: 'clamp(14px, 2vw, 27px)',
-                letterSpacing: '0.2em',
-                textDecoration: 'none',
-                backgroundColor: 'transparent', // Fondo transparente
-                border: '2px solid white', // Borde blanco
-                color: 'white', // Texto blanco
-                padding: 'clamp(12px, 2vw, 16px) clamp(28px, 4vw, 48px)', // Padding para el botón
-                borderRadius: '4px', // Bordes ligeramente redondeados
-              }}
-              // Efectos hover personalizados
+              style={volverBtn}
               onMouseEnter={(e) => {
                 e.currentTarget.style.backgroundColor = 'white';
-                e.currentTarget.style.color = '#003da7'; // Color azul oscuro del fondo de la sección
+                e.currentTarget.style.color = bgColor;
               }}
               onMouseLeave={(e) => {
                 e.currentTarget.style.backgroundColor = 'transparent';
@@ -306,6 +448,7 @@ export default function NewsDetail() {
               VOLVER
             </Link>
           </div>
+
         </div>
       </section>
     </div>

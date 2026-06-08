@@ -48,7 +48,7 @@ export default function Materials() {
           <div className="flex items-center gap-2 mb-6">
             <span
               className="font-averta font-bold tracking-[0.12em] text-primary-dark"
-              style={{ fontSize: 'clamp(16px, 3.5vw, 24px)' }}
+              style={{ fontSize: 'clamp(20px, 3.5vw, 32px)' }}
             >
               MATERIALES TÉCNICOS
             </span>
@@ -58,7 +58,7 @@ export default function Materials() {
           {/* Subtítulo */}
           <p
             className="font-averta italic text-primary-dark mb-1"
-            style={{ fontSize: 'clamp(15px, 3vw, 20px)', lineHeight: 1.6 }}
+            style={{ fontSize: 'clamp(18px, 3vw, 26px)', lineHeight: 1.6 }}
           >
             Materiales para fortalecer el conocimiento sobre la <strong>DCI</strong>*
           </p>
@@ -72,7 +72,7 @@ export default function Materials() {
               <li key={mat.num} className="flex items-start gap-4">
                 <span
                   className="font-averta font-bold text-primary-dark flex-shrink-0"
-                  style={{ fontSize: 'clamp(14px, 2.5vw, 18px)' }}
+                  style={{ fontSize: 'clamp(18px, 2.5vw, 24px)' }}
                 >
                   {mat.num}
                 </span>
@@ -86,7 +86,7 @@ export default function Materials() {
                   {mat.subtitle && (
                     <p
                       className="font-averta italic text-primary-dark/70"
-                      style={{ fontSize: 'clamp(13px, 2vw, 16px)' }}
+                      style={{ fontSize: 'clamp(15px, 2vw, 20px)' }}
                     >
                       {mat.subtitle}
                     </p>
@@ -98,14 +98,20 @@ export default function Materials() {
 
           {/* Botón único */}
           <div className="flex justify-center">
-            <Button
-              variant="filled-light"
-              size="md"
-              className="font-averta font-bold tracking-[0.15em] flex items-center gap-3 px-10 py-3"
+            <a
+              href="/materiales.pdf"
+              download
+              style={{ textDecoration: 'none' }}
             >
-              DESCARGAR PDF
-              <Download size={18} />
-            </Button>
+              <Button
+                variant="filled-light"
+                size="md"
+                className="font-averta font-bold tracking-[0.15em] flex items-center gap-3 px-10 py-3"
+              >
+                DESCARGAR PDF
+                <Download size={18} />
+              </Button>
+            </a>
           </div>
 
         </div>
