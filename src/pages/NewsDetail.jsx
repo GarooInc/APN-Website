@@ -9,7 +9,7 @@ const articles = {
     title: 'ACOMPÁÑAME A CRECER: UN ESFUERZO PÚBLICO-PRIVADO PARA EL DESARROLLO INFANTIL TEMPRANO',
     subtitle: 'Generando evidencia para transformar vidas.',
     image: '/image17.png',
-    imagePosition: 'center center',
+    imagePosition: 'center 65%',
     intro: (
       <>
         La <strong>Alianza por la Nutrición (APN)</strong>, junto con sus socios implementadores —Fundación
@@ -177,11 +177,11 @@ function News3() {
   return (
     <div>
       {/* Hero imagen */}
-      <div className="w-full mt-[70px] md:mt-0" style={{ height: 'clamp(360px, 60vh, 800px)', overflow: 'hidden' }}>
+      <div className="w-full" style={{ marginTop: 70, height: 'clamp(600px, 90vh, 1000px)', overflow: 'hidden' }}>
         <img
-          src="/image2.jpg"
+          src="/image19.png"
           alt="Desnutrición Crónica Infantil"
-          style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center 25%', display: 'block' }}
+          style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center 35%', display: 'block' }}
         />
       </div>
 
@@ -335,7 +335,7 @@ export default function NewsDetail() {
     <div>
       {/* Hero imagen */}
       <div style={{ position: 'relative' }}>
-        <div className="w-full mt-[70px] md:mt-0" style={{ height: 'clamp(400px, 85vh, 950px)' }}>
+        <div className="w-full" style={{ marginTop: 70, height: 'clamp(600px, 90vh, 1000px)' }}>
           <img
             src={article.image}
             alt=""
