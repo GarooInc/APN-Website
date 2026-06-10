@@ -9,7 +9,7 @@ const articles = {
     title: 'ACOMPÁÑAME A CRECER: UN ESFUERZO PÚBLICO-PRIVADO PARA EL DESARROLLO INFANTIL TEMPRANO',
     subtitle: 'Generando evidencia para transformar vidas.',
     image: '/image17.png',
-    imagePosition: 'center 65%',
+    imagePosition: 'center 30%',
     intro: (
       <>
         La <strong>Alianza por la Nutrición (APN)</strong>, junto con sus socios implementadores —Fundación

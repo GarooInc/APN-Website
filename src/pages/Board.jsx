@@ -131,7 +131,7 @@ export default function Board() {
         <img
           src="/image11.jpg"
           alt="Junta Directiva"
-          style={{ width: "100%", display: "block", objectFit: "cover", maxHeight: "clamp(200px, 30vw, 420px)" }}
+          style={{ width: "100%", display: "block", objectFit: "cover", maxHeight: "clamp(200px, 30vw, 420px)", objectPosition: "center 65%" }}
         />
       </section>
 
