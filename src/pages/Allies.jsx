@@ -18,7 +18,7 @@ export default function Allies() {
 
       {/* Carrusel de Aliados */}
       <OrgsCarousel
-        title={<>Aliados <span style={{ fontFamily: "'Averta-RegularItalic'", fontStyle: "normal" }}>›</span></>}
+        title={<>Aliados <span style={{ fontFamily: "'Averta', sans-serif", fontWeight: 200, fontStyle: "normal" }}>›</span></>}
         bgColor="#fff"
         textColor="#00379E"
         showLogo={false}
@@ -30,8 +30,8 @@ export default function Allies() {
         <div style={{ maxWidth: 760, margin: "0 auto" }}>
 
           <h2 style={{
-            fontFamily: "'Averta-Bold'",
-            fontWeight: 400,
+            fontFamily: "'Averta', sans-serif",
+            fontWeight: 700,
             fontSize: "clamp(16px, 2.5vw, 32px)",
             lineHeight: 1.2,
             letterSpacing: "0.05em",
@@ -40,7 +40,7 @@ export default function Allies() {
             marginTop: 0,
             marginBottom: "clamp(40px, 6vw, 80px)",
           }}>
-            Por qué ser parte<br />de la Alianza<br />por la Nutrición <span style={{ fontFamily: "'Averta-RegularItalic'", fontStyle: "normal" }}>›</span>
+            Por qué ser parte<br />de la Alianza<br />por la Nutrición <span style={{ fontFamily: "'Averta', sans-serif", fontWeight: 200, fontStyle: "normal" }}>›</span>
           </h2>
 
           {[
@@ -53,8 +53,8 @@ export default function Allies() {
             <div key={i}>
               <div style={{ display: "flex", alignItems: "flex-start", gap: "clamp(12px, 2vw, 24px)", marginBottom: "clamp(24px, 4vw, 48px)" }}>
                 <span style={{
-                  fontFamily: "'Averta-Bold'",
-                  fontWeight: 400,
+                  fontFamily: "'Averta', sans-serif",
+                  fontWeight: 700,
                   fontSize: "clamp(32px, 6vw, 90px)",
                   color: "#fff",
                   lineHeight: 1,
@@ -67,8 +67,8 @@ export default function Allies() {
                   <div style={{ display: "flex", alignItems: "center", gap: "clamp(10px, 1.5vw, 20px)", marginBottom: "clamp(8px, 1.2vw, 16px)" }}>
                     <img src={icon} alt="" style={{ width: "clamp(28px, 3.5vw, 52px)", height: "clamp(28px, 3.5vw, 52px)", objectFit: "contain", flexShrink: 0 }} />
                     <h3 style={{
-                      fontFamily: "'Averta-Bold'",
-                      fontWeight: 400,
+                      fontFamily: "'Averta', sans-serif",
+                      fontWeight: 700,
                       fontSize: "clamp(12px, 1.5vw, 24px)",
                       color: "#0098DC",
                       textTransform: "uppercase",
@@ -79,7 +79,7 @@ export default function Allies() {
                     </h3>
                   </div>
                   <p style={{
-                    fontFamily: "'Averta-RegularItalic', Georgia, serif",
+                    fontFamily: "'Averta', sans-serif",
                     fontStyle: "italic",
                     fontWeight: 400,
                     fontSize: "clamp(11px, 1.4vw, 20px)",
@@ -98,7 +98,7 @@ export default function Allies() {
           ))}
 
           <p style={{
-            fontFamily: "'Averta', Georgia, serif",
+            fontFamily: "'Averta', sans-serif",
             fontSize: "clamp(10px, 1.2vw, 14px)",
             color: "#fff",
             marginTop: "clamp(40px, 6vw, 80px)",

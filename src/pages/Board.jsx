@@ -10,7 +10,7 @@ export default function Board() {
   const [captchaToken, setCaptchaToken] = useState(null);
 
   const boldStyle = {
-    fontFamily: "'Averta-Bold', Georgia, serif",
+    fontFamily: "'Averta', sans-serif",
     fontWeight: 700,
   };
 
@@ -33,8 +33,8 @@ export default function Board() {
           {/* Título */}
           <h2
             style={{
-              fontFamily: "'Averta-Bold'",
-              fontWeight: 400,
+              fontFamily: "'Averta', sans-serif",
+              fontWeight: 700,
               fontSize: "clamp(18px, 3.5vw, 40px)",
               lineHeight: 1.25,
               letterSpacing: "0.0908em",
@@ -44,7 +44,7 @@ export default function Board() {
               marginTop: 0,
             }}
           >
-            Mensaje de<br /><span style={{ fontFamily: "'Averta-RegularItalic', Georgia, serif", fontStyle: "italic", fontWeight: 400 }}>nuestro presidente</span>
+            Mensaje de<br /><span style={{ fontFamily: "'Averta', sans-serif", fontStyle: "italic", fontWeight: 400 }}>nuestro presidente</span>
           </h2>
 
           {/* Foto + Nombre */}
@@ -64,8 +64,8 @@ export default function Board() {
             <div style={{ display: "flex", flexDirection: "column", justifyContent: "center", paddingTop: 8 }}>
               <span
                 style={{
-                  fontFamily: "'Averta-Bold', Georgia, serif",
-                  fontWeight: 400,
+                  fontFamily: "'Averta', sans-serif",
+                  fontWeight: 700,
                   fontSize: "clamp(12px, 2.5vw, 22px)",
                   lineHeight: 1.3,
                   letterSpacing: "0.0908em",
@@ -77,7 +77,7 @@ export default function Board() {
               </span>
               <span
                 style={{
-                  fontFamily: "'Averta-RegularItalic', 'Averta', Georgia, serif",
+                  fontFamily: "'Averta', sans-serif",
                   fontWeight: 400,
                   fontStyle: "italic",
                   fontSize: "clamp(10px, 1.8vw, 18px)",
@@ -95,7 +95,7 @@ export default function Board() {
           {/* Discurso */}
           <div
             style={{
-              fontFamily: "'Averta-RegularItalic', Georgia, serif",
+              fontFamily: "'Averta', sans-serif",
               fontWeight: 400,
               fontStyle: "italic",
               fontSize: "clamp(16px, 3vw, 26px)",
@@ -143,8 +143,8 @@ export default function Board() {
         <div style={{ maxWidth: 760, margin: "0 auto" }}>
         <h2
           style={{
-            fontFamily: "'Averta-Bold'",
-            fontWeight: 400,
+            fontFamily: "'Averta', sans-serif",
+            fontWeight: 700,
             fontSize: "clamp(18px, 3.5vw, 40px)",
             lineHeight: 1.25,
             letterSpacing: "0.0908em",
@@ -155,7 +155,7 @@ export default function Board() {
             paddingLeft: "calc(8% + clamp(8px, 2vw, 20px))",
           }}
         >
-          Junta<br />Directiva <span style={{ fontFamily: "'Averta-RegularItalic'", fontStyle: "normal" }}>›</span>
+          Junta<br />Directiva <span style={{ fontFamily: "'Averta', sans-serif", fontWeight: 200, fontStyle: "normal" }}>›</span>
         </h2>
 
         <div className="junta-grid">
@@ -184,8 +184,8 @@ export default function Board() {
               <div style={{ display: "flex", flexDirection: "column", justifyContent: "center", paddingTop: 24 }}>
                 <span
                   style={{
-                    fontFamily: "'Averta-Bold', Georgia, serif",
-                    fontWeight: 400,
+                    fontFamily: "'Averta', sans-serif",
+                    fontWeight: 700,
                     fontSize: "clamp(11px, 2vw, 20px)",
                     lineHeight: 1.3,
                     letterSpacing: "0.0908em",
@@ -198,7 +198,7 @@ export default function Board() {
                 </span>
                 <span
                   style={{
-                    fontFamily: "'Averta-RegularItalic', Georgia, serif",
+                    fontFamily: "'Averta', sans-serif",
                     fontStyle: "italic",
                     fontWeight: 400,
                     fontSize: "clamp(9px, 1.5vw, 16px)",
@@ -225,8 +225,8 @@ export default function Board() {
         <div style={{ maxWidth: 760, margin: "0 auto" }}>
           <h2
             style={{
-              fontFamily: "'Averta-Bold'",
-              fontWeight: 400,
+              fontFamily: "'Averta', sans-serif",
+              fontWeight: 700,
               fontSize: "clamp(18px, 3.5vw, 40px)",
               lineHeight: 1.25,
               letterSpacing: "0.0908em",
@@ -261,7 +261,7 @@ export default function Board() {
                 <div style={{ display: "flex", flexDirection: "column", justifyContent: "center", paddingTop: 24 }}>
                   <span
                     style={{
-                      fontFamily: "'Averta-Bold', Georgia, serif",
+                      fontFamily: "'Averta', sans-serif",
                       fontWeight: 400,
                       fontSize: "clamp(11px, 2vw, 20px)",
                       lineHeight: 1.3,
@@ -275,7 +275,7 @@ export default function Board() {
                   </span>
                   <span
                     style={{
-                      fontFamily: "'Averta-RegularItalic', Georgia, serif",
+                      fontFamily: "'Averta', sans-serif",
                       fontStyle: "italic",
                       fontWeight: 400,
                       fontSize: "clamp(9px, 1.5vw, 16px)",
@@ -302,7 +302,7 @@ export default function Board() {
 
       {/* Organizaciones Aliadas - Carrusel */}
       <OrgsCarousel
-        title={<>Organizaciones que son<br />parte de la Alianza por<br />la Nutrición <span style={{ fontFamily: "'Averta-RegularItalic'", fontStyle: "normal" }}>›</span></>}
+        title={<>Organizaciones que son<br />parte de la Alianza por<br />la Nutrición <span style={{ fontFamily: "'Averta', sans-serif", fontWeight: 200, fontStyle: "normal" }}>›</span></>}
         bgColor="#00379E"
         textColor="#fff"
         showLogo={true}
@@ -317,8 +317,8 @@ export default function Board() {
         <div style={{ maxWidth: 560, margin: "0 auto" }}>
           <h2
             style={{
-              fontFamily: "'Averta-Bold'",
-              fontWeight: 400,
+              fontFamily: "'Averta', sans-serif",
+              fontWeight: 700,
               fontSize: "clamp(18px, 3.5vw, 40px)",
               lineHeight: 1.25,
               letterSpacing: "0.0908em",
@@ -328,12 +328,12 @@ export default function Board() {
               marginTop: 0,
             }}
           >
-            Únete Aquí <span style={{ fontFamily: "'Averta-RegularItalic'", fontStyle: "normal" }}>›</span>
+            Únete Aquí <span style={{ fontFamily: "'Averta', sans-serif", fontWeight: 200, fontStyle: "normal" }}>›</span>
           </h2>
 
           <p
             style={{
-              fontFamily: "'Averta-RegularItalic', Georgia, serif",
+              fontFamily: "'Averta', sans-serif",
               fontStyle: "italic",
               fontWeight: 400,
               fontSize: "clamp(13px, 2vw, 20px)",
@@ -342,12 +342,12 @@ export default function Board() {
               marginBottom: 8,
             }}
           >
-            La <strong style={{ fontFamily: "'Averta-Bold'", fontWeight: 700, fontStyle: "normal" }}>Alianza por la Nutrición</strong> necesita de todos y todas para erradicar la <strong style={{ fontFamily: "'Averta-Bold'", fontWeight: 700, fontStyle: "normal" }}>DCI*</strong> en Guatemala. Sé parte del cambio: ingresa tus datos y únete a nuestros espacios de diálogo, concientización y acción para generar impacto. Juntos podemos garantizar que ningún niño ni niña quede atrás.
+            La <strong style={{ fontFamily: "'Averta', sans-serif", fontWeight: 700, fontStyle: "normal" }}>Alianza por la Nutrición</strong> necesita de todos y todas para erradicar la <strong style={{ fontFamily: "'Averta', sans-serif", fontWeight: 700, fontStyle: "normal" }}>DCI*</strong> en Guatemala. Sé parte del cambio: ingresa tus datos y únete a nuestros espacios de diálogo, concientización y acción para generar impacto. Juntos podemos garantizar que ningún niño ni niña quede atrás.
           </p>
 
           <p
             style={{
-              fontFamily: "'Averta', Georgia, serif",
+              fontFamily: "'Averta', sans-serif",
               fontSize: "clamp(10px, 1.4vw, 14px)",
               color: "#00379E",
               marginBottom: "clamp(24px, 4vw, 40px)",
@@ -358,7 +358,7 @@ export default function Board() {
 
           <p
             style={{
-              fontFamily: "'Averta-Bold'",
+              fontFamily: "'Averta', sans-serif",
               fontWeight: 700,
               fontSize: "clamp(14px, 2vw, 22px)",
               color: "#00379E",
@@ -397,7 +397,7 @@ export default function Board() {
                     border: "none",
                     borderBottom: idx < 2 ? "1px solid #ccc" : "none",
                     padding: "clamp(12px, 1.5vw, 18px) clamp(14px, 2vw, 22px)",
-                    fontFamily: "'Averta', Georgia, serif",
+                    fontFamily: "'Averta', sans-serif",
                     fontSize: "clamp(13px, 1.5vw, 16px)",
                     color: "#555",
                     outline: "none",
@@ -427,8 +427,8 @@ export default function Board() {
                 border: "none",
                 borderRadius: 4,
                 padding: "clamp(14px, 2vw, 20px)",
-                fontFamily: "'Averta-Bold'",
-                fontWeight: 400,
+                fontFamily: "'Manrope', sans-serif",
+                fontWeight: 700,
                 fontSize: "clamp(13px, 1.8vw, 18px)",
                 letterSpacing: "0.15em",
                 textTransform: "uppercase",

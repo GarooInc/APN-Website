@@ -5,7 +5,7 @@ export default function Button({
   className = '',
   ...props 
 }) {
-  const baseStyles = 'font-manrope font-semibold rounded-lg transition-all duration-300 hover:scale-105 hover:brightness-110 active:scale-95';
+  const baseStyles = 'font-manrope font-bold rounded-lg transition-all duration-300 hover:scale-105 hover:brightness-110 active:scale-95';
   
   const variants = {
     primary: 'bg-primary-dark text-primary-white hover:bg-primary-light',

@@ -116,8 +116,8 @@ export default function OrgsCarousel({ title, bgColor = "#00379E", textColor = "
       <div style={{ maxWidth: 760, margin: "0 auto" }}>
         <h2
           style={{
-            fontFamily: "'Averta-Bold'",
-            fontWeight: 400,
+            fontFamily: "'Averta', sans-serif",
+            fontWeight: 700,
             fontSize: "clamp(18px, 3.5vw, 40px)",
             lineHeight: 1.25,
             letterSpacing: "0.0908em",

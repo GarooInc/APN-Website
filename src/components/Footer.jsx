@@ -35,7 +35,7 @@ export default function Footer({ variant = "dark" }) {
                 className="transition-all duration-200 hover:text-[#0098DC] hover:tracking-widest"
                 style={{
                   fontFamily: "'Averta', sans-serif",
-                  fontWeight: 700,
+                  fontWeight: 400,
                   fontSize: "clamp(11px, 2.5vw, 14px)",
                   letterSpacing: "0.12em",
                   color: variant === "light" ? "#00379E" : "white",
@@ -58,7 +58,7 @@ export default function Footer({ variant = "dark" }) {
                 className="transition-all duration-200 hover:text-[#0098DC] hover:tracking-widest"
                 style={{
                   fontFamily: "'Averta', sans-serif",
-                  fontWeight: 700,
+                  fontWeight: 400,
                   fontSize: "clamp(11px, 2.5vw, 14px)",
                   letterSpacing: "0.12em",
                   color: variant === "light" ? "#00379E" : "white",

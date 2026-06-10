@@ -16,8 +16,6 @@ import NewsDetail from './pages/NewsDetail';
 import Board from './pages/Board';
 import { ROUTES } from './utils/constants';
 import { LanguageProvider } from './context/LanguageContext';
-// main.jsx o App.jsx
-import '@fontsource/plus-jakarta-sans/400.css';
 
 export default function App() {
   return (

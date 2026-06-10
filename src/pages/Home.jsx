@@ -2,7 +2,6 @@ import Button from '../components/Button';
 import { useNavigate } from 'react-router-dom';
 import { useFadeIn } from '../hooks/useFadeIn';
 import { useLang } from '../context/LanguageContext';
-import '@fontsource/plus-jakarta-sans/400.css';
 
 export default function Home() {
   useFadeIn();
@@ -28,7 +27,7 @@ export default function Home() {
           <p
             className="text-white/80 mb-3 tracking-[0.15em] uppercase"
             style={{
-              fontFamily: "'Manrope', 'Montserrat', sans-serif",
+              fontFamily: "'Averta', sans-serif",
               fontSize: "clamp(11px, 2vw, 24px)",
               letterSpacing: "0.20em",
             }}
@@ -41,7 +40,7 @@ export default function Home() {
             className="text-white m-0 text-center mx-auto"
             style={{
               fontFamily: "'Averta', sans-serif",
-              fontWeight: 800,
+              fontWeight: 700,
               fontStyle: "italic",
               fontSize: "clamp(20px, 6vw, 52px)",
               lineHeight: 1.15,
@@ -238,7 +237,7 @@ export default function Home() {
             <Button
               variant="filled-light"
               size="md"
-              className="font-averta font-bold text-[clamp(12px,2.5vw,16px)] tracking-[0.15em] px-[40px] py-[12px]"
+              className="font-bold text-[clamp(12px,2.5vw,16px)] tracking-[0.15em] px-[40px] py-[12px]"
               onClick={() => navigate('/board')}
             >
               {t.quienesSomos.btn}
@@ -304,7 +303,7 @@ export default function Home() {
             <Button
               variant="filled-light"
               size="md"
-              className="font-averta font-bold text-[clamp(12px,2.5vw,16px)] tracking-[0.15em] px-[40px] py-[12px]"
+              className="font-bold text-[clamp(12px,2.5vw,16px)] tracking-[0.15em] px-[40px] py-[12px]"
               onClick={() => navigate('/allies')}
             >
               {t.aliados.btn}
@@ -360,7 +359,7 @@ export default function Home() {
             <Button
               variant="primary"
               size="md"
-              className="font-averta font-bold text-[clamp(12px,2.5vw,16px)] tracking-[0.15em] px-[40px] py-[12px]"
+              className="font-bold text-[clamp(12px,2.5vw,16px)] tracking-[0.15em] px-[40px] py-[12px]"
               onClick={() => navigate('/evidence')}
             >
               {t.evidencia.btn}
@@ -416,7 +415,7 @@ export default function Home() {
             <Button
               variant="filled-light"
               size="md"
-              className="font-averta font-bold text-[clamp(12px,2.5vw,16px)] tracking-[0.15em] px-[40px] py-[12px]"
+              className="font-bold text-[clamp(12px,2.5vw,16px)] tracking-[0.15em] px-[40px] py-[12px]"
               onClick={() => navigate('/materials')}
             >
               {t.materiales.btn}
@@ -472,7 +471,7 @@ export default function Home() {
             <Button
               variant="primary"
               size="md"
-              className="font-averta font-bold text-[clamp(12px,2.5vw,16px)] tracking-[0.15em] px-[40px] py-[12px]"
+              className="font-bold text-[clamp(12px,2.5vw,16px)] tracking-[0.15em] px-[40px] py-[12px]"
               onClick={() => navigate('/news')}
             >
               {t.noticias.btn}

@@ -106,7 +106,7 @@ export default function Materials() {
               <Button
                 variant="filled-light"
                 size="md"
-                className="font-averta font-bold tracking-[0.15em] flex items-center gap-3 px-10 py-3"
+                className="font-bold tracking-[0.15em] flex items-center gap-3 px-10 py-3"
               >
                 DESCARGAR PDF
                 <Download size={18} />

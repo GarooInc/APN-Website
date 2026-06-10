@@ -31,7 +31,7 @@ export default function Header() {
   ];
 
   return (
-    <header className="w-full h-[70px] flex justify-between items-center bg-white shadow-md font-montserrat absolute z-50">
+    <header className="w-full h-[70px] flex justify-between items-center bg-white shadow-md absolute z-50">
 
       {/* Left: Hamburger */}
       <div className="flex items-center pl-5">
@@ -71,7 +71,7 @@ export default function Header() {
       <div className="flex items-center justify-end pr-5">
         <button
           onClick={toggleLang}
-          className="bg-none border-none cursor-pointer text-sm font-Manrope text-[#00379E] flex items-center gap-[6px] font-Manrope"
+          className="bg-none border-none cursor-pointer text-sm text-[#00379E] flex items-center gap-[6px]"
         >
           {lang}
           <svg width="14" height="14" viewBox="0 0 12 12" fill="none">

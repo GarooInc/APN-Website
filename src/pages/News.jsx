@@ -67,7 +67,7 @@ export default function News() {
               <div style={{ maxWidth: 760, margin: '0 auto' }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
                   <span style={{
-                    fontFamily: "'Averta-Bold', sans-serif",
+                    fontFamily: "'Averta', sans-serif",
                     fontWeight: 700,
                     fontSize: 'clamp(16px, 3.5vw, 24px)',
                     letterSpacing: '0.12em',
@@ -98,7 +98,7 @@ export default function News() {
           {/* Contenido */}
           <div style={{ padding: 'clamp(28px, 5vw, 56px) clamp(32px, 6vw, 80px)', maxWidth: 760, margin: '0 auto' }}>
             <h2 style={{
-              fontFamily: "'Averta-Bold', sans-serif",
+              fontFamily: "'Averta', sans-serif",
               fontWeight: 700,
               fontSize: article.titleSize || 'clamp(16px, 3vw, 24px)',
               lineHeight: 1.4,
@@ -125,7 +125,7 @@ export default function News() {
               <Button
                 variant="filled-light"
                 size="md"
-                className="font-averta font-bold text-[clamp(12px,2.5vw,16px)] tracking-[0.15em] px-[40px] py-[12px]"
+                className="font-bold text-[clamp(12px,2.5vw,16px)] tracking-[0.15em] px-[40px] py-[12px]"
                 style={
                   article.id === 1 ? { backgroundColor: '#00379E', borderColor: '#00379E' } :
                   article.id === 2 ? { backgroundColor: '#0098DC', borderColor: '#0098DC' } : {}

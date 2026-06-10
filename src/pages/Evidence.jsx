@@ -103,7 +103,7 @@ export default function Evidence() {
               color: '#00a1e0',
               borderRadius: 4,
               padding: 'clamp(12px, 2vw, 16px) clamp(28px, 4vw, 48px)',
-              fontFamily: "'Averta', sans-serif",
+              fontFamily: "'Manrope', sans-serif",
               fontWeight: 700,
               fontSize: 'clamp(12px, 1.8vw, 15px)',
               letterSpacing: '0.15em',
