@@ -6,19 +6,17 @@ import { useNavigate, useLocation } from "react-router-dom";
 import { useLang } from "../context/LanguageContext";
 
 // Destinos por posicion, en el mismo orden que t.footer.left / t.footer.right.
-// { id } = seccion del Home;  { path } = ruta propia.
+// Todos apuntan a una seccion del homepage, igual que el menu del header.
 const LEFT_TARGETS = [
-  { id: "proposito" },   // PROPOSITO
-  { id: "mision" },      // MISION
-  { path: "/evidence" }, // GENERACION DE EVIDENCIA
-  { path: "/allies" },   // ALIADOS
+  { id: "quienes-somos" }, // QUIENES SOMOS
+  { id: "proposito" },     // PROPOSITO
+  { id: "mision" },        // MISION
 ];
 
 const RIGHT_TARGETS = [
-  { path: "/board" },     // UNETE
-  { path: "/materials" }, // MATERIALES TECNICOS
-  { path: "/news" },      // NOTICIAS
-  { id: "contacto" },     // CONTACTANOS
+  { id: "aliados" },  // ALIADOS
+  { id: "unete" },    // UNETE
+  { id: "noticias" }, // NOTICIAS
 ];
 
 export default function Footer({ variant = "dark" }) {

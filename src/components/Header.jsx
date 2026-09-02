@@ -22,28 +22,20 @@ export default function Header() {
     }
   };
 
-  const goTo = (item) => {
-    if (item.path) {
-      setMenuOpen(false);
-      navigate(item.path);
-      window.scrollTo({ top: 0 });
-    } else {
-      scrollToSection(item.id);
-    }
-  };
-
+  // En el mismo orden en que aparecen las secciones del homepage
   const menuItems = [
-    { label: t.menu.quienesSomos, id: "quienes-somos" },
-    { label: t.menu.proposito,    id: "proposito"     },
-    { label: t.menu.mision,       id: "mision"        },
-    { label: t.menu.aliados,      id: "aliados"       },
-    { label: t.menu.unete,        path: "/board"      },
-    { label: t.menu.noticias,     id: "noticias"      },
+    { label: t.menu.proposito, id: "proposito" },
+    { label: t.menu.mision,    id: "mision"    },
+    { label: t.menu.aliados,   id: "aliados"   },
+    { label: t.menu.evidencia,  id: "evidencia"  },
+    { label: t.menu.materiales, id: "materiales" },
+    { label: t.menu.noticias,   id: "noticias"   },
+    { label: t.menu.contacto,   id: "contacto"   },
   ];
 
-  // Repartidos alrededor del logo central: 3 a la izquierda, 3 a la derecha
-  const leftItems  = menuItems.slice(0, 3);
-  const rightItems = menuItems.slice(3);
+  // Repartidos alrededor del logo central: 4 a la izquierda, 3 a la derecha
+  const leftItems  = menuItems.slice(0, 4);
+  const rightItems = menuItems.slice(4);
 
   const navLinkClass =
     "bg-none border-none cursor-pointer whitespace-nowrap font-averta font-semibold " +
@@ -64,11 +56,11 @@ export default function Header() {
           <span className="block w-6 h-[2.5px] bg-[#00379E] rounded-[2px]" />
         </button>
 
-        <nav className="hidden lg:flex w-full items-center justify-center gap-8 xl:gap-12">
+        <nav className="hidden lg:flex w-full items-center justify-center gap-5 xl:gap-9">
           {leftItems.map(item => (
             <button
               key={item.label}
-              onClick={() => goTo(item)}
+              onClick={() => scrollToSection(item.id)}
               className={navLinkClass}
             >
               {item.label}
@@ -100,11 +92,11 @@ export default function Header() {
 
       {/* Derecha: links + selector de idioma */}
       <div className="flex-1 flex items-center justify-end pl-[60px] md:pl-[110px] pr-5">
-        <nav className="hidden lg:flex flex-1 items-center justify-center gap-8 xl:gap-12">
+        <nav className="hidden lg:flex flex-1 items-center justify-center gap-5 xl:gap-9">
           {rightItems.map(item => (
             <button
               key={item.label}
-              onClick={() => goTo(item)}
+              onClick={() => scrollToSection(item.id)}
               className={navLinkClass}
             >
               {item.label}
@@ -129,7 +121,7 @@ export default function Header() {
           {menuItems.map(item => (
             <div
               key={item.label}
-              onClick={() => goTo(item)}
+              onClick={() => scrollToSection(item.id)}
               className="p-3 px-6 text-sm font-medium text-[#00379E] cursor-pointer border-b border-[#f5f5f5] hover:text-[#0098DC] transition-colors"
             >
               {item.label}

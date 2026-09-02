@@ -233,7 +233,7 @@ export default function Home() {
             {t.quienesSomos.footnote}
           </p>
 
-          <div className="flex justify-center mt-6">
+          <div id="unete" className="flex justify-center mt-6 scroll-mt-[90px]">
             <Button
               variant="filled-light"
               size="md"
@@ -314,7 +314,7 @@ export default function Home() {
       </section>
 
       {/* Generación de Evidencia */}
-      <section className="bg-[#0098DC] px-8 py-10 flex flex-col items-center fade-in">
+      <section id="evidencia" className="bg-[#0098DC] px-8 py-10 flex flex-col items-center fade-in">
 
         <div className="w-full sm:w-[75%] h-[300px] sm:h-[500px] overflow-hidden mb-6">
           <img
@@ -370,7 +370,7 @@ export default function Home() {
       </section>
 
       {/* Materiales Técnicos */}
-      <section className="bg-[#d6d8db] px-8 py-10 flex flex-col items-center fade-in">
+      <section id="materiales" className="bg-[#d6d8db] px-8 py-10 flex flex-col items-center fade-in">
 
         <div className="w-full sm:w-[75%] h-[300px] sm:h-[550px] overflow-hidden mb-6">
           <img
