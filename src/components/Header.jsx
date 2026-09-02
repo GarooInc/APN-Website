@@ -47,7 +47,7 @@ export default function Header() {
 
   const navLinkClass =
     "bg-none border-none cursor-pointer whitespace-nowrap font-averta font-semibold " +
-    "text-[13px] xl:text-[15px] text-[#333] hover:text-[#00379E] transition-colors";
+    "text-[13px] xl:text-[15px] text-[#00379E] hover:text-[#0098DC] transition-colors";
 
   return (
     <header className="w-full h-[70px] flex items-center bg-white shadow-md absolute z-50">
@@ -130,7 +130,7 @@ export default function Header() {
             <div
               key={item.label}
               onClick={() => goTo(item)}
-              className="p-3 px-6 text-sm font-medium text-[#333] cursor-pointer border-b border-[#f5f5f5] hover:text-[#00379E] transition-colors"
+              className="p-3 px-6 text-sm font-medium text-[#00379E] cursor-pointer border-b border-[#f5f5f5] hover:text-[#0098DC] transition-colors"
             >
               {item.label}
             </div>
