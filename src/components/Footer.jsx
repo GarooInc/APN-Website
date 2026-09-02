@@ -2,11 +2,30 @@ import { LiaLinkedinIn } from "react-icons/lia";
 import { FaFacebookF, FaYoutube } from "react-icons/fa";
 import { AiOutlineInstagram } from "react-icons/ai";
 import { useState, useEffect } from "react";
+import { useNavigate, useLocation } from "react-router-dom";
 import { useLang } from "../context/LanguageContext";
+
+// Destinos por posicion, en el mismo orden que t.footer.left / t.footer.right.
+// { id } = seccion del Home;  { path } = ruta propia.
+const LEFT_TARGETS = [
+  { id: "proposito" },   // PROPOSITO
+  { id: "mision" },      // MISION
+  { path: "/evidence" }, // GENERACION DE EVIDENCIA
+  { path: "/allies" },   // ALIADOS
+];
+
+const RIGHT_TARGETS = [
+  { path: "/board" },     // UNETE
+  { path: "/materials" }, // MATERIALES TECNICOS
+  { path: "/news" },      // NOTICIAS
+  { id: "contacto" },     // CONTACTANOS
+];
 
 export default function Footer({ variant = "dark" }) {
   const [isVisible, setIsVisible] = useState(false);
   const { t } = useLang();
+  const navigate = useNavigate();
+  const location = useLocation();
 
   useEffect(() => {
     // Trigger animation after component mounts
@@ -19,6 +38,27 @@ export default function Footer({ variant = "dark" }) {
     transition: `opacity 0.5s ease-out ${index * 0.1}s, transform 0.5s ease-out ${index * 0.1}s`,
   });
 
+  const hrefFor = (target) => target.path || `/#${target.id}`;
+
+  const goTo = (e, target) => {
+    e.preventDefault();
+    if (target.path) {
+      navigate(target.path);
+      window.scrollTo({ top: 0 });
+      return;
+    }
+    const doScroll = () => {
+      const el = document.getElementById(target.id);
+      if (el) el.scrollIntoView({ behavior: "smooth" });
+    };
+    if (location.pathname === "/") {
+      doScroll();
+    } else {
+      navigate("/");
+      setTimeout(doScroll, 100);
+    }
+  };
+
   return (
     <footer>
 
@@ -28,11 +68,12 @@ export default function Footer({ variant = "dark" }) {
 
           {/* Columna izquierda */}
           <div className="flex flex-col gap-6 sm:gap-10">
-            {t.footer.left.map((item) => (
+            {t.footer.left.map((item, i) => (
               <a
                 key={item}
-                href="#"
-                className="transition-all duration-200 hover:text-[#0098DC] hover:tracking-widest"
+                href={hrefFor(LEFT_TARGETS[i])}
+                onClick={(e) => goTo(e, LEFT_TARGETS[i])}
+                className="cursor-pointer transition-all duration-200 hover:text-[#0098DC] hover:tracking-widest"
                 style={{
                   fontFamily: "'Averta', sans-serif",
                   fontWeight: 400,
@@ -51,11 +92,12 @@ export default function Footer({ variant = "dark" }) {
 
           {/* Columna derecha */}
           <div className="flex flex-col gap-6 sm:gap-10">
-            {t.footer.right.map((item) => (
+            {t.footer.right.map((item, i) => (
               <a
                 key={item}
-                href="#"
-                className="transition-all duration-200 hover:text-[#0098DC] hover:tracking-widest"
+                href={hrefFor(RIGHT_TARGETS[i])}
+                onClick={(e) => goTo(e, RIGHT_TARGETS[i])}
+                className="cursor-pointer transition-all duration-200 hover:text-[#0098DC] hover:tracking-widest"
                 style={{
                   fontFamily: "'Averta', sans-serif",
                   fontWeight: 400,

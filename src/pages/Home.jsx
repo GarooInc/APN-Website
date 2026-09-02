@@ -103,7 +103,7 @@ export default function Home() {
         />
       </div>
 
-      <section className="bg-[#d6d8db] px-8 py-10 flex flex-col justify-center min-h-[320px] fade-in">
+      <section id="mision" className="bg-[#d6d8db] px-8 py-10 flex flex-col justify-center min-h-[320px] fade-in">
         <div className="max-w-2xl mx-auto w-full">
           <div className="flex items-center gap-2 mb-8">
             <span

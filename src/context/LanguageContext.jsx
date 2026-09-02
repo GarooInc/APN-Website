@@ -5,8 +5,11 @@ const translations = {
     menu: {
       inicio:      "Inicio",
       quienesSomos: "Quiénes somos",
+      proposito:   "Propósito",
+      mision:      "Misión",
       programas:   "Programas",
       aliados:     "Aliados",
+      unete:       "Únete",
       noticias:    "Noticias",
       contacto:    "Contacto",
     },
@@ -70,8 +73,11 @@ const translations = {
     menu: {
       inicio:       "Home",
       quienesSomos: "Who we are",
+      proposito:    "Purpose",
+      mision:       "Mission",
       programas:    "Programs",
       aliados:      "Allies",
+      unete:        "Join us",
       noticias:     "News",
       contacto:     "Contact",
     },
