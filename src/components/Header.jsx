@@ -27,15 +27,13 @@ export default function Header() {
     { label: t.menu.proposito, id: "proposito" },
     { label: t.menu.mision,    id: "mision"    },
     { label: t.menu.aliados,   id: "aliados"   },
-    { label: t.menu.evidencia,  id: "evidencia"  },
-    { label: t.menu.materiales, id: "materiales" },
     { label: t.menu.noticias,   id: "noticias"   },
     { label: t.menu.contacto,   id: "contacto"   },
   ];
 
-  // Repartidos alrededor del logo central: 4 a la izquierda, 3 a la derecha
-  const leftItems  = menuItems.slice(0, 4);
-  const rightItems = menuItems.slice(4);
+  // Repartidos alrededor del logo central: 3 a la izquierda, 2 a la derecha
+  const leftItems  = menuItems.slice(0, 3);
+  const rightItems = menuItems.slice(3);
 
   const navLinkClass =
     "bg-none border-none cursor-pointer whitespace-nowrap font-averta font-semibold " +
