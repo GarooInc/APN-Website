@@ -19,8 +19,9 @@ export default function Board() {
 
       {/* Mensaje de Nuestro Presidente */}
       <section
+        id="mensaje-presidente"
         className="fade-in"
-        style={{ backgroundColor: "#C0C8CE", margin: 0, padding: 0 }}
+        style={{ backgroundColor: "#C0C8CE", margin: 0, padding: 0, scrollMarginTop: 90 }}
       >
         <div
           style={{
@@ -137,8 +138,9 @@ export default function Board() {
 
       {/* Junta Directiva */}
       <section
+        id="junta-directiva"
         className="fade-in"
-        style={{ backgroundColor: "#fff", padding: "clamp(40px, 6vw, 80px) clamp(60px, 12vw, 180px)" }}
+        style={{ backgroundColor: "#fff", padding: "clamp(40px, 6vw, 80px) clamp(60px, 12vw, 180px)", scrollMarginTop: 90 }}
       >
         <div style={{ maxWidth: 760, margin: "0 auto" }}>
         <h2
@@ -311,8 +313,9 @@ export default function Board() {
 
       {/* Únete Aquí */}
       <section
+        id="unete-aqui"
         className="fade-in"
-        style={{ backgroundColor: "#fff", padding: "clamp(40px, 6vw, 80px) clamp(40px, 8vw, 120px)" }}
+        style={{ backgroundColor: "#fff", padding: "clamp(40px, 6vw, 80px) clamp(40px, 8vw, 120px)", scrollMarginTop: 90 }}
       >
         <div style={{ maxWidth: 560, margin: "0 auto" }}>
           <h2

@@ -26,7 +26,7 @@ export default function Allies() {
       />
 
       {/* Por qué ser parte */}
-      <section className="fade-in" style={{ backgroundColor: "#00379E", padding: "clamp(60px, 8vw, 100px) clamp(60px, 10vw, 160px)" }}>
+      <section id="por-que-ser-parte" className="fade-in" style={{ backgroundColor: "#00379E", padding: "clamp(60px, 8vw, 100px) clamp(60px, 10vw, 160px)", scrollMarginTop: 90 }}>
         <div style={{ maxWidth: 760, margin: "0 auto" }}>
 
           <h2 style={{

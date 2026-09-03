@@ -4,9 +4,14 @@ const translations = {
   ES: {
     menu: {
       inicio:      "Inicio",
-      quienesSomos: "Quiénes somos",
+      quienesSomos: "Quiénes Somos",
       proposito:   "Propósito",
       mision:      "Misión",
+      mensajePresidente: "Mensaje Presidente",
+      juntaDirectiva:    "Junta Directiva",
+      porQueSerParte:    "Porque ser parte de la Alianza",
+      contactanos:       "Contáctanos",
+      uneteAqui:         "Únete Aquí",
       evidencia:   "Evidencia",
       materiales:  "Materiales",
       programas:   "Programas",
@@ -74,9 +79,14 @@ const translations = {
   EN: {
     menu: {
       inicio:       "Home",
-      quienesSomos: "Who we are",
+      quienesSomos: "Who We Are",
       proposito:    "Purpose",
       mision:       "Mission",
+      mensajePresidente: "President's Message",
+      juntaDirectiva:    "Board of Directors",
+      porQueSerParte:    "Why be part of the Alliance",
+      contactanos:       "Contact Us",
+      uneteAqui:         "Join Us",
       evidencia:    "Evidence",
       materiales:   "Materials",
       programas:    "Programs",
