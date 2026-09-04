@@ -245,7 +245,6 @@ export default function Board() {
             {[
               { img: "/image12.png", name: "Ana Luisa\nEsquivel",  role: "Directora Ejecutiva" },
               { img: "/image13.jpg", name: "Olga\nLópez",          role: "Coordinadora",  subrole: "Administración y Finanzas" },
-              { img: "/image14.png", name: "Mónica\nRodríguez",    role: "Coordinadora",  subrole: "Monitoreo, Evaluación y Aprendizaje" },
             ].map(({ img, name, role, subrole }) => (
               <div key={name} style={{ display: "flex", alignItems: "flex-start", gap: "clamp(12px, 2vw, 20px)" }}>
                 <img

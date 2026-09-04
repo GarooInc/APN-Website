@@ -542,20 +542,6 @@ export default function Home() {
             </div>
 
             <div>
-              <p style={{ fontFamily: "'Averta', sans-serif", fontWeight: 700, fontSize: "clamp(13px, 2.5vw, 16px)", color: "#00379E" }}>Mónica Rodríguez
-              </p>
-              <p style={{ fontFamily: "'Averta', sans-serif", fontStyle: "italic", fontSize: "clamp(11px, 2vw, 14px)", color: "#00379E" }} className="mb-1">
-                {t.contacto.roles.monitoreo}
-              </p>
-              <p style={{ fontFamily: "'Averta', sans-serif", fontSize: "clamp(11px, 2vw, 14px)", color: "#00379E" }} className="flex items-center gap-1">
-                <img src="/phone.svg" alt="Teléfono" className="w-3.5 h-3.5" style={{ filter: 'invert(19%) sepia(85%) saturate(1472%) hue-rotate(204deg) brightness(68%) contrast(97%)' }} /> (502) 3483-2517
-              </p>
-              <p style={{ fontFamily: "'Averta', sans-serif", fontSize: "clamp(11px, 2vw, 14px)", color: "#00379E" }} className="flex items-center gap-1">
-                <img src="/message.svg" alt="Correo" className="w-3.5 h-3.5" style={{ filter: 'invert(19%) sepia(85%) saturate(1472%) hue-rotate(204deg) brightness(68%) contrast(97%)' }} /> monica.rodriguez@apn.org.gt
-              </p>
-            </div>
-
-            <div>
               <p style={{ fontFamily: "'Averta', sans-serif", fontWeight: 700, fontSize: "clamp(13px, 2.5vw, 16px)", color: "#00379E" }}>Alianza por la Nutrición
               </p>
               <p style={{ fontFamily: "'Averta', sans-serif", fontSize: "clamp(11px, 2vw, 14px)", color: "#00379E", lineHeight: "1.6" }}>
