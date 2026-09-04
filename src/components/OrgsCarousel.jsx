@@ -22,6 +22,10 @@ const LOGOS = [
   { src: "/Allies19.jpeg", alt: "Aliado 19" },
   { src: "/Allies20.png",  alt: "Aliado 20" },
   { src: "/Allies21.webp", alt: "Aliado 21" },
+  { src: "/Allies22.svg",  alt: "Aliado 22" },
+  // Logo en blanco: necesita tarjeta oscura para que se lea
+  { src: "/Allies23.png",  alt: "Aliado 23", bg: "#00379E" },
+  { src: "/Allies24.png",  alt: "Aliado 24" },
 ];
 
 const GAP = 24;
@@ -163,7 +167,7 @@ export default function OrgsCarousel({ title, bgColor = "#00379E", textColor = "
                     width: card,
                     height: card,
                     flexShrink: 0,
-                    backgroundColor: "#fff",
+                    backgroundColor: logo.bg || "#fff",
                     borderRadius: 8,
                     overflow: "hidden",
                     border: cardBorder,
