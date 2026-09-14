@@ -3,10 +3,24 @@ import { useNavigate } from 'react-router-dom';
 import { useFadeIn } from '../hooks/useFadeIn';
 import { useLang } from '../context/LanguageContext';
 
+// La seccion Generacion de Evidencia se oculto a pedido del cliente
+// (revision 07/09/26). Poner en true para volver a mostrarla.
+const MOSTRAR_EVIDENCIA = false;
+
 export default function Home() {
   useFadeIn();
   const navigate = useNavigate();
   const { t } = useLang();
+
+  // Lleva a otra página y baja hasta una sección concreta de esa página
+  const goToSection = (path, id) => {
+    navigate(path);
+    // Espera al render de la nueva página (ScrollToTop corre primero)
+    setTimeout(() => {
+      const el = document.getElementById(id);
+      if (el) el.scrollIntoView({ behavior: 'smooth' });
+    }, 100);
+  };
 
   return (
     <div>
@@ -238,7 +252,7 @@ export default function Home() {
               variant="filled-light"
               size="md"
               className="font-bold text-[clamp(12px,2.5vw,16px)] tracking-[0.15em] px-[40px] py-[12px]"
-              onClick={() => navigate('/board')}
+              onClick={() => goToSection('/board', 'unete-aqui')}
             >
               {t.quienesSomos.btn}
             </Button>
@@ -314,6 +328,7 @@ export default function Home() {
       </section>
 
       {/* Generación de Evidencia */}
+      {MOSTRAR_EVIDENCIA && (
       <section id="evidencia" className="bg-[#0098DC] px-8 py-10 flex flex-col items-center fade-in">
 
         <div className="w-full sm:w-[75%] h-[300px] sm:h-[500px] overflow-hidden mb-6">
@@ -368,6 +383,7 @@ export default function Home() {
 
         </div>
       </section>
+      )}
 
       {/* Materiales Técnicos */}
       <section id="materiales" className="bg-[#d6d8db] px-8 py-10 flex flex-col items-center fade-in">

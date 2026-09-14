@@ -2,26 +2,42 @@ import { Download } from 'lucide-react';
 import Button from '../components/Button';
 import { useFadeIn } from '../hooks/useFadeIn';
 
+// Cada material tiene su propio PDF. Los archivos se resuelven al compilar:
+// basta con dejar el PDF en src/assets/materiales/<slug>.pdf para que aparezca
+// su boton de descarga. Si el archivo aun no esta, el material se muestra sin
+// boton en lugar de ofrecer una descarga rota.
+const PDFS = import.meta.glob('../assets/materiales/*.pdf', {
+  eager: true,
+  query: '?url',
+  import: 'default',
+});
+
+const pdfFor = (slug) => PDFS[`../assets/materiales/${slug}.pdf`];
+
 const materials = [
   {
     num: '1.',
     title: 'Programa de Educación Inicial',
     subtitle: 'Acompáñame a Crecer',
+    slug: '1-acompaname-a-crecer',
   },
   {
     num: '2.',
     title: 'Hoja Informativa CECODII',
     subtitle: '',
+    slug: '2-cecodii',
   },
   {
     num: '3.',
     title: 'Política Pública de Primera Infancia',
     subtitle: '',
+    slug: '3-politica-primera-infancia',
   },
   {
     num: '4.',
     title: 'Quinto Censo Nacional de Talla',
     subtitle: '',
+    slug: '4-censo-nacional-talla',
   },
 ];
 
@@ -66,53 +82,56 @@ export default function Materials() {
             *DCI: Desnutrición Crónica Infantil.
           </p>
 
-          {/* Lista */}
-          <ol className="mb-8 flex flex-col gap-3">
-            {materials.map((mat) => (
-              <li key={mat.num} className="flex items-start gap-4">
-                <span
-                  className="font-averta font-bold text-primary-dark flex-shrink-0"
-                  style={{ fontSize: 'clamp(18px, 2.5vw, 24px)' }}
-                >
-                  {mat.num}
-                </span>
-                <div>
-                  <p
-                    className="font-averta font-bold text-primary-dark"
-                    style={{ fontSize: 'clamp(14px, 2.5vw, 18px)', lineHeight: 1.4 }}
+          {/* Lista — cada material con su propia descarga */}
+          <ol className="mb-8 flex flex-col gap-6">
+            {materials.map((mat) => {
+              const pdf = pdfFor(mat.slug);
+              return (
+                <li key={mat.num} className="flex flex-wrap items-start gap-x-4 gap-y-3">
+                  <span
+                    className="font-averta font-bold text-primary-dark flex-shrink-0"
+                    style={{ fontSize: 'clamp(18px, 2.5vw, 24px)' }}
                   >
-                    {mat.title}
-                  </p>
-                  {mat.subtitle && (
+                    {mat.num}
+                  </span>
+                  <div className="flex-1" style={{ minWidth: '200px' }}>
                     <p
-                      className="font-averta italic text-primary-dark/70"
-                      style={{ fontSize: 'clamp(15px, 2vw, 20px)' }}
+                      className="font-averta font-bold text-primary-dark"
+                      style={{ fontSize: 'clamp(14px, 2.5vw, 18px)', lineHeight: 1.4 }}
                     >
-                      {mat.subtitle}
+                      {mat.title}
                     </p>
-                  )}
-                </div>
-              </li>
-            ))}
-          </ol>
+                    {mat.subtitle && (
+                      <p
+                        className="font-averta italic text-primary-dark/70"
+                        style={{ fontSize: 'clamp(15px, 2vw, 20px)' }}
+                      >
+                        {mat.subtitle}
+                      </p>
+                    )}
+                  </div>
 
-          {/* Botón único */}
-          <div className="flex justify-center">
-            <a
-              href="/materiales.pdf"
-              download
-              style={{ textDecoration: 'none' }}
-            >
-              <Button
-                variant="filled-light"
-                size="md"
-                className="font-bold tracking-[0.15em] flex items-center gap-3 px-10 py-3"
-              >
-                DESCARGAR PDF
-                <Download size={18} />
-              </Button>
-            </a>
-          </div>
+                  {pdf && (
+                    <a
+                      href={pdf}
+                      download
+                      className="flex-shrink-0"
+                      style={{ textDecoration: 'none' }}
+                    >
+                      <Button
+                        variant="filled-light"
+                        size="sm"
+                        className="font-bold tracking-[0.15em] flex items-center gap-2 whitespace-nowrap"
+                      >
+                        DESCARGAR PDF
+                        <Download size={16} />
+                      </Button>
+                    </a>
+                  )}
+                </li>
+              );
+            })}
+          </ol>
 
         </div>
       </section>

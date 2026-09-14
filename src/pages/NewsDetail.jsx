@@ -35,12 +35,12 @@ const articles = {
               desarrollo en la primera infancia (0 a 4 años). Este programa fue impulsado por el{' '}
               <strong style={{ fontStyle: 'normal' }}>Ministerio de Educación</strong> mediante el{' '}
               <strong style={{ fontStyle: 'normal' }}>Acuerdo Ministerial 3512-2018</strong> y, en 2020, evolucionó
-              hacia una atención integral con el <strong style={{ fontStyle: 'normal' }}>Acuerdo Gubernativo 239.</strong>
+              hacia una atención integral con el <strong style={{ fontStyle: 'normal' }}>Acuerdo Gubernativo 239&#8209;2020.</strong>
             </p>
             <p style={{ margin: 0 }}>
               Gracias a un convenio interinstitucional con el Ministerio de Educación,{' '}
-              <strong style={{ fontStyle: 'normal' }}>APN</strong> implementa el programa junto a sus socios. En diciembre 2025 cumplimos 5
-              años de su implementación, de un esfuerzo público&#8209;privado.
+              <strong style={{ fontStyle: 'normal' }}>APN</strong> implementa el programa junto a sus socios. En diciembre de 2025, cumplimos 5
+              años de la implementación de un esfuerzo público&#8209;privado.
             </p>
           </>
         ),
@@ -146,6 +146,9 @@ const volverBtn = {
   transition: 'background-color 0.2s, color 0.2s',
 };
 
+// Canal de YouTube de NutreMe GT, donde vive el video de DCI
+const VIDEO_DCI_URL = 'https://www.youtube.com/@nutremegt7608';
+
 // ─── News/3 — Desktop 8 ───────────────────────────────────────────────────────
 
 function News3() {
@@ -224,11 +227,11 @@ function News3() {
 
           {/* Sección 2 */}
           <div style={sectionGap}>
-            <h2 style={headingStyle}>¿Cuál es el periodo de mayor desarrollo de un niño?</h2>
+            <h2 style={headingStyle}>¿Cuál es el período de mayor desarrollo de un niño?</h2>
             <p style={bodyDark}>
-              Desde que la madre está embarazada hasta que el niño tiene 2 años es el periodo de un{' '}
+              Desde que la madre está embarazada hasta que el niño tiene 2 años es el período de un{' '}
               <em><strong>notable crecimiento y desarrollo cerebral</strong></em> y por eso tienen los mayores requerimientos
-              nutricionales. A este periodo se le conoce como la <strong>ventana de los 1,000 días</strong>, y es especialmente
+              nutricionales. A este período se le conoce como la <strong>ventana de los 1,000 días</strong>, y es especialmente
               importante asegurar un cuidado integral para lograr su óptimo desarrollo.
             </p>
           </div>
@@ -237,20 +240,29 @@ function News3() {
           <div style={sectionGap}>
             <h2 style={headingStyle}>¿Dónde estamos parados como país?</h2>
             <p style={bodyDark}>
-              La <strong>desnutrición crónica</strong> en Guatemala es un asunto preocupante. Afecta a <strong>uno de cada dos
-              niños</strong> menores de cinco años. Pese a la gravedad del asunto, se trata de un tema que pasa desapercibido
-              para la población en general, incluso para los familiares de los que la padecen.
+              El análisis del estado nutricional en la niñez es fundamental para la salud y el bienestar, ya que permite
+              evaluar su crecimiento y desarrollo, así como identificar riesgos asociados a la malnutrición. Estos
+              indicadores contribuyen a monitorear el avance hacia los <strong>Objetivos de Desarrollo Sostenible (ODS)</strong>,
+              en particular los indicadores relacionados con el <strong>ODS 2</strong>.
             </p>
             <p style={{ ...bodyDark, marginTop: 'clamp(16px, 2vw, 28px)' }}>
-              En Guatemala, la prevalencia de la <em><strong>DCI*</strong></em> en menores de 5 años es de <strong>46.5%</strong> según
-              la ENSMI (encuesta nacional salud materno infantil — 2014/2015).
+              En la Encuesta Nacional de Demografía y Salud — <strong>ENDESA 2025</strong>, el <strong>42%</strong> de los niños y
+              niñas menores de 5 años presentan <strong>retraso del crecimiento</strong> (desnutrición crónica), siendo el problema
+              nutricional de mayor magnitud.
             </p>
             <p style={{ ...bodyDark, marginTop: 'clamp(16px, 2vw, 28px)' }}>
-              <strong>Guatemala ocupa el primer lugar en la prevalencia de desnutrición crónica</strong> en la niñez menor de 5
-              años en América Latina y el Caribe, y el sexto lugar a nivel mundial.
+              A nivel departamental existen brechas en cuanto al retraso del crecimiento. Por ejemplo:{' '}
+              <strong>Totonicapán (68%)</strong>, <strong>Huehuetenango (58%)</strong> y <strong>Quiché (56%)</strong> superan
+              ampliamente a <strong>El Progreso (19%)</strong> y <strong>Santa Rosa (24%)</strong>.
             </p>
-            <p style={{ ...bodyDark, fontSize: 'clamp(13px, 1.5vw, 18px)', marginTop: 'clamp(12px, 1.5vw, 20px)', fontStyle: 'italic' }}>
-              *DCI: Desnutrición Crónica Infantil.
+            <p style={{ ...bodyDark, marginTop: 'clamp(16px, 2vw, 28px)' }}>
+              En el área rural, el retraso del crecimiento alcanza <strong>48%</strong>, mientras que en zonas urbanas es{' '}
+              <strong>36%</strong>. El retraso del crecimiento es mayor en la población indígena o afrodescendiente, con una
+              prevalencia del <strong>52%</strong>, frente al <strong>31%</strong> en otros grupos.
+            </p>
+            <p style={{ ...bodyDark, marginTop: 'clamp(16px, 2vw, 28px)' }}>
+              La prevalencia del retraso del crecimiento difiere según el nivel educativo de la madre. Cuando la madre tiene
+              solo educación preprimaria o ninguna, la prevalencia llega al <strong>54%</strong>.
             </p>
           </div>
 
@@ -273,7 +285,10 @@ function News3() {
 
           {/* Botón VIDEO DCI */}
           <div style={{ textAlign: 'center', marginBottom: 'clamp(32px, 5vw, 64px)' }}>
-            <button
+            <a
+              href={VIDEO_DCI_URL}
+              target="_blank"
+              rel="noopener noreferrer"
               style={{
                 backgroundColor: '#0098dc',
                 color: 'white',
@@ -286,10 +301,12 @@ function News3() {
                 textTransform: 'uppercase',
                 cursor: 'pointer',
                 borderRadius: '4px',
+                textDecoration: 'none',
+                display: 'inline-block',
               }}
             >
               VIDEO DCI
-            </button>
+            </a>
           </div>
 
           {/* VOLVER */}

@@ -113,14 +113,16 @@ export default function Footer({ variant = "dark" }) {
             {/* Iconos sociales */}
             <div className="flex items-center gap-3 mt-2">
               {[
-                { icon: <LiaLinkedinIn size={18} />, href: "#", rounded: "8px" },
-                { icon: <FaFacebookF size={18} />, href: "#", rounded: "50%" },
-                { icon: <AiOutlineInstagram size={18} />, href: "#", rounded: "50%" },
-                { icon: <FaYoutube size={18} />, href: "#", rounded: "50%" },
+                { icon: <LiaLinkedinIn size={18} />,     href: "https://www.linkedin.com/company/137034031", label: "LinkedIn",  rounded: "8px" },
+                { icon: <FaFacebookF size={18} />,       href: "#", label: "Facebook",  rounded: "50%" },
+                { icon: <AiOutlineInstagram size={18} />, href: "#", label: "Instagram", rounded: "50%" },
+                { icon: <FaYoutube size={18} />,         href: "https://www.youtube.com/@nutremegt7608", label: "YouTube", rounded: "50%" },
               ].map((social, i) => (
             <a
               key={i}
               href={social.href}
+              aria-label={social.label}
+              {...(social.href !== "#" && { target: "_blank", rel: "noopener noreferrer" })}
               className="flex items-center justify-center hover:opacity-80 hover:scale-110 transition-all duration-300"
               style={{
                 color: "white",
