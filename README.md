@@ -36,6 +36,19 @@ npm run dev
 npm run build
 ```
 
+## Formulario de contacto (Netlify Forms)
+
+El formulario de `/board` envía a Netlify Forms (formulario `contacto`). Los avisos por correo se configuran en Netlify → Forms → Form notifications.
+
+Variables de entorno en Netlify:
+
+| Variable | Scope | Uso |
+| --- | --- | --- |
+| `SITE_RECAPTCHA_KEY` | Builds y Runtime | Clave pública reCAPTCHA v2 (se muestra en el sitio) |
+| `SITE_RECAPTCHA_SECRET` | Runtime | Clave secreta; Netlify valida el captcha en el servidor |
+
+Sin `SITE_RECAPTCHA_KEY` el captcha no se muestra y el formulario queda protegido solo por el honeypot y el filtro antispam de Netlify. Para probar en local, usa `SITE_RECAPTCHA_KEY=... npm run dev` con una clave que incluya `localhost` en sus dominios.
+
 ---
 
 Fernando Ortiz — Dev House

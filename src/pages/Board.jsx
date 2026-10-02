@@ -4,10 +4,57 @@ import OrgsCarousel from '../components/OrgsCarousel';
 import { useFadeIn } from '../hooks/useFadeIn';
 import './Allies.css';
 
+// Clave pública de reCAPTCHA v2; Netlify usa la misma variable para validar el envío.
+const RECAPTCHA_SITE_KEY = import.meta.env.SITE_RECAPTCHA_KEY;
+
+const CONTACT_FIELDS = [
+  { name: 'nombre', placeholder: 'Nombre', type: 'text', autoComplete: 'name' },
+  { name: 'correo', placeholder: 'Correo', type: 'email', autoComplete: 'email' },
+  { name: 'telefono', placeholder: 'Teléfono', type: 'tel', autoComplete: 'tel' },
+];
+
 export default function Board() {
   useFadeIn();
   const recaptchaRef = useRef(null);
   const [captchaToken, setCaptchaToken] = useState(null);
+  const [form, setForm] = useState({ nombre: '', correo: '', telefono: '', 'bot-field': '' });
+  // idle | sending | success | error
+  const [status, setStatus] = useState('idle');
+  const [statusMsg, setStatusMsg] = useState('');
+
+  const handleChange = (e) => setForm({ ...form, [e.target.name]: e.target.value });
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    if (RECAPTCHA_SITE_KEY && !captchaToken) {
+      setStatus('error');
+      setStatusMsg('Por favor completa el captcha.');
+      return;
+    }
+
+    setStatus('sending');
+    setStatusMsg('');
+    const body = new URLSearchParams({ 'form-name': 'contacto', ...form });
+    if (captchaToken) body.append('g-recaptcha-response', captchaToken);
+
+    try {
+      const res = await fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: body.toString(),
+      });
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      setStatus('success');
+      setStatusMsg('¡Gracias! Recibimos tus datos y pronto nos pondremos en contacto.');
+      setForm({ nombre: '', correo: '', telefono: '', 'bot-field': '' });
+    } catch {
+      setStatus('error');
+      setStatusMsg('No se pudo enviar el formulario. Intenta de nuevo más tarde.');
+    } finally {
+      recaptchaRef.current?.reset();
+      setCaptchaToken(null);
+    }
+  };
 
   const boldStyle = {
     fontFamily: "'Averta', sans-serif",
@@ -371,15 +418,21 @@ export default function Board() {
           </p>
 
           <form
+            name="contacto"
+            method="POST"
             style={{ display: "flex", flexDirection: "column", gap: 16, alignItems: "center" }}
-            onSubmit={(e) => {
-              e.preventDefault();
-              if (!captchaToken) {
-                alert('Por favor completa el captcha.');
-                return;
-              }
-            }}
+            onSubmit={handleSubmit}
           >
+            <input type="hidden" name="form-name" value="contacto" />
+
+            {/* Campo trampa para bots (honeypot) */}
+            <p style={{ position: "absolute", left: "-10000px" }} aria-hidden="true">
+              <label>
+                No llenes este campo:
+                <input name="bot-field" tabIndex={-1} autoComplete="off" value={form['bot-field']} onChange={handleChange} />
+              </label>
+            </p>
+
             {/* Campos con borde azul */}
             <div
               style={{
@@ -389,11 +442,17 @@ export default function Board() {
                 overflow: "hidden",
               }}
             >
-              {["Nombre", "Correo", "Teléfono"].map((placeholder, idx) => (
+              {CONTACT_FIELDS.map(({ name, placeholder, type, autoComplete }, idx) => (
                 <input
-                  key={placeholder}
-                  type={placeholder === "Correo" ? "email" : placeholder === "Teléfono" ? "tel" : "text"}
+                  key={name}
+                  name={name}
+                  type={type}
                   placeholder={placeholder}
+                  aria-label={placeholder}
+                  autoComplete={autoComplete}
+                  required
+                  value={form[name]}
+                  onChange={handleChange}
                   style={{
                     backgroundColor: "#E8E8E8",
                     border: "none",
@@ -412,16 +471,35 @@ export default function Board() {
             </div>
 
             {/* reCAPTCHA v2 */}
-            <ReCAPTCHA
-              ref={recaptchaRef}
-              sitekey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MFLndUL7"
-              onChange={(token) => setCaptchaToken(token)}
-              onExpired={() => setCaptchaToken(null)}
-            />
+            {RECAPTCHA_SITE_KEY && (
+              <ReCAPTCHA
+                ref={recaptchaRef}
+                sitekey={RECAPTCHA_SITE_KEY}
+                hl="es"
+                onChange={(token) => setCaptchaToken(token)}
+                onExpired={() => setCaptchaToken(null)}
+              />
+            )}
+
+            {statusMsg && (
+              <p
+                role={status === 'error' ? 'alert' : 'status'}
+                style={{
+                  fontFamily: "'Averta', sans-serif",
+                  fontSize: "clamp(13px, 1.5vw, 16px)",
+                  color: status === 'error' ? "#B00020" : "#00379E",
+                  textAlign: "center",
+                  margin: 0,
+                }}
+              >
+                {statusMsg}
+              </p>
+            )}
 
             {/* Botón ENVIAR */}
             <button
               type="submit"
+              disabled={status === 'sending'}
               style={{
                 marginTop: 4,
                 backgroundColor: "#00379E",
@@ -434,11 +512,12 @@ export default function Board() {
                 fontSize: "clamp(13px, 1.8vw, 18px)",
                 letterSpacing: "0.15em",
                 textTransform: "uppercase",
-                cursor: "pointer",
+                cursor: status === 'sending' ? "wait" : "pointer",
+                opacity: status === 'sending' ? 0.7 : 1,
                 width: "70%",
               }}
             >
-              ENVIAR
+              {status === 'sending' ? 'ENVIANDO…' : 'ENVIAR'}
             </button>
           </form>
         </div>

@@ -10,6 +10,13 @@
     <title>APN - Generación de Evidencia</title>
   </head>
   <body>
+    <!-- Formulario estático para que Netlify detecte el formulario de contacto (Board.jsx) -->
+    <form name="contacto" data-netlify="true" netlify-honeypot="bot-field" data-netlify-recaptcha-placeholder hidden>
+      <input type="text" name="nombre" />
+      <input type="email" name="correo" />
+      <input type="tel" name="telefono" />
+      <input type="text" name="bot-field" />
+    </form>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
   </body>
